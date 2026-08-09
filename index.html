@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;background:#F4EEE2;color:#26241E;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  a{color:inherit;}
+  @keyframes menuIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;position:relative;">
+  <div id="__topSentinel" style="position:absolute;top:0;left:0;height:1px;width:1px;pointer-events:none;"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header style="position:fixed;top:0;left:0;right:0;z-index:70;transition:background .3s ease,box-shadow .3s ease;background:{{ theme.bg }};box-shadow:{{ theme.sh }};--wm:{{ theme.wm }};--wmSub:{{ theme.wmSub }};--nav:{{ theme.nav }};--navHover:{{ theme.navHover }};--ind:{{ theme.ind }};--ham:{{ theme.ham }};">
+    <div onMouseLeave="{{ onZoneLeave }}">
+      <div style="max-width:1440px;margin:0 auto;padding:0 40px;height:92px;display:flex;align-items:center;justify-content:space-between;gap:32px;">
+
+        <!-- Wordmark -->
+        <a href="#" style="text-decoration:none;display:flex;flex-direction:column;line-height:1;flex:none;">
+          <span style="font-weight:800;font-size:22px;letter-spacing:-0.02em;color:var(--wm,#FBF9F3);transition:color .3s ease;">뉴저지제일한인교회</span>
+          <span style="font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--wmSub,rgba(251,249,243,0.72));margin-top:5px;transition:color .3s ease;">The First Korean Church of NJ</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+          <nav style="display:flex;align-items:center;gap:30px;">
+            <a href="#" onClick="{{ closeAll }}" style="font-size:15px;font-weight:500;color:var(--nav,rgba(251,249,243,0.88));white-space:nowrap;text-decoration:none;transition:color .3s ease;" style-hover="color:var(--navHover,#FBF9F3);">홈</a>
+            <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="4">
+              <button onMouseEnter="{{ item.onEnter }}" onClick="{{ item.onClick }}" style="display:flex;align-items:center;gap:7px;background:none;border:none;padding:0;cursor:pointer;font-family:inherit;font-size:15px;font-weight:500;color:var(--nav,rgba(251,249,243,0.88));white-space:nowrap;transition:color .3s ease;" style-hover="color:var(--navHover,#FBF9F3);">
+                <span>{{ item.label }}</span>
+                <span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;font-size:15px;font-weight:400;color:var(--ind,#CBE39B);transition:color .3s ease;">{{ item.indicator }}</span>
+              </button>
+            </sc-for>
+            <a href="#" style="font-size:15px;font-weight:500;color:var(--nav,rgba(251,249,243,0.88));white-space:nowrap;text-decoration:none;transition:color .3s ease;" style-hover="color:var(--navHover,#FBF9F3);">로그인</a>
+            <a href="#" onClick="{{ closeAll }}" style="background:#CBE39B;color:#2E3A16;font-weight:600;font-size:15px;padding:12px 26px;border-radius:999px;text-decoration:none;transition:background .18s,transform .18s;" style-hover="background:#bdd987;transform:translateY(-1px);">새가족 등록</a>
+          </nav>
+        </sc-if>
+
+        <!-- Mobile hamburger -->
+        <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ toggleMobile }}" aria-label="메뉴" style="background:none;border:none;cursor:pointer;padding:8px;color:var(--ham,#FBF9F3);transition:color .3s ease;display:flex;">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16 M4 12h16 M4 17h16"></path></svg>
+          </button>
+        </sc-if>
+      </div>
+
+      <!-- ============ MEGA MENU PANEL ============ -->
+      <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;top:100%;left:0;right:0;background:#F4EEE2;border-top:1px solid rgba(38,36,30,0.09);border-radius:0 0 30px 30px;box-shadow:0 34px 70px -24px rgba(38,36,30,0.4);animation:menuIn .28s cubic-bezier(.34,.02,.14,1) both;z-index:60;">
+          <div style="max-width:1440px;margin:0 auto;padding:34px 40px 46px;">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;padding:0 18px 18px;border-bottom:1px solid rgba(38,36,30,0.08);margin-bottom:14px;">
+              <div style="display:flex;align-items:baseline;gap:14px;">
+                <span style="font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:300;font-size:24px;color:#26241E;">{{ openLabel }}</span>
+                <span style="font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#a1977f;">{{ openEn }}</span>
+              </div>
+              <a href="#" onClick="{{ closeAll }}" style="font-size:13.5px;font-weight:600;color:#6E8B3D;text-decoration:none;">전체 보기 &rarr;</a>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:4px 30px;">
+              <sc-for list="{{ openItems }}" as="item" hint-placeholder-count="6">
+                <a href="#" onClick="{{ closeAll }}" style="display:flex;gap:18px;align-items:flex-start;padding:16px;border-radius:16px;text-decoration:none;transition:background .16s;" style-hover="background:#EBE2D0;">
+                  <span style="flex:none;width:60px;height:60px;border-radius:15px;background:#FBF9F3;border:1px solid rgba(38,36,30,0.08);display:flex;align-items:center;justify-content:center;color:#6E8B3D;">
+                    <svg viewBox="0 0 24 24" width="27" height="27" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="{{ item.icon }}"></path></svg>
+                  </span>
+                  <span style="display:block;padding-top:3px;">
+                    <span style="display:block;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:300;font-size:21px;color:#26241E;margin-bottom:5px;">{{ item.label }}</span>
+                    <span style="display:block;font-size:13.5px;line-height:1.55;color:#6F6656;max-width:36ch;">{{ item.desc }}</span>
+                  </span>
+                </a>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </header>
+
+  <!-- Scrim -->
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeAll }}" style="position:fixed;inset:0;z-index:50;background:rgba(22,20,13,0.5);animation:fadeIn .28s ease both;"></div>
+  </sc-if>
+
+  <!-- Mobile menu -->
+  <sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;top:92px;z-index:65;background:#F4EEE2;overflow-y:auto;padding:16px 24px 48px;animation:fadeIn .2s ease both;">
+      <a href="#" onClick="{{ closeAll }}" style="display:block;padding:16px 6px;font-size:17px;font-weight:600;color:#26241E;text-decoration:none;border-bottom:1px solid rgba(38,36,30,0.08);">홈</a>
+      <sc-for list="{{ mobileGroups }}" as="grp" hint-placeholder-count="4">
+        <div style="border-bottom:1px solid rgba(38,36,30,0.08);">
+          <button onClick="{{ grp.onToggle }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:none;border:none;padding:16px 6px;cursor:pointer;font-family:inherit;font-size:17px;font-weight:600;color:#26241E;">
+            <span>{{ grp.label }}</span>
+            <span style="color:#7d9a4a;font-weight:400;font-size:19px;">{{ grp.indicator }}</span>
+          </button>
+          <sc-if value="{{ grp.isOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:2px 6px 16px;">
+              <sc-for list="{{ grp.items }}" as="item" hint-placeholder-count="4">
+                <a href="#" onClick="{{ closeAll }}" style="display:flex;align-items:center;gap:14px;padding:11px 8px;text-decoration:none;">
+                  <span style="flex:none;width:40px;height:40px;border-radius:11px;background:#FBF9F3;border:1px solid rgba(38,36,30,0.08);display:flex;align-items:center;justify-content:center;color:#6E8B3D;">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="{{ item.icon }}"></path></svg>
+                  </span>
+                  <span style="font-size:15px;color:#3f3a2e;">{{ item.label }}</span>
+                </a>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+      <div style="display:flex;gap:12px;margin-top:24px;">
+        <a href="#" style="flex:1;text-align:center;padding:14px;border:1px solid rgba(38,36,30,0.18);border-radius:999px;text-decoration:none;font-weight:600;color:#3f3a2e;">로그인</a>
+        <a href="#" style="flex:1;text-align:center;padding:14px;background:#CBE39B;color:#2E3A16;border-radius:999px;text-decoration:none;font-weight:600;">새가족 등록</a>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ============ HERO ============ -->
+  <section style="position:relative;overflow:hidden;background:#22211a;">
+    <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;">
+      <iframe src="https://www.youtube.com/embed/VJ0viD3Osik?si=Ohs2s19ITLt3MOuw&autoplay=1&mute=1&loop=1&playlist=VJ0viD3Osik&controls=0&rel=0&modestbranding=1&playsinline=1&disablekb=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100%;min-width:177.78vh;transform:translate(-50%,-50%);border:0;"></iframe>
+    </div>
+    <div style="position:absolute;inset:0;background:linear-gradient(175deg,rgba(20,19,13,0.34),rgba(20,19,13,0.72));"></div>
+    <div style="position:absolute;left:0;right:0;bottom:0;height:55%;background:linear-gradient(to top,rgba(20,19,13,0.9),rgba(20,19,13,0));pointer-events:none;"></div>
+    <div style="position:relative;max-width:1440px;margin:0 auto;padding:132px 40px 96px;">
+      <span style="display:inline-block;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:400;font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#CBE39B;margin-bottom:26px;">Grace &amp; Truth · Since 1974</span>
+      <h2 style="font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:600;font-size:clamp(42px,6.5vw,82px);line-height:1.2;letter-spacing:-0.02em;color:#FBF9F3;margin:0 0 24px;">말씀 위에 세워진<br>믿음의 공동체</h2>
+      <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;font-weight:600;color:#FFFFFF;max-width:560px;margin:0 0 64px;">뉴저지제일한인교회는 한 사람 한 사람을 그리스도의 제자로 세우며, 이웃과 다음세대에게 복음을 전하는 예배 공동체입니다.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:8px;">
+        <a href="#" style="background:#CBE39B;color:#2E3A16;font-weight:600;font-size:15px;padding:15px 32px;border-radius:999px;text-decoration:none;">새가족 등록 안내</a>
+        <a href="#" style="background:rgba(251,249,243,0.22);border:1px solid rgba(251,249,243,0.4);color:#FBF9F3;font-weight:500;font-size:15px;padding:15px 32px;border-radius:999px;text-decoration:none;">예배 안내 &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORSHIP TIMES BAND ============ -->
+  <section style="background:#ECE4D4;border-bottom:1px solid rgba(38,36,30,0.08);">
+    <div style="max-width:1440px;margin:0 auto;padding:26px 40px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 40px;">
+      <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#8f8570;font-weight:600;flex:none;">예배 시간</span>
+      <div style="display:flex;flex-wrap:wrap;gap:12px 36px;">
+        <sc-for list="{{ heroTimes }}" as="t" hint-placeholder-count="4">
+          <div style="display:flex;align-items:baseline;gap:10px;">
+            <span style="font-size:14px;color:#57503f;">{{ t.name }}</span>
+            <span style="font-size:15px;font-weight:600;color:#26241E;">{{ t.time }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WEEKLY NEWS ============ -->
+  <section style="max-width:1440px;margin:0 auto;padding:96px 40px;">
+    <div style="margin-bottom:44px;">
+      <span style="font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:#8f8570;">This Week</span>
+      <h3 style="font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:300;font-size:clamp(30px,4vw,44px);line-height:1.1;color:#26241E;margin:10px 0 0;">한 주간의 소식</h3>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:22px;">
+      <div style="grid-column:span 1;position:relative;overflow:hidden;border-radius:22px;background:#1f2416;color:#FBF9F3;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;">
+        <div style="position:absolute;inset:0;">
+          <iframe src="https://www.youtube.com/embed/cdK7xYzoQAs?si=k0_TXBSQOvnkbqV0&rel=0&modestbranding=1&playsinline=1&start=2707" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe>
+        </div>
+        <div style="position:relative;padding:22px 24px;background:linear-gradient(to top,rgba(15,17,10,0.92),rgba(15,17,10,0));pointer-events:none;">
+          <span style="display:block;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#CBE39B;margin-bottom:8px;">최신 주일설교 · 2026.05.31</span>
+          <span style="display:block;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:300;font-size:22px;line-height:1.35;">"예수님을 위한 증거" · Witnesses to Jesus</span>
+          <span style="display:block;font-size:13.5px;color:rgba(251,249,243,0.72);margin-top:8px;">요한복음 5:31-47 · 강상석 담임목사</span>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(38,36,30,0.12);border-radius:22px;padding:34px;display:flex;flex-direction:column;background:#FBF9F3;">
+        <h4 style="font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:300;font-size:22px;color:#26241E;margin:0 0 22px;">이번 주 소식</h4>
+        <sc-for list="{{ news }}" as="n" hint-placeholder-count="4">
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid rgba(38,36,30,0.08);">
+            <span style="font-size:14.5px;color:#3f3a2e;line-height:1.45;">{{ n.title }}</span>
+            <span style="font-size:12.5px;color:#a1977f;flex:none;">{{ n.date }}</span>
+          </div>
+        </sc-for>
+        <a href="#" style="margin-top:22px;font-size:14px;font-weight:600;color:#6E8B3D;text-decoration:none;">주보 보기 &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUICK LINKS ============ -->
+  <section style="background:#ECE4D4;">
+    <div style="max-width:1440px;margin:0 auto;padding:88px 40px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;">
+        <sc-for list="{{ quicks }}" as="q" hint-placeholder-count="3">
+          <a href="#" style="background:#FBF9F3;border:1px solid rgba(38,36,30,0.08);border-radius:20px;padding:34px;text-decoration:none;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;height:100%;" style-hover="transform:translateY(-4px);box-shadow:0 20px 40px -20px rgba(38,36,30,0.3);">
+            <span style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:14px;background:#EEF3E0;color:#6E8B3D;margin-bottom:22px;">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="{{ q.icon }}"></path></svg>
+            </span>
+            <span style="display:block;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:300;font-size:23px;color:#26241E;margin-bottom:10px;">{{ q.title }}</span>
+            <span style="display:block;font-size:14px;line-height:1.6;color:#6F6656;margin-bottom:20px;">{{ q.desc }}</span>
+            <span style="display:block;font-size:14px;font-weight:600;color:#6E8B3D;margin-top:auto;">{{ q.cta }} &rarr;</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WELCOME ============ -->
+  <section style="position:relative;overflow:hidden;background:repeating-linear-gradient(135deg,#22211a,#22211a 14px,#2a2921 14px,#2a2921 28px);">
+    <div style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(20,19,13,0.82),rgba(20,19,13,0.55));"></div>
+    <div style="position:relative;max-width:820px;margin:0 auto;padding:110px 40px;text-align:center;">
+      <h3 style="font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:300;font-size:clamp(30px,4.4vw,48px);line-height:1.2;color:#FBF9F3;margin:0 0 22px;">처음 방문하셨나요?<br>여러분의 시작을 돕겠습니다.</h3>
+      <p style="font-size:16px;line-height:1.7;color:rgba(251,249,243,0.72);margin:0 0 36px;">새가족 등록 과정을 자세히 안내해 드립니다. 뉴저지제일한인교회는 한 사람 한 사람을 그리스도의 제자로 세우려 노력하고 있습니다.</p>
+      <a href="#" style="background:#CBE39B;color:#2E3A16;font-weight:600;font-size:15px;padding:15px 34px;border-radius:999px;text-decoration:none;">새가족 등록 안내 &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ============ CONGREGATIONS ============ -->
+  <section style="max-width:1440px;margin:0 auto;padding:96px 40px;">
+    <div style="text-align:center;margin-bottom:48px;">
+      <span style="font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:#8f8570;">Community</span>
+      <h3 style="font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:300;font-size:clamp(30px,4vw,44px);color:#26241E;margin:10px 0 0;">함께하는 공동체</h3>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;">
+      <sc-for list="{{ congs }}" as="c" hint-placeholder-count="3">
+        <a href="#" style="border:1px solid rgba(38,36,30,0.12);border-radius:20px;padding:38px;text-align:center;text-decoration:none;background:#FBF9F3;transition:transform .2s,box-shadow .2s;display:block;" style-hover="transform:translateY(-4px);box-shadow:0 20px 40px -20px rgba(38,36,30,0.3);">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:50%;background:#EEF3E0;color:#6E8B3D;margin-bottom:22px;">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="{{ c.icon }}"></path></svg>
+          </span>
+          <span style="display:block;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:300;font-size:23px;color:#26241E;margin-bottom:4px;">{{ c.title }}</span>
+          <span style="display:block;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#8f8570;margin-bottom:16px;">{{ c.subtitle }}</span>
+          <span style="display:block;font-size:14px;line-height:1.6;color:#6F6656;">{{ c.desc }}</span>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#211F18;color:rgba(251,249,243,0.6);">
+    <div style="max-width:1440px;margin:0 auto;padding:72px 40px 40px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(251,249,243,0.1);">
+        <div>
+          <div style="font-weight:800;font-size:18px;color:#FBF9F3;margin-bottom:4px;">뉴저지제일한인교회</div>
+          <div style="font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#8f8570;margin-bottom:18px;">The First Korean Church of NJ</div>
+          <p style="font-size:13.5px;line-height:1.7;margin:0;">2681 John F Kennedy Blvd<br>Jersey City, NJ 07306<br>201-333-2121</p>
+        </div>
+        <div>
+          <div style="color:rgba(251,249,243,0.85);font-weight:600;font-size:14px;margin-bottom:16px;">바로가기</div>
+          <sc-for list="{{ footerLinks }}" as="f" hint-placeholder-count="6">
+            <a href="#" style="display:block;font-size:13.5px;padding:6px 0;text-decoration:none;color:rgba(251,249,243,0.55);">{{ f }}</a>
+          </sc-for>
+        </div>
+        <div>
+          <div style="color:rgba(251,249,243,0.85);font-weight:600;font-size:14px;margin-bottom:16px;">예배 시간</div>
+          <sc-for list="{{ heroTimes }}" as="t" hint-placeholder-count="4">
+            <div style="font-size:13.5px;padding:6px 0;">{{ t.name }} · {{ t.time }}</div>
+          </sc-for>
+        </div>
+        <div>
+          <div style="color:rgba(251,249,243,0.85);font-weight:600;font-size:14px;margin-bottom:16px;">회원</div>
+          <a href="#" style="display:block;font-size:13.5px;padding:6px 0;text-decoration:none;color:rgba(251,249,243,0.55);">로그인</a>
+          <a href="#" style="display:block;font-size:13.5px;padding:6px 0;text-decoration:none;color:rgba(251,249,243,0.55);">회원가입</a>
+          <a href="#" style="display:block;font-size:13.5px;padding:6px 0;text-decoration:none;color:rgba(251,249,243,0.55);">새가족등록</a>
+        </div>
+      </div>
+      <div style="padding-top:26px;font-size:12px;color:rgba(251,249,243,0.32);">&copy; 2026 뉴저지제일한인교회. All rights reserved.</div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900},&quot;openOnHover&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Mega menu&quot;}}">
+class Component extends DCLogic {
+  state = { open: null, mobileOpen: false, mobileGroup: null, w: 1280, scrolled: false };
+
+  nav = [
+    { label: '교회소개', en: 'About', items: [
+      { label: '교회소개', desc: '뉴저지제일한인교회가 걸어온 길과 나아갈 방향을 소개합니다', icon: 'M3 10.5 12 3l9 7.5 M5 9.5V21h14V9.5 M10 21v-6h4v6' },
+      { label: '담임목사', desc: '강상석 담임목사의 목회 철학과 인사말을 전합니다', icon: 'M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z M6 11a6 6 0 0 0 12 0 M12 17v4 M8 21h8' },
+      { label: '섬기는분', desc: '성도를 섬기는 교역자와 장로, 봉사자를 소개합니다', icon: 'M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z M2.5 21a6.5 6.5 0 0 1 13 0 M17 3.5a4 4 0 0 1 0 7.5 M18 14.6a6.5 6.5 0 0 1 3.5 5.4' },
+      { label: '새가족등록안내', desc: '처음 오신 분들을 위한 등록 절차를 안내해 드립니다', icon: 'M10 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z M3 21a7 7 0 0 1 14 0 M19 8v6 M22 11h-6' },
+      { label: '찾아오시는길', desc: '예배당 위치와 오시는 길, 주차 안내를 확인하세요', icon: 'M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z M12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z' },
+    ] },
+    { label: '예배와말씀', en: 'Worship', items: [
+      { label: '예배안내', desc: '주일예배와 각 예배의 시간과 순서를 안내합니다', icon: 'M12 2v5 M9.5 4.5h5 M6 22V11l6-4 6 4v11 M4 22h16 M10 22v-5h4v5' },
+      { label: '주일설교', desc: '매주 선포되는 생명의 말씀을 영상으로 다시 봅니다', icon: 'M12 7v14 M3 5h6a3 3 0 0 1 3 3 3 3 0 0 1 3-3h6v13h-7a2 2 0 0 0-2 2 2 2 0 0 0-2-2H3V5Z' },
+      { label: '수요찬양기도회', desc: '수요일 저녁, 찬양과 기도로 함께하는 시간입니다', icon: 'M9 18V6l10-2v12 M6 15a3 3 0 1 0 3 3 M16 13a3 3 0 1 0 3 3' },
+      { label: 'English Ministry', desc: '영어권 성도를 위한 예배와 공동체를 소개합니다', icon: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z M3 12h18 M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9Z' },
+    ] },
+    { label: '다음세대', en: 'Next Gen', items: [
+      { label: '유아부', desc: '가장 어린 자녀들이 처음 만나는 신앙의 자리입니다', icon: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z M9 10h.01 M15 10h.01 M9.5 14.5a3.5 3.5 0 0 0 5 0' },
+      { label: '유초등부', desc: '유치부와 초등부 아이들의 예배와 교육 공동체입니다', icon: 'M7 9a5 5 0 0 1 10 0v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V9Z M9.5 9V7a2.5 2.5 0 0 1 5 0v2 M7 14h10' },
+      { label: '한어대학청년부', desc: '대학생과 청년이 함께 세워가는 신앙 공동체입니다', icon: 'M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z M2.5 21a6.5 6.5 0 0 1 13 0 M17 3.5a4 4 0 0 1 0 7.5 M18 14.6a6.5 6.5 0 0 1 3.5 5.4' },
+      { label: 'English Ministry', desc: '영어권 다음세대를 위한 예배와 교제의 자리입니다', icon: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z M3 12h18 M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9Z' },
+      { label: '한글학교', desc: '다음세대에게 우리말과 문화를 가르치는 배움터입니다', icon: 'M12 4 2 9l10 5 10-5-10-5Z M6 11.5V16c0 1.1 2.7 2.5 6 2.5s6-1.4 6-2.5v-4.5' },
+    ] },
+    { label: '나눔터', en: 'Fellowship', items: [
+      { label: '중보기도', desc: '서로의 기도 제목을 나누며 함께 기도합니다', icon: 'M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z' },
+      { label: '새가족소개', desc: '새롭게 등록하신 가족들을 반갑게 소개합니다', icon: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z M8.5 14a4 4 0 0 0 7 0 M9 9.5h.01 M15 9.5h.01' },
+      { label: '포토갤러리', desc: '교회 공동체의 소중한 순간들을 사진으로 담았습니다', icon: 'M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z M8.5 11a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z M21 15l-5-5-9 9' },
+      { label: '주보', desc: '매주 발행되는 교회 소식과 예배 순서를 확인하세요', icon: 'M4 6a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v13a2 2 0 0 0 2 2H5a2 2 0 0 0-2-2V8 M8 9h6 M8 13h6 M8 17h4 M17 9h2a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2' },
+    ] },
+  ];
+
+  heroTimes = [
+    { name: '주일예배 1부', time: '오전 9:00' },
+    { name: '주일예배 2부', time: '오전 10:30' },
+    { name: '수요찬양기도회', time: '오후 8:00' },
+    { name: '금요기도회', time: '오후 8:00' },
+  ];
+
+  news = [
+    { title: '성경암송대회 (요한복음 1:1-18)', date: '06.07' },
+    { title: '찬양예배 — 주일 2부 예배', date: '06.07' },
+    { title: '한글학교 — 2층 유초등부실', date: '매주 일요일' },
+    { title: '경로 선물 — 75세 이상 어르신', date: '진행 중' },
+  ];
+
+  quicks = [
+    { title: '주보', desc: '매주 발행되는 교회 주보를 온라인으로 보실 수 있습니다.', cta: '주보 보기', icon: 'M4 6a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v13a2 2 0 0 0 2 2H5a2 2 0 0 0-2-2V8 M8 9h6 M8 13h6 M8 17h4 M17 9h2a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2' },
+    { title: '주일설교', desc: '생명의 말씀, 주일설교 영상을 다시 보실 수 있습니다.', cta: '설교 보기', icon: 'M12 7v14 M3 5h6a3 3 0 0 1 3 3 3 3 0 0 1 3-3h6v13h-7a2 2 0 0 0-2 2 2 2 0 0 0-2-2H3V5Z' },
+    { title: '온라인 헌금', desc: '간단하고 안전하게 감사의 마음을 담아 드릴 수 있습니다.', cta: '헌금 안내', icon: 'M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z' },
+  ];
+
+  congs = [
+    { title: '한국어권 회중', subtitle: 'Korean Congregation', desc: '말씀, 기도, 전도의 정신으로 그리스도의 제자를 세우는 한어권 예배 공동체입니다.', icon: 'M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z M2.5 21a6.5 6.5 0 0 1 13 0 M17 3.5a4 4 0 0 1 0 7.5 M18 14.6a6.5 6.5 0 0 1 3.5 5.4' },
+    { title: 'English Ministry', subtitle: 'English Congregation', desc: '영어권 성도들이 신령과 진정으로 하나님을 예배하는 공동체입니다.', icon: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z M3 12h18 M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9Z' },
+    { title: '다음세대', subtitle: 'Next Generation', desc: '유아부부터 한어대학청년부, 한글학교까지 다음세대를 세우는 교육 공동체입니다.', icon: 'M12 4 2 9l10 5 10-5-10-5Z M6 11.5V16c0 1.1 2.7 2.5 6 2.5s6-1.4 6-2.5v-4.5' },
+  ];
+
+  footerLinks = ['교회소개', '예배안내', '주일설교', '찾아오시는길', '중보기도', '주보'];
+
+  componentDidMount() {
+    this._resize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this._resize);
+    this.setState({ w: window.innerWidth });
+    this._key = (e) => { if (e.key === 'Escape') this.setState({ open: null, mobileOpen: false }); };
+    window.addEventListener('keydown', this._key);
+    this._scroll = () => this.setState({ scrolled: (window.scrollY || document.documentElement.scrollTop || 0) > 30 });
+    window.addEventListener('scroll', this._scroll, { passive: true });
+    document.addEventListener('scroll', this._scroll, { passive: true, capture: true });
+    this._scroll();
+    const sentinel = document.getElementById('__topSentinel');
+    if (sentinel && 'IntersectionObserver' in window) {
+      this._io = new IntersectionObserver(
+        (entries) => this.setState({ scrolled: !entries[0].isIntersecting }),
+        { threshold: 0, rootMargin: '-30px 0px 0px 0px' }
+      );
+      this._io.observe(sentinel);
+    }
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._resize);
+    window.removeEventListener('keydown', this._key);
+    window.removeEventListener('scroll', this._scroll);
+    document.removeEventListener('scroll', this._scroll, true);
+    if (this._io) this._io.disconnect();
+    clearTimeout(this._t);
+  }
+
+  openMenu(i) { clearTimeout(this._t); this.setState({ open: i }); }
+  scheduleClose() { clearTimeout(this._t); this._t = setTimeout(() => this.setState({ open: null }), 150); }
+  toggle(i) { clearTimeout(this._t); this.setState(s => ({ open: s.open === i ? null : i })); }
+
+  renderVals() {
+    const open = this.state.open;
+    const isMobile = this.state.w < 1024;
+    const g = open == null ? null : this.nav[open];
+    const solid = this.state.scrolled || (open != null && !isMobile) || (this.state.mobileOpen && isMobile);
+    const theme = solid
+      ? { bg: '#F4EEE2', sh: '0 1px 0 rgba(38,36,30,0.08)', wm: '#26241E', wmSub: '#8f8570', nav: '#57503f', navHover: '#26241E', ind: '#7d9a4a', ham: '#26241E' }
+      : { bg: 'transparent', sh: 'none', wm: '#FBF9F3', wmSub: 'rgba(251,249,243,0.72)', nav: 'rgba(251,249,243,0.88)', navHover: '#FBF9F3', ind: '#CBE39B', ham: '#FBF9F3' };
+    return {
+      theme,
+      isMobile,
+      isDesktop: !isMobile,
+      menuOpen: open != null && !isMobile,
+      openLabel: g ? g.label : '',
+      openEn: g ? g.en : '',
+      openItems: g ? g.items : [],
+      navItems: this.nav.map((grp, i) => ({
+        label: grp.label,
+        indicator: i === open ? '×' : '+',
+        onEnter: () => { if (this.props.openOnHover ?? true) this.openMenu(i); },
+        onClick: () => this.toggle(i),
+      })),
+      mobileGroups: this.nav.map((grp, i) => ({
+        label: grp.label,
+        items: grp.items,
+        isOpen: this.state.mobileGroup === i,
+        indicator: this.state.mobileGroup === i ? '−' : '+',
+        onToggle: () => this.setState(s => ({ mobileGroup: s.mobileGroup === i ? null : i })),
+      })),
+      mobileOpen: this.state.mobileOpen && isMobile,
+      heroTimes: this.heroTimes,
+      news: this.news,
+      quicks: this.quicks,
+      congs: this.congs,
+      footerLinks: this.footerLinks,
+      onZoneLeave: () => this.scheduleClose(),
+      closeAll: () => this.setState({ open: null, mobileOpen: false, mobileGroup: null }),
+      toggleMobile: () => this.setState(s => ({ mobileOpen: !s.mobileOpen })),
+    };
+  }
+}
+</script>
+</body>
+</html>
