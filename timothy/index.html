@@ -14,10 +14,10 @@
     
     <style>
         :root {
-            --church-bg: #FAF8F5;
-            --church-main: #1E3E2B;
-            --church-point: #8AA18C;
-            --church-text: #2D312E;
+            --church-bg: #F5F7F5;
+            --church-main: #5A6D56;
+            --church-point: #8F9F8B;
+            --church-text: #2D3A2C;
             --church-card: #FFFFFF;
         }
 
@@ -33,7 +33,7 @@
         }
 
         .bg-pattern {
-            background-image: radial-gradient(#8aa18c 0.5px, transparent 0.5px), radial-gradient(#8aa18c 0.5px, #FAF8F5 0.5px);
+            background-image: radial-gradient(#8f9f8b 0.5px, transparent 0.5px), radial-gradient(#8f9f8b 0.5px, #F5F7F5 0.5px);
             background-size: 20px 20px;
             background-position: 0 0, 10px 10px;
             opacity: 0.12;
@@ -43,8 +43,8 @@
             position: sticky;
             top: 0;
             z-index: 40;
-            background-color: rgba(250, 248, 245, 0.95);
-            border-bottom: 1px solid #EAE6DF;
+            background-color: rgba(245, 247, 245, 0.95);
+            border-bottom: 1px solid #DDE3DC;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
@@ -133,7 +133,7 @@
         
         .card {
             background: var(--church-card);
-            border: 1px solid #EAE6DF;
+            border: 1px solid #DDE3DC;
             border-radius: 20px;
             padding: 24px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.02);
@@ -150,11 +150,11 @@
         .card:hover {
             transform: translateY(-6px) scale(1.03);
             border-color: var(--church-main) !important;
-            box-shadow: 0 16px 32px rgba(30, 62, 43, 0.12);
+            box-shadow: 0 16px 32px rgba(90, 109, 86, 0.12);
         }
 
         .card-growth-highlight {
-            box-shadow: 0 12px 28px rgba(30, 62, 43, 0.1) !important;
+            box-shadow: 0 12px 28px rgba(90, 109, 86, 0.1) !important;
         }
 
         .hover-card-zoom {
@@ -163,7 +163,7 @@
         .hover-card-zoom:hover {
             transform: translateY(-6px) scale(1.03);
             border-color: var(--church-main) !important;
-            box-shadow: 0 16px 32px rgba(30, 62, 43, 0.12);
+            box-shadow: 0 16px 32px rgba(90, 109, 86, 0.12);
         }
 
         @media (min-width: 1024px) {
@@ -193,14 +193,14 @@
 <body class="min-h-screen flex flex-col justify-between overflow-x-hidden pb-16 md:pb-0 relative">
 
     <!-- 관리자 상단 고정 띠 -->
-    <div id="adminModeBanner" class="hidden bg-[#1E3E2B] text-white py-2 px-4 text-xs font-bold flex justify-between items-center z-50 sticky top-0 shadow-md">
+    <div id="adminModeBanner" class="hidden bg-[#5A6D56] text-white py-2 px-4 text-xs font-bold flex justify-between items-center z-50 sticky top-0 shadow-md">
         <div class="flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-            <i class="fa-solid fa-user-shield text-[#8AA18C]"></i>
+            <i class="fa-solid fa-user-shield text-[#8F9F8B]"></i>
             <span>디모데 웹사이트 관리자 권한 활성화됨</span>
         </div>
         <div class="flex items-center gap-2">
-            <button onclick="openAdminDashboard()" class="bg-[#8AA18C] hover:bg-[#8AA18C]/80 text-white px-3 py-1 rounded-full text-[11px] transition-all">
+            <button onclick="openAdminDashboard()" class="bg-[#8F9F8B] hover:bg-[#8F9F8B]/80 text-white px-3 py-1 rounded-full text-[11px] transition-all">
                 <i class="fa-solid fa-sliders mr-1"></i> 대시보드
             </button>
             <button onclick="logoutAdmin()" class="bg-white/10 hover:bg-white/20 text-white px-3 py-1 rounded-full text-[11px] transition-all">
@@ -210,38 +210,38 @@
     </div>
 
     <!-- Header -->
-    <header class="sticky top-0 z-40 bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#EAE6DF]">
+    <header class="sticky top-0 z-40 bg-[#F5F7F5]/95 backdrop-blur-md border-b border-[#DDE3DC]">
         <div class="header-container">
             
             <a href="#welcome" class="logo-area" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
                 <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="40" stroke="#8AA18C" stroke-width="3" stroke-dasharray="4 2" opacity="0.6"/>
-                    <line x1="50" y1="20" x2="50" y2="80" stroke="#1E3E2B" stroke-width="5" stroke-linecap="round"/>
-                    <line x1="30" y1="38" x2="70" y2="38" stroke="#1E3E2B" stroke-width="5" stroke-linecap="round"/>
-                    <path d="M50 38 C58 28, 62 26, 68 28 C64 36, 56 38, 50 38 Z" fill="#8AA18C"/>
+                    <circle cx="50" cy="50" r="40" stroke="#8F9F8B" stroke-width="3" stroke-dasharray="4 2" opacity="0.6"/>
+                    <line x1="50" y1="20" x2="50" y2="80" stroke="#5A6D56" stroke-width="5" stroke-linecap="round"/>
+                    <line x1="30" y1="38" x2="70" y2="38" stroke="#5A6D56" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M50 38 C58 28, 62 26, 68 28 C64 36, 56 38, 50 38 Z" fill="#8F9F8B"/>
                 </svg>
                 
                 <div class="logo-title-group">
                     <div class="flex items-center space-x-1.5">
-                        <span class="text-xs font-black tracking-widest text-[#1E3E2B] font-logo uppercase">Timothy</span>
-                        <span class="text-[9px] bg-[#1E3E2B] text-[#FAF8F5] px-1.5 py-0.2 rounded font-bold font-logo uppercase">Group</span>
+                        <span class="text-xs font-black tracking-widest text-[#5A6D56] font-logo uppercase">Timothy</span>
+                        <span class="text-[9px] bg-[#5A6D56] text-[#F5F7F5] px-1.5 py-0.2 rounded font-bold font-logo uppercase">Group</span>
                     </div>
-                    <p class="text-[10px] text-[#8AA18C] font-semibold tracking-tight text-left">뉴저지제일한인교회</p>
+                    <p class="text-[10px] text-[#8F9F8B] font-semibold tracking-tight text-left">뉴저지제일한인교회</p>
                 </div>
             </a>
 
-            <nav class="hidden md:flex items-center space-x-6 text-xs font-bold text-[#2D312E]">
-                <a href="#welcome" class="hover:text-[#1E3E2B] transition-colors">환영합니다</a>
-                <a href="#moments" class="hover:text-[#1E3E2B] transition-colors">디모데 일상</a>
-                <a href="#identity" class="hover:text-[#1E3E2B] transition-colors">공동체 비전</a>
-                <a href="#leaders" class="hover:text-[#1E3E2B] transition-colors">섬기는 사람들</a>
-                <a href="#meetings" class="hover:text-[#1E3E2B] transition-colors">모임 안내</a>
-                <a href="#blessing-board" class="hover:text-[#1E3E2B] transition-colors">송별과 축복 아카이브</a>
+            <nav class="hidden md:flex items-center space-x-6 text-xs font-bold text-[#2D3A2C]">
+                <a href="#welcome" class="hover:text-[#5A6D56] transition-colors">환영합니다</a>
+                <a href="#moments" class="hover:text-[#5A6D56] transition-colors">디모데 일상</a>
+                <a href="#identity" class="hover:text-[#5A6D56] transition-colors">공동체 비전</a>
+                <a href="#leaders" class="hover:text-[#5A6D56] transition-colors">섬기는 사람들</a>
+                <a href="#meetings" class="hover:text-[#5A6D56] transition-colors">모임 안내</a>
+                <a href="#blessing-board" class="hover:text-[#5A6D56] transition-colors">송별과 축복 아카이브</a>
             </nav>
 
             <div class="flex items-center space-x-2">
-                <a href="../" class="inline-flex items-center h-8 px-3 rounded-full bg-[#1E3E2B] text-white text-[11px] font-bold hover:bg-[#1E3E2B]/90 transition-colors whitespace-nowrap" title="교회 홈으로">교회 홈</a>
-                <button onclick="sharePageLink()" class="w-8 h-8 rounded-full bg-[#1E3E2B]/5 hover:bg-[#1E3E2B]/10 flex items-center justify-center text-[#1E3E2B] transition-colors" title="페이지 주소 공유">
+                <a href="../" class="inline-flex items-center h-8 px-3 rounded-full bg-[#5A6D56] text-white text-[11px] font-bold hover:bg-[#5A6D56]/90 transition-colors whitespace-nowrap" title="교회 홈으로">교회 홈</a>
+                <button onclick="sharePageLink()" class="w-8 h-8 rounded-full bg-[#5A6D56]/5 hover:bg-[#5A6D56]/10 flex items-center justify-center text-[#5A6D56] transition-colors" title="페이지 주소 공유">
                     <i class="fa-solid fa-share-nodes text-xs"></i>
                 </button>
             </div>
@@ -249,29 +249,29 @@
     </header>
 
     <!-- 모바일 하단 탭 메뉴 -->
-    <div class="fixed bottom-0 left-0 right-0 z-40 bg-[#FAF8F5]/95 backdrop-blur-lg border-t border-[#EAE6DF] md:hidden shadow-lg">
+    <div class="fixed bottom-0 left-0 right-0 z-40 bg-[#F5F7F5]/95 backdrop-blur-lg border-t border-[#DDE3DC] md:hidden shadow-lg">
         <div class="flex justify-around items-center h-14">
-            <a href="#welcome" class="flex flex-col items-center justify-center flex-1 text-center text-[#1E3E2B]">
+            <a href="#welcome" class="flex flex-col items-center justify-center flex-1 text-center text-[#5A6D56]">
                 <i class="fa-solid fa-house text-sm"></i>
                 <span class="text-[9px] font-bold mt-0.5">홈</span>
             </a>
-            <a href="#moments" class="flex flex-col items-center justify-center flex-1 text-center text-[#8AA18C]">
+            <a href="#moments" class="flex flex-col items-center justify-center flex-1 text-center text-[#8F9F8B]">
                 <i class="fa-solid fa-images text-sm"></i>
                 <span class="text-[9px] font-bold mt-0.5">활동</span>
             </a>
-            <a href="#identity" class="flex flex-col items-center justify-center flex-1 text-center text-[#8AA18C]">
+            <a href="#identity" class="flex flex-col items-center justify-center flex-1 text-center text-[#8F9F8B]">
                 <i class="fa-solid fa-compass text-sm"></i>
                 <span class="text-[9px] font-bold mt-0.5">비전</span>
             </a>
-            <a href="#leaders" class="flex flex-col items-center justify-center flex-1 text-center text-[#8AA18C]">
+            <a href="#leaders" class="flex flex-col items-center justify-center flex-1 text-center text-[#8F9F8B]">
                 <i class="fa-solid fa-users text-sm"></i>
                 <span class="text-[9px] font-bold mt-0.5">사람들</span>
             </a>
-            <a href="#meetings" class="flex flex-col items-center justify-center flex-1 text-center text-[#8AA18C]">
+            <a href="#meetings" class="flex flex-col items-center justify-center flex-1 text-center text-[#8F9F8B]">
                 <i class="fa-solid fa-calendar-days text-sm"></i>
                 <span class="text-[9px] font-bold mt-0.5">모임</span>
             </a>
-            <a href="#blessing-board" class="flex flex-col items-center justify-center flex-1 text-center text-[#8AA18C]">
+            <a href="#blessing-board" class="flex flex-col items-center justify-center flex-1 text-center text-[#8F9F8B]">
                 <i class="fa-solid fa-heart text-sm"></i>
                 <span class="text-[9px] font-bold mt-0.5">축복</span>
             </a>
@@ -285,33 +285,33 @@
             Your browser does not support the video tag.
         </video>
 
-        <div id="heroOverlay" class="absolute inset-0 bg-gradient-to-b from-[#FAF8F5]/90 via-[#FAF8F5]/75 to-[#FAF8F5]/50 z-10 backdrop-blur-[2px] transition-all duration-500"></div>
+        <div id="heroOverlay" class="absolute inset-0 bg-gradient-to-b from-[#F5F7F5]/90 via-[#F5F7F5]/75 to-[#F5F7F5]/50 z-10 backdrop-blur-[2px] transition-all duration-500"></div>
         <div class="absolute inset-0 bg-pattern pointer-events-none z-10"></div>
         
         <div class="relative max-w-7xl mx-auto z-20 w-full">
             <div id="welcomeContainer" class="max-w-3xl text-left">
                 <div class="flex items-center gap-2 mb-4">
-                    <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-[11px] font-semibold bg-[#1E3E2B]/10 text-[#1E3E2B]">
+                    <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full text-[11px] font-semibold bg-[#5A6D56]/10 text-[#5A6D56]">
                         <i class="fa-solid fa-location-dot"></i> 미국 뉴저지 저지시티 (Jersey City, NJ)
                     </span>
 
-                    <button onclick="openEditSectionModal('welcome')" class="admin-only bg-[#8AA18C] text-white px-2.5 py-1 rounded-full text-[10px] font-bold shadow hover:bg-[#8AA18C]/90 transition-all">
+                    <button onclick="openEditSectionModal('welcome')" class="admin-only bg-[#8F9F8B] text-white px-2.5 py-1 rounded-full text-[10px] font-bold shadow hover:bg-[#8F9F8B]/90 transition-all">
                         <i class="fa-solid fa-pen-to-square mr-1"></i> [1. 환영합니다 수정]
                     </button>
                 </div>
                 
-                <h2 id="heroTitle" class="text-2xl sm:text-4xl lg:text-5xl font-black text-[#1E3E2B] tracking-tight leading-relaxed mb-5 text-left">
+                <h2 id="heroTitle" class="text-2xl sm:text-4xl lg:text-5xl font-black text-[#5A6D56] tracking-tight leading-relaxed mb-5 text-left">
                     흘러가는 삶 속에 피어나는<br>
-                    <span style="color: #8AA18C; font-weight: bold;">영원한 믿음의 동역</span>,<br>
+                    <span style="color: #8F9F8B; font-weight: bold;">영원한 믿음의 동역</span>,<br>
                     디모데 그룹입니다
                 </h2>
                 
-                <p id="heroDesc" class="text-xs sm:text-base text-[#2D312E]/90 leading-relaxed mb-6 font-medium max-w-xl text-left">
+                <p id="heroDesc" class="text-xs sm:text-base text-[#2D3A2C]/90 leading-relaxed mb-6 font-medium max-w-xl text-left">
                     뉴저지 저지시티(Jersey City)에서 함께 자라가는 대학생, 직장인들의 청년 공동체입니다. 이곳에서 우리는 믿음의 뿌리를 깊게 내리고 서로의 삶을 든든히 지탱해 줍니다.
                 </p>
                 
                 <div class="flex items-center gap-3">
-                    <a href="#identity" class="bg-[#1E3E2B] hover:bg-[#1E3E2B]/90 text-white font-semibold px-6 py-3 rounded-full shadow hover:shadow-lg transition-all flex items-center justify-center gap-2 text-xs sm:text-sm">
+                    <a href="#identity" class="bg-[#5A6D56] hover:bg-[#5A6D56]/90 text-white font-semibold px-6 py-3 rounded-full shadow hover:shadow-lg transition-all flex items-center justify-center gap-2 text-xs sm:text-sm">
                         <span>디모데 정체성 알아보기</span>
                         <i class="fa-solid fa-arrow-down"></i>
                     </a>
@@ -321,19 +321,19 @@
     </section>
 
     <!-- 2. 디모데 일상 (Moments) -->
-    <section id="moments" class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white border-y border-[#EAE6DF] scroll-mt-20">
+    <section id="moments" class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white border-y border-[#DDE3DC] scroll-mt-20">
         <div class="max-w-5xl mx-auto">
             <div id="momentsHeaderContainer" class="text-center max-w-3xl mx-auto mb-8">
                 <div class="flex justify-center items-center gap-2 mb-1">
-                    <h3 id="momentsSubHeader" class="text-xs font-bold tracking-widest text-[#8AA18C] uppercase text-center">TIMOTHY MOMENTS</h3>
-                    <button onclick="openEditSectionModal('moments')" class="admin-only bg-[#8AA18C] text-white px-2.5 py-1 rounded-full text-[10px] font-bold">
+                    <h3 id="momentsSubHeader" class="text-xs font-bold tracking-widest text-[#8F9F8B] uppercase text-center">TIMOTHY MOMENTS</h3>
+                    <button onclick="openEditSectionModal('moments')" class="admin-only bg-[#8F9F8B] text-white px-2.5 py-1 rounded-full text-[10px] font-bold">
                         <i class="fa-solid fa-pen-to-square mr-1"></i> [2. 디모데 일상 수정]
                     </button>
                 </div>
-                <h4 id="momentsMainHeader" class="text-xl sm:text-3xl font-extrabold text-[#1E3E2B] text-center">함께해서 더 즐거운 디모데 일상</h4>
+                <h4 id="momentsMainHeader" class="text-xl sm:text-3xl font-extrabold text-[#5A6D56] text-center">함께해서 더 즐거운 디모데 일상</h4>
             </div>
 
-            <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-[#EAE6DF] aspect-[16/10] max-h-[480px] w-full bg-gray-900 group" id="momentsCarouselFrame">
+            <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-[#DDE3DC] aspect-[16/10] max-h-[480px] w-full bg-gray-900 group" id="momentsCarouselFrame">
                 <div id="momentsSlidesContainer" class="w-full h-full relative overflow-hidden">
                     <!-- JS 동적 생성 -->
                 </div>
@@ -347,7 +347,7 @@
                 </button>
 
                 <div class="absolute bottom-3 right-4 z-20 bg-black/50 text-white text-[10px] font-bold px-3 py-1 rounded-full backdrop-blur-sm flex items-center gap-1.5">
-                    <i class="fa-solid fa-images text-[#8AA18C]"></i>
+                    <i class="fa-solid fa-images text-[#8F9F8B]"></i>
                     <span id="slideCounterText">1 / 1</span>
                 </div>
             </div>
@@ -357,25 +357,25 @@
     </section>
 
     <!-- 3. 공동체 비전 (Identity) -->
-    <section id="identity" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5] scroll-mt-20">
+    <section id="identity" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#F5F7F5] scroll-mt-20">
         <div class="max-w-7xl mx-auto">
             <div id="identityHeaderContainer" class="text-center max-w-4xl mx-auto mb-10 overflow-hidden">
                 <div class="flex justify-center items-center gap-2 mb-2">
-                    <h3 class="text-xs font-bold tracking-widest text-[#8AA18C] uppercase">OUR SPECIAL IDENTITY</h3>
-                    <button onclick="openEditSectionModal('identity')" class="admin-only bg-[#8AA18C] text-white px-2.5 py-1 rounded-full text-[10px] font-bold">
+                    <h3 class="text-xs font-bold tracking-widest text-[#8F9F8B] uppercase">OUR SPECIAL IDENTITY</h3>
+                    <button onclick="openEditSectionModal('identity')" class="admin-only bg-[#8F9F8B] text-white px-2.5 py-1 rounded-full text-[10px] font-bold">
                         <i class="fa-solid fa-pen-to-square mr-1"></i> [3. 공동체 비전 수정]
                     </button>
                 </div>
                 
-                <h4 id="visionTitle" class="text-xl sm:text-3xl md:text-4xl font-extrabold text-[#1E3E2B] tracking-tight leading-relaxed break-keep px-2 text-center">
+                <h4 id="visionTitle" class="text-xl sm:text-3xl md:text-4xl font-extrabold text-[#5A6D56] tracking-tight leading-relaxed break-keep px-2 text-center">
                     믿음의 길목에서 만난 지체들이,<br>
                     다시 세상으로 파송되는 은혜의 정거장
                 </h4>
-                <p id="visionDesc" class="mt-4 text-xs sm:text-base text-[#2D312E]/80 leading-relaxed px-2 text-center">
+                <p id="visionDesc" class="mt-4 text-xs sm:text-base text-[#2D3A2C]/80 leading-relaxed px-2 text-center">
                     저지시티라는 지역 특성상, 디모데 그룹은 이미 신앙생활을 해오던 청년들이 학업과 직장을 위해 이주해 모이는 공동체입니다. 
                     2~3년의 계절 동안 이곳에서 모여 깊이 있게 성장하고, 주님의 부르심을 따라 다시 각자의 터전과 타 지역, 세상을 향해 담대히 파송되는 영적 훈련 기지입니다.
                 </p>
-                <p class="text-[11px] text-[#8AA18C] font-bold mt-4 lg:hidden flex items-center justify-center gap-1.5 animate-pulse">
+                <p class="text-[11px] text-[#8F9F8B] font-bold mt-4 lg:hidden flex items-center justify-center gap-1.5 animate-pulse">
                     <i class="fa-solid fa-arrows-left-right"></i>
                     <span>오른쪽으로 밀어서 카드 확인</span>
                 </p>
@@ -385,33 +385,33 @@
                 <!-- Card 01 -->
                 <div class="card hover-card-zoom">
                     <div>
-                        <div class="w-9 h-9 bg-[#8AA18C]/20 rounded-xl flex items-center justify-center text-[#1E3E2B] mb-4 text-xs font-bold">01</div>
-                        <h5 id="vCard1Title" class="text-base sm:text-lg font-bold text-[#1E3E2B] mb-2 flex items-center gap-1.5">
+                        <div class="w-9 h-9 bg-[#8F9F8B]/20 rounded-xl flex items-center justify-center text-[#5A6D56] mb-4 text-xs font-bold">01</div>
+                        <h5 id="vCard1Title" class="text-base sm:text-lg font-bold text-[#5A6D56] mb-2 flex items-center gap-1.5">
                             <span>따뜻한 만남과 정착</span>
-                            <i class="fa-solid fa-door-open text-[#8AA18C]"></i>
+                            <i class="fa-solid fa-door-open text-[#8F9F8B]"></i>
                         </h5>
-                        <p id="vCard1Desc" class="text-xs text-[#2D312E]/80 leading-relaxed">
+                        <p id="vCard1Desc" class="text-xs text-[#2D3A2C]/80 leading-relaxed">
                             학업과 직장을 이유로 저지시티 인근으로 오신 이미 하나님을 신뢰하고 살아오던 여러분을 진심으로 환영합니다. 낯선 미국 땅에서 영적 안전지대가 되어 새로운 믿음의 동역을 마주하게 됩니다.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 02 -->
-                <div class="card hover-card-zoom bg-[#F0F4F1] border-[#8AA18C]/40 shadow-sm">
+                <div class="card hover-card-zoom bg-[#E8EEE8] border-[#8F9F8B]/40 shadow-sm">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <div class="w-9 h-9 bg-[#1E3E2B] text-white rounded-xl flex items-center justify-center text-xs font-bold">02</div>
-                            <span id="vCard2Badge" class="bg-[#1E3E2B] text-[#FAF8F5] text-[9px] font-black tracking-wider px-3 py-1 rounded-full uppercase whitespace-nowrap">CORE IDENTITY • 핵심 성장</span>
+                            <div class="w-9 h-9 bg-[#5A6D56] text-white rounded-xl flex items-center justify-center text-xs font-bold">02</div>
+                            <span id="vCard2Badge" class="bg-[#5A6D56] text-[#F5F7F5] text-[9px] font-black tracking-wider px-3 py-1 rounded-full uppercase whitespace-nowrap">CORE IDENTITY • 핵심 성장</span>
                         </div>
-                        <h5 id="vCard2Title" class="text-base sm:text-lg font-extrabold text-[#1E3E2B] mb-2 flex items-center gap-1.5">
+                        <h5 id="vCard2Title" class="text-base sm:text-lg font-extrabold text-[#5A6D56] mb-2 flex items-center gap-1.5">
                             <span>2-3년의 압축적 성장</span>
-                            <i class="fa-solid fa-seedling text-[#1E3E2B]"></i>
+                            <i class="fa-solid fa-seedling text-[#5A6D56]"></i>
                         </h5>
-                        <p id="vCard2Desc" class="text-xs text-[#2D312E] leading-relaxed font-medium">
+                        <p id="vCard2Desc" class="text-xs text-[#2D3A2C] leading-relaxed font-medium">
                             길지 않은 머무름이기에, 우리의 교제와 성경 공부는 매 순간이 더욱 소중합니다. 주일 말씀 연구와 성경공부, 그리고 깊이 있는 삶의 나눔을 통해 평생 흔들리지 않을 견고한 영적 거장으로 성장하는 디모데의 핵심 시기입니다.
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-[#8AA18C]/30 flex items-center gap-1.5 text-[#1E3E2B] text-[11px] font-bold">
+                    <div class="mt-4 pt-3 border-t border-[#8F9F8B]/30 flex items-center gap-1.5 text-[#5A6D56] text-[11px] font-bold">
                         <i class="fa-solid fa-circle-check"></i>
                         <span id="vCard2SubText">가장 아름다운 영적 골든 타임</span>
                     </div>
@@ -420,12 +420,12 @@
                 <!-- Card 03 -->
                 <div class="card hover-card-zoom">
                     <div>
-                        <div class="w-9 h-9 bg-[#8AA18C]/20 rounded-xl flex items-center justify-center text-[#1E3E2B] mb-4 text-xs font-bold">03</div>
-                        <h5 id="vCard3Title" class="text-base sm:text-lg font-bold text-[#1E3E2B] mb-2 flex items-center gap-1.5">
+                        <div class="w-9 h-9 bg-[#8F9F8B]/20 rounded-xl flex items-center justify-center text-[#5A6D56] mb-4 text-xs font-bold">03</div>
+                        <h5 id="vCard3Title" class="text-base sm:text-lg font-bold text-[#5A6D56] mb-2 flex items-center gap-1.5">
                             <span>세상을 향한 파송</span>
-                            <i class="fa-solid fa-paper-plane text-[#8AA18C]"></i>
+                            <i class="fa-solid fa-paper-plane text-[#8F9F8B]"></i>
                         </h5>
-                        <p id="vCard3Desc" class="text-xs text-[#2D312E]/80 leading-relaxed">
+                        <p id="vCard3Desc" class="text-xs text-[#2D3A2C]/80 leading-relaxed">
                             대학 졸업 후 한국 귀국, 타 주 취업 및 이직, 혹은 결혼을 통해 이주하며 한때 인원이 많다가 적어지기도 하지만, 우리는 슬퍼하는 이별 대신 주님이 각 처소로 이끄시는 영광스러운 파송(Commissioning)으로 서로를 힘껏 축복합니다.
                         </p>
                     </div>
@@ -439,37 +439,37 @@
         <div class="max-w-7xl mx-auto">
             <div id="leadersHeaderContainer" class="text-center max-w-3xl mx-auto mb-10">
                 <div class="flex justify-center items-center gap-2 mb-2">
-                    <h3 class="text-xs font-bold tracking-widest text-[#8AA18C] uppercase">COMMUNITY LEADERS</h3>
-                    <button onclick="openEditSectionModal('leaders')" class="admin-only bg-[#8AA18C] text-white px-2.5 py-1 rounded-full text-[10px] font-bold">
+                    <h3 class="text-xs font-bold tracking-widest text-[#8F9F8B] uppercase">COMMUNITY LEADERS</h3>
+                    <button onclick="openEditSectionModal('leaders')" class="admin-only bg-[#8F9F8B] text-white px-2.5 py-1 rounded-full text-[10px] font-bold">
                         <i class="fa-solid fa-pen-to-square mr-1"></i> [4. 섬기는 사람들 수정]
                     </button>
                 </div>
-                <h4 id="leadersTitle" class="text-2xl sm:text-3xl font-extrabold text-[#1E3E2B] leading-relaxed text-center">디모데 그룹을 세우는 아름다운 동역자들</h4>
-                <p id="leadersDesc" class="mt-3 text-xs sm:text-base text-[#2D312E]/70 leading-relaxed text-center">
+                <h4 id="leadersTitle" class="text-2xl sm:text-3xl font-extrabold text-[#5A6D56] leading-relaxed text-center">디모데 그룹을 세우는 아름다운 동역자들</h4>
+                <p id="leadersDesc" class="mt-3 text-xs sm:text-base text-[#2D3A2C]/70 leading-relaxed text-center">
                     목회자와 집사님, 임원들과 모든 청년 한 사람 한 사람이 동등한 하나님 나라의 벽돌이 되어 아름다운 유기적 공동체를 이루고 있습니다.
                 </p>
             </div>
 
             <div id="leadersGridContainer" class="flex overflow-x-auto pb-4 snap-x snap-mandatory gap-5 no-scrollbar md:grid md:grid-cols-4 md:overflow-visible">
                 <!-- 1. 담당 목사 -->
-                <div class="min-w-[78vw] sm:min-w-[40vw] md:min-w-0 snap-center bg-[#FAF8F5] border border-[#EAE6DF] rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between hover-card-zoom">
-                    <div class="bg-[#1E3E2B]/5 py-6 text-center border-b border-[#EAE6DF]">
-                        <div id="leader1ImgContainer" class="w-24 h-24 mx-auto rounded-full bg-[#1E3E2B]/10 border-4 border-white flex items-center justify-center text-[#1E3E2B] mb-2 shadow-md overflow-hidden relative">
+                <div class="min-w-[78vw] sm:min-w-[40vw] md:min-w-0 snap-center bg-[#F5F7F5] border border-[#DDE3DC] rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between hover-card-zoom">
+                    <div class="bg-[#5A6D56]/5 py-6 text-center border-b border-[#DDE3DC]">
+                        <div id="leader1ImgContainer" class="w-24 h-24 mx-auto rounded-full bg-[#5A6D56]/10 border-4 border-white flex items-center justify-center text-[#5A6D56] mb-2 shadow-md overflow-hidden relative">
                             <i id="leader1Icon" class="fa-solid fa-user-tie text-3xl"></i>
                             <img id="leader1Photo" src="" class="hidden w-full h-full object-cover">
                         </div>
-                        <h5 id="leader1Role" class="text-base font-bold text-[#1E3E2B]">강충만 담당 목사</h5>
-                        <p id="leader1Eng" class="text-[10px] text-[#8AA18C] font-semibold uppercase">Spiritual Shepherd</p>
+                        <h5 id="leader1Role" class="text-base font-bold text-[#5A6D56]">강충만 담당 목사</h5>
+                        <p id="leader1Eng" class="text-[10px] text-[#8F9F8B] font-semibold uppercase">Spiritual Shepherd</p>
                     </div>
                     <div class="p-4 flex-grow flex flex-col justify-between">
-                        <p id="leader1Quote" class="text-xs text-[#2D312E]/85 italic leading-relaxed mb-4">
+                        <p id="leader1Quote" class="text-xs text-[#2D3A2C]/85 italic leading-relaxed mb-4">
                             "저지시티라는 약속의 땅에서 여러분의 2-3년이 단순한 거쳐가는 시간이 아닌, 주님의 부르심을 확인하는 골든 타임이 되도록 기도로 동행하겠습니다."
                         </p>
-                        <div class="pt-3 border-t border-[#EAE6DF] flex items-center justify-between text-[11px] text-[#2D312E]/70">
+                        <div class="pt-3 border-t border-[#DDE3DC] flex items-center justify-between text-[11px] text-[#2D3A2C]/70">
                             <span id="leader1EmailText" class="whitespace-nowrap shrink-0 overflow-hidden text-ellipsis max-w-[170px]" title="goodchurchbbs@gmail.com">
-                                <i class="fa-solid fa-envelope mr-1 text-[#8AA18C]"></i> <span id="leader1EmailVal">goodchurchbbs@gmail.com</span>
+                                <i class="fa-solid fa-envelope mr-1 text-[#8F9F8B]"></i> <span id="leader1EmailVal">goodchurchbbs@gmail.com</span>
                             </span>
-                            <a id="leader1EmailBtn" href="mailto:goodchurchbbs@gmail.com" class="font-bold text-[#1E3E2B] whitespace-nowrap shrink-0 hover:underline">
+                            <a id="leader1EmailBtn" href="mailto:goodchurchbbs@gmail.com" class="font-bold text-[#5A6D56] whitespace-nowrap shrink-0 hover:underline">
                                 문의하기
                             </a>
                         </div>
@@ -477,68 +477,68 @@
                 </div>
 
                 <!-- 2. 부장 집사 -->
-                <div class="min-w-[78vw] sm:min-w-[40vw] md:min-w-0 snap-center bg-[#FAF8F5] border border-[#EAE6DF] rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between hover-card-zoom">
-                    <div class="bg-[#8AA18C]/5 py-6 text-center border-b border-[#EAE6DF]">
-                        <div id="leader2ImgContainer" class="w-24 h-24 mx-auto rounded-full bg-[#8AA18C]/10 border-4 border-white flex items-center justify-center text-[#8AA18C] mb-2 shadow-md overflow-hidden relative">
+                <div class="min-w-[78vw] sm:min-w-[40vw] md:min-w-0 snap-center bg-[#F5F7F5] border border-[#DDE3DC] rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between hover-card-zoom">
+                    <div class="bg-[#8F9F8B]/5 py-6 text-center border-b border-[#DDE3DC]">
+                        <div id="leader2ImgContainer" class="w-24 h-24 mx-auto rounded-full bg-[#8F9F8B]/10 border-4 border-white flex items-center justify-center text-[#8F9F8B] mb-2 shadow-md overflow-hidden relative">
                             <i id="leader2Icon" class="fa-solid fa-hands-holding text-3xl"></i>
                             <img id="leader2Photo" src="" class="hidden w-full h-full object-cover">
                         </div>
-                        <h5 id="leader2Role" class="text-base font-bold text-[#1E3E2B]">김본중 부장 집사</h5>
-                        <p id="leader2Eng" class="text-[10px] text-[#8AA18C] font-semibold uppercase">Supporter & Mentor</p>
+                        <h5 id="leader2Role" class="text-base font-bold text-[#5A6D56]">김본중 부장 집사</h5>
+                        <p id="leader2Eng" class="text-[10px] text-[#8F9F8B] font-semibold uppercase">Supporter & Mentor</p>
                     </div>
                     <div class="p-4 flex-grow flex flex-col justify-between">
-                        <p id="leader2Quote" class="text-xs text-[#2D312E]/85 italic leading-relaxed mb-4">
+                        <p id="leader2Quote" class="text-xs text-[#2D3A2C]/85 italic leading-relaxed mb-4">
                             "낯선 타지 생활 속 든든한 쉼터이자 버팀목이 되겠습니다. 영적인 양식뿐 아니라 마음을 다해 여러분의 실질적 필요와 삶의 멘토가 되어 드릴게요."
                         </p>
-                        <div class="pt-3 border-t border-[#EAE6DF] flex items-center justify-between text-[11px] text-[#2D312E]/70">
-                            <span id="leader2SubLeft" class="whitespace-nowrap shrink-0"><i class="fa-solid fa-heart mr-1 text-[#8AA18C]"></i> Care & Advice</span>
-                            <span id="leader2SubRight" class="font-bold text-[#1E3E2B] whitespace-nowrap shrink-0">멘토링</span>
+                        <div class="pt-3 border-t border-[#DDE3DC] flex items-center justify-between text-[11px] text-[#2D3A2C]/70">
+                            <span id="leader2SubLeft" class="whitespace-nowrap shrink-0"><i class="fa-solid fa-heart mr-1 text-[#8F9F8B]"></i> Care & Advice</span>
+                            <span id="leader2SubRight" class="font-bold text-[#5A6D56] whitespace-nowrap shrink-0">멘토링</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- 3. 디모데 회장 -->
-                <div class="min-w-[78vw] sm:min-w-[40vw] md:min-w-0 snap-center bg-[#FAF8F5] border border-[#EAE6DF] rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between hover-card-zoom">
-                    <div class="bg-[#D4C5B9]/15 py-6 text-center border-b border-[#EAE6DF]">
-                        <div id="leader3ImgContainer" class="w-24 h-24 mx-auto rounded-full bg-[#D4C5B9]/30 border-4 border-white flex items-center justify-center text-[#1E3E2B] mb-2 shadow-md overflow-hidden relative">
+                <div class="min-w-[78vw] sm:min-w-[40vw] md:min-w-0 snap-center bg-[#F5F7F5] border border-[#DDE3DC] rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between hover-card-zoom">
+                    <div class="bg-[#C5CFC3]/15 py-6 text-center border-b border-[#DDE3DC]">
+                        <div id="leader3ImgContainer" class="w-24 h-24 mx-auto rounded-full bg-[#C5CFC3]/30 border-4 border-white flex items-center justify-center text-[#5A6D56] mb-2 shadow-md overflow-hidden relative">
                             <i id="leader3Icon" class="fa-solid fa-users-viewfinder text-3xl"></i>
                             <img id="leader3Photo" src="" class="hidden w-full h-full object-cover">
                         </div>
-                        <h5 id="leader3Role" class="text-base font-bold text-[#1E3E2B]">정대영 디모데 회장</h5>
-                        <p id="leader3Eng" class="text-[10px] text-[#8AA18C] font-semibold uppercase">Group President</p>
+                        <h5 id="leader3Role" class="text-base font-bold text-[#5A6D56]">정대영 디모데 회장</h5>
+                        <p id="leader3Eng" class="text-[10px] text-[#8F9F8B] font-semibold uppercase">Group President</p>
                     </div>
                     <div class="p-4 flex-grow flex flex-col justify-between">
-                        <p id="leader3Quote" class="text-xs text-[#2D312E]/85 italic leading-relaxed mb-4">
+                        <p id="leader3Quote" class="text-xs text-[#2D3A2C]/85 italic leading-relaxed mb-4">
                             "비슷한 고민을 품고 있는 친구이자 리더로서 늘 곁에 있겠습니다! 우리 서로 손을 꼭 쥐고 디모데에서 잊지 못할 믿음의 추억을 쌓아 가요."
                         </p>
-                        <div class="pt-3 border-t border-[#EAE6DF] flex items-center justify-between text-[11px] text-[#2D312E]/70">
-                            <span id="leader3SubLeft" class="whitespace-nowrap shrink-0"><i class="fa-solid fa-comments mr-1 text-[#8AA18C]"></i> Active Timothy</span>
-                            <span id="leader3SubRight" class="font-bold text-[#1E3E2B] whitespace-nowrap shrink-0">소통 창구</span>
+                        <div class="pt-3 border-t border-[#DDE3DC] flex items-center justify-between text-[11px] text-[#2D3A2C]/70">
+                            <span id="leader3SubLeft" class="whitespace-nowrap shrink-0"><i class="fa-solid fa-comments mr-1 text-[#8F9F8B]"></i> Active Timothy</span>
+                            <span id="leader3SubRight" class="font-bold text-[#5A6D56] whitespace-nowrap shrink-0">소통 창구</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- 4. 디모데 청년들 -->
-                <div class="min-w-[78vw] sm:min-w-[40vw] md:min-w-0 snap-center bg-white border border-[#8AA18C]/40 rounded-2xl overflow-hidden shadow-md flex flex-col justify-between relative hover-card-zoom">
-                    <span class="absolute top-2.5 right-2.5 bg-[#1E3E2B] text-white text-[8px] font-bold px-2 py-0.5 rounded-full uppercase">Timothy</span>
-                    <div class="bg-[#1E3E2B]/5 py-6 text-center border-b border-[#1E3E2B]/10">
-                        <div id="leader4ImgContainer" class="w-24 h-24 mx-auto rounded-full bg-white border-4 border-[#8AA18C]/30 flex items-center justify-center text-[#1E3E2B] mb-2 shadow-md overflow-hidden relative">
+                <div class="min-w-[78vw] sm:min-w-[40vw] md:min-w-0 snap-center bg-white border border-[#8F9F8B]/40 rounded-2xl overflow-hidden shadow-md flex flex-col justify-between relative hover-card-zoom">
+                    <span class="absolute top-2.5 right-2.5 bg-[#5A6D56] text-white text-[8px] font-bold px-2 py-0.5 rounded-full uppercase">Timothy</span>
+                    <div class="bg-[#5A6D56]/5 py-6 text-center border-b border-[#5A6D56]/10">
+                        <div id="leader4ImgContainer" class="w-24 h-24 mx-auto rounded-full bg-white border-4 border-[#8F9F8B]/30 flex items-center justify-center text-[#5A6D56] mb-2 shadow-md overflow-hidden relative">
                             <div id="leader4Icon" class="flex -space-x-1.5">
-                                <span class="w-5 h-5 rounded-full bg-[#1E3E2B]/30 text-[9px] flex items-center justify-center font-bold">☺</span>
-                                <span class="w-6 h-6 rounded-full bg-[#8AA18C]/40 text-[10px] flex items-center justify-center font-bold">☺</span>
-                                <span class="w-5 h-5 rounded-full bg-[#1E3E2B]/30 text-[9px] flex items-center justify-center font-bold">☺</span>
+                                <span class="w-5 h-5 rounded-full bg-[#5A6D56]/30 text-[9px] flex items-center justify-center font-bold">☺</span>
+                                <span class="w-6 h-6 rounded-full bg-[#8F9F8B]/40 text-[10px] flex items-center justify-center font-bold">☺</span>
+                                <span class="w-5 h-5 rounded-full bg-[#5A6D56]/30 text-[9px] flex items-center justify-center font-bold">☺</span>
                             </div>
                             <img id="leader4Photo" src="" class="hidden w-full h-full object-cover">
                         </div>
-                        <h5 id="leader4Role" class="text-base font-bold text-[#1E3E2B]">디모데 청년들</h5>
-                        <p id="leader4Eng" class="text-[10px] text-[#8AA18C] font-semibold uppercase">The Heart of Timothy</p>
+                        <h5 id="leader4Role" class="text-base font-bold text-[#5A6D56]">디모데 청년들</h5>
+                        <p id="leader4Eng" class="text-[10px] text-[#8F9F8B] font-semibold uppercase">The Heart of Timothy</p>
                     </div>
                     <div class="p-4 flex-grow flex flex-col justify-between">
-                        <p id="leader4Quote" class="text-xs text-[#2D312E]/80 leading-relaxed mb-4">
+                        <p id="leader4Quote" class="text-xs text-[#2D3A2C]/80 leading-relaxed mb-4">
                             비록 흘러가는 시간 속에 머물지라도, 당신이 디모데에 남기는 지문과 기도는 결코 가볍지 않습니다. 함께 동역하며 주님의 얼굴을 구할 당신을 기다립니다.
                         </p>
-                        <div class="pt-3 border-t border-[#EAE6DF] text-center">
-                            <span id="leader4SubBottom" class="text-xs text-[#1E3E2B] font-bold"><i class="fa-solid fa-check mr-1 text-[#8AA18C]"></i> 당신이 주인공입니다</span>
+                        <div class="pt-3 border-t border-[#DDE3DC] text-center">
+                            <span id="leader4SubBottom" class="text-xs text-[#5A6D56] font-bold"><i class="fa-solid fa-check mr-1 text-[#8F9F8B]"></i> 당신이 주인공입니다</span>
                         </div>
                     </div>
                 </div>
@@ -547,17 +547,17 @@
     </section>
 
     <!-- 5. 모임 안내 (Meetings) -->
-    <section id="meetings" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5] scroll-mt-20">
+    <section id="meetings" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#F5F7F5] scroll-mt-20">
         <div class="max-w-7xl mx-auto">
             <div id="meetingsHeaderContainer" class="text-center max-w-3xl mx-auto mb-12">
                 <div class="flex justify-center items-center gap-2 mb-2">
-                    <h3 class="text-xs font-bold tracking-widest text-[#8AA18C] uppercase">SCHEDULE & MEETINGS</h3>
-                    <button onclick="openEditSectionModal('meetings')" class="admin-only bg-[#8AA18C] text-white px-2.5 py-1 rounded-full text-[10px] font-bold">
+                    <h3 class="text-xs font-bold tracking-widest text-[#8F9F8B] uppercase">SCHEDULE & MEETINGS</h3>
+                    <button onclick="openEditSectionModal('meetings')" class="admin-only bg-[#8F9F8B] text-white px-2.5 py-1 rounded-full text-[10px] font-bold">
                         <i class="fa-solid fa-pen-to-square mr-1"></i> [5. 모임 안내 수정]
                     </button>
                 </div>
-                <h4 id="meetingsMainTitle" class="text-2xl sm:text-3xl font-extrabold text-[#1E3E2B] leading-relaxed text-center">디모데 그룹 대표 모임</h4>
-                <p id="meetingsMainDesc" class="mt-3 text-xs sm:text-base text-[#2D312E]/70 leading-relaxed px-4 text-center">
+                <h4 id="meetingsMainTitle" class="text-2xl sm:text-3xl font-extrabold text-[#5A6D56] leading-relaxed text-center">디모데 그룹 대표 모임</h4>
+                <p id="meetingsMainDesc" class="mt-3 text-xs sm:text-base text-[#2D3A2C]/70 leading-relaxed px-4 text-center">
                     매주 정기적인 만남을 통해 성경공부와 기도로 중심을 잡고,<br class="hidden sm:block">
                     한 주간 있었던 시시콜콜한 삶의 이야기를 나누며 친밀하게 동역합니다.
                 </p>
@@ -565,111 +565,111 @@
 
             <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Card 1 -->
-                <div class="bg-white border border-[#EAE6DF] rounded-2xl p-6 text-center shadow-sm hover-card-zoom flex flex-col justify-between items-center">
-                    <div class="w-12 h-12 rounded-full bg-[#1E3E2B]/5 flex items-center justify-center text-[#1E3E2B] mb-3">
+                <div class="bg-white border border-[#DDE3DC] rounded-2xl p-6 text-center shadow-sm hover-card-zoom flex flex-col justify-between items-center">
+                    <div class="w-12 h-12 rounded-full bg-[#5A6D56]/5 flex items-center justify-center text-[#5A6D56] mb-3">
                         <i class="fa-solid fa-clock text-xl"></i>
                     </div>
                     <div>
-                        <span id="mCard1Sub" class="text-[9px] text-[#8AA18C] font-bold uppercase tracking-wider block mb-1">Meeting Time</span>
-                        <h5 id="mCard1Title" class="text-sm sm:text-base font-bold text-[#1E3E2B] mb-2">모임 시간</h5>
-                        <p id="mCard1Badge" class="text-xs sm:text-sm font-bold text-[#1E3E2B] bg-[#1E3E2B]/5 px-4 py-1.5 rounded-full inline-block">
+                        <span id="mCard1Sub" class="text-[9px] text-[#8F9F8B] font-bold uppercase tracking-wider block mb-1">Meeting Time</span>
+                        <h5 id="mCard1Title" class="text-sm sm:text-base font-bold text-[#5A6D56] mb-2">모임 시간</h5>
+                        <p id="mCard1Badge" class="text-xs sm:text-sm font-bold text-[#5A6D56] bg-[#5A6D56]/5 px-4 py-1.5 rounded-full inline-block">
                             매주 주일 오후 1:00
                         </p>
                     </div>
-                    <p id="mCard1Desc" class="text-[11px] text-[#2D312E]/60 mt-3">함께 모여 성경공부와 소중한 나눔을 시작합니다.</p>
+                    <p id="mCard1Desc" class="text-[11px] text-[#2D3A2C]/60 mt-3">함께 모여 성경공부와 소중한 나눔을 시작합니다.</p>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-white border border-[#EAE6DF] rounded-2xl p-6 text-center shadow-sm hover-card-zoom flex flex-col justify-between items-center">
-                    <div class="w-12 h-12 rounded-full bg-[#1E3E2B]/5 flex items-center justify-center text-[#1E3E2B] mb-3">
+                <div class="bg-white border border-[#DDE3DC] rounded-2xl p-6 text-center shadow-sm hover-card-zoom flex flex-col justify-between items-center">
+                    <div class="w-12 h-12 rounded-full bg-[#5A6D56]/5 flex items-center justify-center text-[#5A6D56] mb-3">
                         <i class="fa-solid fa-map-location-dot text-xl"></i>
                     </div>
                     <div>
-                        <span id="mCard2Sub" class="text-[9px] text-[#8AA18C] font-bold uppercase tracking-wider block mb-1">Meeting Place</span>
-                        <h5 id="mCard2Title" class="text-sm sm:text-base font-bold text-[#1E3E2B] mb-2">모임 장소</h5>
-                        <p id="mCard2Badge" class="text-xs sm:text-sm font-bold text-[#1E3E2B] bg-[#1E3E2B]/5 px-6 py-1.5 rounded-full inline-block">
+                        <span id="mCard2Sub" class="text-[9px] text-[#8F9F8B] font-bold uppercase tracking-wider block mb-1">Meeting Place</span>
+                        <h5 id="mCard2Title" class="text-sm sm:text-base font-bold text-[#5A6D56] mb-2">모임 장소</h5>
+                        <p id="mCard2Badge" class="text-xs sm:text-sm font-bold text-[#5A6D56] bg-[#5A6D56]/5 px-6 py-1.5 rounded-full inline-block">
                             디모데 실
                         </p>
                     </div>
-                    <p id="mCard2Desc" class="text-[11px] text-[#2D312E]/60 mt-3">내 집처럼 편안하게 머무는 전용 룸입니다.</p>
+                    <p id="mCard2Desc" class="text-[11px] text-[#2D3A2C]/60 mt-3">내 집처럼 편안하게 머무는 전용 룸입니다.</p>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-white border border-[#EAE6DF] rounded-2xl p-6 text-center shadow-sm hover-card-zoom flex flex-col justify-between items-center">
-                    <div class="w-12 h-12 rounded-full bg-[#1E3E2B]/5 flex items-center justify-center text-[#1E3E2B] mb-3">
+                <div class="bg-white border border-[#DDE3DC] rounded-2xl p-6 text-center shadow-sm hover-card-zoom flex flex-col justify-between items-center">
+                    <div class="w-12 h-12 rounded-full bg-[#5A6D56]/5 flex items-center justify-center text-[#5A6D56] mb-3">
                         <i class="fa-solid fa-face-smile text-xl"></i>
                     </div>
                     <div>
-                        <span id="mCard3Sub" class="text-[9px] text-[#8AA18C] font-bold uppercase tracking-wider block mb-1">Special Gatherings</span>
-                        <h5 id="mCard3Title" class="text-sm sm:text-base font-bold text-[#1E3E2B] mb-2">액티비티 활동</h5>
-                        <p id="mCard3Desc" class="text-xs sm:text-sm text-[#2D312E]/80 leading-relaxed font-medium">
+                        <span id="mCard3Sub" class="text-[9px] text-[#8F9F8B] font-bold uppercase tracking-wider block mb-1">Special Gatherings</span>
+                        <h5 id="mCard3Title" class="text-sm sm:text-base font-bold text-[#5A6D56] mb-2">액티비티 활동</h5>
+                        <p id="mCard3Desc" class="text-xs sm:text-sm text-[#2D3A2C]/80 leading-relaxed font-medium">
                             볼링, 피크닉, 보드게임 및 근교 카페 투어 등<br>친밀한 동역 활동
                         </p>
                     </div>
-                    <p id="mCard3Badge" class="text-[11px] text-[#2D312E]/60 mt-3">가끔씩 즐기는 소소한 행복</p>
+                    <p id="mCard3Badge" class="text-[11px] text-[#2D3A2C]/60 mt-3">가끔씩 즐기는 소소한 행복</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 6. 송별과 축복 아카이브 (Blessing Archive) -->
-    <section id="blessing-board" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white relative scroll-mt-20 border-t border-[#EAE6DF]">
+    <section id="blessing-board" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white relative scroll-mt-20 border-t border-[#DDE3DC]">
         <div class="max-w-5xl mx-auto">
             <div id="blessingHeaderContainer" class="text-center max-w-3xl mx-auto mb-8">
                 <div class="flex justify-center items-center gap-2 mb-1">
-                    <h3 class="text-xs font-bold tracking-widest text-[#8AA18C] uppercase">FAREWELL & COMMISSIONING</h3>
-                    <button onclick="openEditSectionModal('blessing')" class="admin-only bg-[#8AA18C] text-white px-2.5 py-1 rounded-full text-[10px] font-bold">
+                    <h3 class="text-xs font-bold tracking-widest text-[#8F9F8B] uppercase">FAREWELL & COMMISSIONING</h3>
+                    <button onclick="openEditSectionModal('blessing')" class="admin-only bg-[#8F9F8B] text-white px-2.5 py-1 rounded-full text-[10px] font-bold">
                         <i class="fa-solid fa-pen-to-square mr-1"></i> [6. 송별과 축복 아카이브 수정]
                     </button>
                 </div>
-                <h4 id="blessingMainTitle" class="text-2xl sm:text-3xl font-extrabold text-[#1E3E2B] text-center">또 다른 선교지로 파송된 우리들의 고백</h4>
-                <p id="blessingMainDesc" class="mt-2 text-xs sm:text-base text-[#2D312E]/70 leading-relaxed px-2 text-center">
+                <h4 id="blessingMainTitle" class="text-2xl sm:text-3xl font-extrabold text-[#5A6D56] text-center">또 다른 선교지로 파송된 우리들의 고백</h4>
+                <p id="blessingMainDesc" class="mt-2 text-xs sm:text-base text-[#2D3A2C]/70 leading-relaxed px-2 text-center">
                     디모데 그룹을 스쳐 다른 주로 이직을 하거나, 학교를 졸업하여 한국으로 돌아가거나, 결혼을 하여 새로운 가정을 이룬 아름다운 디모데 지체들을 축복한 기록입니다.
                 </p>
             </div>
 
-            <div class="flex flex-col sm:flex-row items-center justify-between mb-6 border-b border-[#8AA18C]/20 pb-4 gap-3">
-                <span class="text-xs sm:text-sm font-bold text-[#2D312E]/80 flex items-center gap-1.5">
-                    <i class="fa-solid fa-box-archive text-[#8AA18C]"></i>
+            <div class="flex flex-col sm:flex-row items-center justify-between mb-6 border-b border-[#8F9F8B]/20 pb-4 gap-3">
+                <span class="text-xs sm:text-sm font-bold text-[#2D3A2C]/80 flex items-center gap-1.5">
+                    <i class="fa-solid fa-box-archive text-[#8F9F8B]"></i>
                     <span>디모데 파송 & 축복 아카이브</span>
                 </span>
                 
                 <div class="flex items-center gap-2.5">
-                    <div class="inline-flex items-center gap-1.5 bg-[#8AA18C]/20 border border-[#8AA18C]/30 text-[#1E3E2B] px-3.5 py-1.5 rounded-full text-xs font-bold shadow-sm">
-                        <i class="fa-solid fa-arrows-rotate spin-icon text-[#1E3E2B]"></i>
+                    <div class="inline-flex items-center gap-1.5 bg-[#8F9F8B]/20 border border-[#8F9F8B]/30 text-[#5A6D56] px-3.5 py-1.5 rounded-full text-xs font-bold shadow-sm">
+                        <i class="fa-solid fa-arrows-rotate spin-icon text-[#5A6D56]"></i>
                         <span id="weeklyUpdateBadge">2026년 30주차 업데이트</span>
                     </div>
 
-                    <button onclick="openWriteModal()" class="admin-only bg-[#1E3E2B] hover:bg-[#1E3E2B]/90 text-white px-3.5 py-1.5 rounded-full text-xs font-bold shadow transition-all flex items-center gap-1.5">
+                    <button onclick="openWriteModal()" class="admin-only bg-[#5A6D56] hover:bg-[#5A6D56]/90 text-white px-3.5 py-1.5 rounded-full text-xs font-bold shadow transition-all flex items-center gap-1.5">
                         <i class="fa-solid fa-pen-to-square text-xs"></i>
                         <span>글쓰기</span>
                     </button>
                 </div>
             </div>
 
-            <div class="relative bg-[#FAF8F5] border border-[#EAE6DF] rounded-3xl p-5 sm:p-7 shadow-md" id="blessingSliderFrame">
+            <div class="relative bg-[#F5F7F5] border border-[#DDE3DC] rounded-3xl p-5 sm:p-7 shadow-md" id="blessingSliderFrame">
                 <div id="blessingCardContainer" class="min-h-[220px] grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
                     <!-- JS 동적 생성 -->
                 </div>
 
-                <div class="flex items-center justify-between mt-6 pt-4 border-t border-[#EAE6DF]">
+                <div class="flex items-center justify-between mt-6 pt-4 border-t border-[#DDE3DC]">
                     <div class="flex items-center gap-2">
-                        <button onclick="prevBlessingSlide()" class="w-9 h-9 rounded-full bg-white border border-[#EAE6DF] hover:bg-[#1E3E2B] hover:text-white text-[#1E3E2B] flex items-center justify-center transition-all shadow-sm">
+                        <button onclick="prevBlessingSlide()" class="w-9 h-9 rounded-full bg-white border border-[#DDE3DC] hover:bg-[#5A6D56] hover:text-white text-[#5A6D56] flex items-center justify-center transition-all shadow-sm">
                             <i class="fa-solid fa-chevron-left text-xs"></i>
                         </button>
-                        <button onclick="nextBlessingSlide()" class="w-9 h-9 rounded-full bg-white border border-[#EAE6DF] hover:bg-[#1E3E2B] hover:text-white text-[#1E3E2B] flex items-center justify-center transition-all shadow-sm">
+                        <button onclick="nextBlessingSlide()" class="w-9 h-9 rounded-full bg-white border border-[#DDE3DC] hover:bg-[#5A6D56] hover:text-white text-[#5A6D56] flex items-center justify-center transition-all shadow-sm">
                             <i class="fa-solid fa-chevron-right text-xs"></i>
                         </button>
-                        <span id="blessingCounterText" class="text-xs font-bold text-[#8AA18C] ml-2">1 / 1 페이지</span>
+                        <span id="blessingCounterText" class="text-xs font-bold text-[#8F9F8B] ml-2">1 / 1 페이지</span>
                     </div>
 
                     <div id="blessingDotsContainer" class="flex items-center gap-1.5"></div>
                 </div>
             </div>
 
-            <div class="mt-8 text-center bg-[#FAF8F5] p-4 rounded-xl border border-[#8AA18C]/20 max-w-xl mx-auto">
-                <p class="text-[11px] sm:text-xs text-[#2D312E]/70 leading-relaxed">
-                    <i class="fa-solid fa-circle-info text-[#8AA18C] mr-1"></i> 
+            <div class="mt-8 text-center bg-[#F5F7F5] p-4 rounded-xl border border-[#8F9F8B]/20 max-w-xl mx-auto">
+                <p class="text-[11px] sm:text-xs text-[#2D3A2C]/70 leading-relaxed">
+                    <i class="fa-solid fa-circle-info text-[#8F9F8B] mr-1"></i> 
                     임원진 및 <strong>부장 집사</strong>에게 요청 시 축복 파송 카드를 웹사이트에 추가로 등록해 드립니다.
                 </p>
             </div>
@@ -679,24 +679,24 @@
     <!-- 1. 비밀번호 인증 모달 -->
     <div id="passwordAuthModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-center p-4">
         <div id="passwordAuthContainer" class="bg-white w-full max-w-sm rounded-3xl p-6 shadow-2xl transform scale-95 transition-all duration-300">
-            <div class="flex justify-between items-center pb-3 border-b border-[#EAE6DF]">
-                <h4 class="text-sm font-extrabold text-[#1E3E2B] flex items-center gap-2">
-                    <i class="fa-solid fa-lock text-[#8AA18C]"></i>
+            <div class="flex justify-between items-center pb-3 border-b border-[#DDE3DC]">
+                <h4 class="text-sm font-extrabold text-[#5A6D56] flex items-center gap-2">
+                    <i class="fa-solid fa-lock text-[#8F9F8B]"></i>
                     <span>관리자 권한 인증</span>
                 </h4>
-                <button onclick="closePasswordAuthModal()" class="w-7 h-7 rounded-full bg-[#FAF8F5] flex items-center justify-center text-[#2D312E]">
+                <button onclick="closePasswordAuthModal()" class="w-7 h-7 rounded-full bg-[#F5F7F5] flex items-center justify-center text-[#2D3A2C]">
                     <i class="fa-solid fa-xmark text-xs"></i>
                 </button>
             </div>
 
             <div class="py-4 space-y-3">
-                <p class="text-xs text-[#2D312E]/70">페이지 관리를 위해 관리자 비밀번호를 입력해 주세요.</p>
-                <input type="password" id="inputPassword" placeholder="비밀번호 입력" class="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#EAE6DF] rounded-xl text-xs focus:outline-none focus:border-[#1E3E2B]">
+                <p class="text-xs text-[#2D3A2C]/70">페이지 관리를 위해 관리자 비밀번호를 입력해 주세요.</p>
+                <input type="password" id="inputPassword" placeholder="비밀번호 입력" class="w-full px-3.5 py-2.5 bg-[#F5F7F5] border border-[#DDE3DC] rounded-xl text-xs focus:outline-none focus:border-[#5A6D56]">
             </div>
 
             <div class="flex gap-2 pt-2">
-                <button onclick="closePasswordAuthModal()" class="w-1/2 bg-[#FAF8F5] text-[#2D312E] py-2.5 rounded-xl text-xs font-bold hover:bg-[#EAE6DF]">취소</button>
-                <button onclick="submitPasswordAuth()" class="w-1/2 bg-[#1E3E2B] text-white py-2.5 rounded-xl text-xs font-bold shadow hover:bg-[#1E3E2B]/90">확인</button>
+                <button onclick="closePasswordAuthModal()" class="w-1/2 bg-[#F5F7F5] text-[#2D3A2C] py-2.5 rounded-xl text-xs font-bold hover:bg-[#DDE3DC]">취소</button>
+                <button onclick="submitPasswordAuth()" class="w-1/2 bg-[#5A6D56] text-white py-2.5 rounded-xl text-xs font-bold shadow hover:bg-[#5A6D56]/90">확인</button>
             </div>
         </div>
     </div>
@@ -704,81 +704,81 @@
     <!-- 2. 관리자 대시보드 모달 -->
     <div id="adminDashboardModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-center p-4">
         <div id="adminDashboardContainer" class="bg-white w-full max-w-lg rounded-3xl p-6 shadow-2xl transform scale-95 transition-all duration-300 max-h-[90vh] overflow-y-auto no-scrollbar">
-            <div class="flex justify-between items-center pb-3 border-b border-[#EAE6DF]">
-                <h4 class="text-sm font-extrabold text-[#1E3E2B] flex items-center gap-2">
-                    <i class="fa-solid fa-gear text-[#8AA18C]"></i>
+            <div class="flex justify-between items-center pb-3 border-b border-[#DDE3DC]">
+                <h4 class="text-sm font-extrabold text-[#5A6D56] flex items-center gap-2">
+                    <i class="fa-solid fa-gear text-[#8F9F8B]"></i>
                     <span>디모데 웹사이트 관리자 대시보드</span>
                 </h4>
-                <button onclick="closeAdminDashboard()" class="w-7 h-7 rounded-full bg-[#FAF8F5] flex items-center justify-center text-[#2D312E]">
+                <button onclick="closeAdminDashboard()" class="w-7 h-7 rounded-full bg-[#F5F7F5] flex items-center justify-center text-[#2D3A2C]">
                     <i class="fa-solid fa-xmark text-xs"></i>
                 </button>
             </div>
 
             <div class="py-4 space-y-4">
-                <button onclick="closeAdminDashboard(); openWriteModal()" class="w-full p-3 bg-[#1E3E2B] text-white hover:bg-[#1E3E2B]/90 border border-[#1E3E2B] rounded-xl text-left text-xs font-bold transition-all flex items-center justify-between shadow-sm">
+                <button onclick="closeAdminDashboard(); openWriteModal()" class="w-full p-3 bg-[#5A6D56] text-white hover:bg-[#5A6D56]/90 border border-[#5A6D56] rounded-xl text-left text-xs font-bold transition-all flex items-center justify-between shadow-sm">
                     <span class="flex items-center gap-2">
-                        <i class="fa-solid fa-pen-to-square text-[#8AA18C]"></i>
+                        <i class="fa-solid fa-pen-to-square text-[#8F9F8B]"></i>
                         <span>+ 신규 축복 & 파송 글쓰기</span>
                     </span>
                     <i class="fa-solid fa-chevron-right text-[10px] text-white/70"></i>
                 </button>
 
                 <div>
-                    <h5 class="text-xs font-bold text-[#1E3E2B] mb-2 flex items-center gap-1.5">
-                        <i class="fa-solid fa-sliders text-[#8AA18C]"></i>
+                    <h5 class="text-xs font-bold text-[#5A6D56] mb-2 flex items-center gap-1.5">
+                        <i class="fa-solid fa-sliders text-[#8F9F8B]"></i>
                         <span>홈페이지 각 섹션별 편집 항목</span>
                     </h5>
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        <button onclick="closeAdminDashboard(); openEditSectionModal('welcome')" class="p-3 bg-[#FAF8F5] hover:bg-[#1E3E2B]/5 border border-[#EAE6DF] rounded-xl text-left text-xs font-bold text-[#1E3E2B] transition-all flex items-center justify-between">
+                        <button onclick="closeAdminDashboard(); openEditSectionModal('welcome')" class="p-3 bg-[#F5F7F5] hover:bg-[#5A6D56]/5 border border-[#DDE3DC] rounded-xl text-left text-xs font-bold text-[#5A6D56] transition-all flex items-center justify-between">
                             <span>1. 환영합니다</span>
-                            <i class="fa-solid fa-pen text-[10px] text-[#8AA18C]"></i>
+                            <i class="fa-solid fa-pen text-[10px] text-[#8F9F8B]"></i>
                         </button>
                         
-                        <button onclick="closeAdminDashboard(); openEditSectionModal('moments')" class="p-3 bg-[#FAF8F5] hover:bg-[#1E3E2B]/5 border border-[#EAE6DF] rounded-xl text-left text-xs font-bold text-[#1E3E2B] transition-all flex items-center justify-between">
+                        <button onclick="closeAdminDashboard(); openEditSectionModal('moments')" class="p-3 bg-[#F5F7F5] hover:bg-[#5A6D56]/5 border border-[#DDE3DC] rounded-xl text-left text-xs font-bold text-[#5A6D56] transition-all flex items-center justify-between">
                             <span>2. 디모데 일상 (사진)</span>
-                            <i class="fa-solid fa-camera text-[10px] text-[#8AA18C]"></i>
+                            <i class="fa-solid fa-camera text-[10px] text-[#8F9F8B]"></i>
                         </button>
 
-                        <button onclick="closeAdminDashboard(); openEditSectionModal('identity')" class="p-3 bg-[#FAF8F5] hover:bg-[#1E3E2B]/5 border border-[#EAE6DF] rounded-xl text-left text-xs font-bold text-[#1E3E2B] transition-all flex items-center justify-between">
+                        <button onclick="closeAdminDashboard(); openEditSectionModal('identity')" class="p-3 bg-[#F5F7F5] hover:bg-[#5A6D56]/5 border border-[#DDE3DC] rounded-xl text-left text-xs font-bold text-[#5A6D56] transition-all flex items-center justify-between">
                             <span>3. 공동체 비전</span>
-                            <i class="fa-solid fa-pen text-[10px] text-[#8AA18C]"></i>
+                            <i class="fa-solid fa-pen text-[10px] text-[#8F9F8B]"></i>
                         </button>
 
-                        <button onclick="closeAdminDashboard(); openEditSectionModal('leaders')" class="p-3 bg-[#FAF8F5] hover:bg-[#1E3E2B]/5 border border-[#EAE6DF] rounded-xl text-left text-xs font-bold text-[#1E3E2B] transition-all flex items-center justify-between">
+                        <button onclick="closeAdminDashboard(); openEditSectionModal('leaders')" class="p-3 bg-[#F5F7F5] hover:bg-[#5A6D56]/5 border border-[#DDE3DC] rounded-xl text-left text-xs font-bold text-[#5A6D56] transition-all flex items-center justify-between">
                             <span>4. 섬기는 사람들</span>
-                            <i class="fa-solid fa-user-pen text-[10px] text-[#8AA18C]"></i>
+                            <i class="fa-solid fa-user-pen text-[10px] text-[#8F9F8B]"></i>
                         </button>
 
-                        <button onclick="closeAdminDashboard(); openEditSectionModal('meetings')" class="p-3 bg-[#FAF8F5] hover:bg-[#1E3E2B]/5 border border-[#EAE6DF] rounded-xl text-left text-xs font-bold text-[#1E3E2B] transition-all flex items-center justify-between">
+                        <button onclick="closeAdminDashboard(); openEditSectionModal('meetings')" class="p-3 bg-[#F5F7F5] hover:bg-[#5A6D56]/5 border border-[#DDE3DC] rounded-xl text-left text-xs font-bold text-[#5A6D56] transition-all flex items-center justify-between">
                             <span>5. 모임 안내</span>
-                            <i class="fa-solid fa-pen text-[10px] text-[#8AA18C]"></i>
+                            <i class="fa-solid fa-pen text-[10px] text-[#8F9F8B]"></i>
                         </button>
 
-                        <button onclick="closeAdminDashboard(); openEditSectionModal('blessing')" class="p-3 bg-[#FAF8F5] hover:bg-[#1E3E2B]/5 border border-[#EAE6DF] rounded-xl text-left text-xs font-bold text-[#1E3E2B] transition-all flex items-center justify-between">
+                        <button onclick="closeAdminDashboard(); openEditSectionModal('blessing')" class="p-3 bg-[#F5F7F5] hover:bg-[#5A6D56]/5 border border-[#DDE3DC] rounded-xl text-left text-xs font-bold text-[#5A6D56] transition-all flex items-center justify-between">
                             <span>6. 송별과 축복 아카이브</span>
-                            <i class="fa-solid fa-pen text-[10px] text-[#8AA18C]"></i>
+                            <i class="fa-solid fa-pen text-[10px] text-[#8F9F8B]"></i>
                         </button>
                     </div>
                 </div>
 
-                <div class="pt-3 border-t border-[#EAE6DF]">
-                    <h5 class="text-xs font-bold text-[#1E3E2B] mb-2 flex items-center gap-1.5">
-                        <i class="fa-solid fa-key text-[#8AA18C]"></i>
+                <div class="pt-3 border-t border-[#DDE3DC]">
+                    <h5 class="text-xs font-bold text-[#5A6D56] mb-2 flex items-center gap-1.5">
+                        <i class="fa-solid fa-key text-[#8F9F8B]"></i>
                         <span>관리자 보안 설정</span>
                     </h5>
-                    <button onclick="openChangePasswordModal()" class="w-full p-3 bg-[#FAF8F5] hover:bg-[#1E3E2B]/5 border border-[#EAE6DF] rounded-xl text-left text-xs font-bold text-[#1E3E2B] transition-all flex items-center justify-between">
+                    <button onclick="openChangePasswordModal()" class="w-full p-3 bg-[#F5F7F5] hover:bg-[#5A6D56]/5 border border-[#DDE3DC] rounded-xl text-left text-xs font-bold text-[#5A6D56] transition-all flex items-center justify-between">
                         <span class="flex items-center gap-2">
-                            <i class="fa-solid fa-lock text-[#8AA18C]"></i>
+                            <i class="fa-solid fa-lock text-[#8F9F8B]"></i>
                             <span>관리자 비밀번호 변경하기</span>
                         </span>
-                        <i class="fa-solid fa-chevron-right text-[10px] text-[#8AA18C]"></i>
+                        <i class="fa-solid fa-chevron-right text-[10px] text-[#8F9F8B]"></i>
                     </button>
                 </div>
             </div>
 
-            <div class="pt-2 border-t border-[#EAE6DF] flex gap-2">
-                <button onclick="logoutAdmin()" class="w-full bg-[#FAF8F5] text-[#2D312E] py-3 rounded-xl text-xs font-bold hover:bg-[#EAE6DF] flex items-center justify-center gap-2">
+            <div class="pt-2 border-t border-[#DDE3DC] flex gap-2">
+                <button onclick="logoutAdmin()" class="w-full bg-[#F5F7F5] text-[#2D3A2C] py-3 rounded-xl text-xs font-bold hover:bg-[#DDE3DC] flex items-center justify-center gap-2">
                     <i class="fa-solid fa-right-from-bracket text-red-600"></i>
                     <span>관리자 로그아웃 (일반 페이지로 돌아가기)</span>
                 </button>
@@ -789,37 +789,37 @@
     <!-- 비밀번호 변경 모달 -->
     <div id="changePasswordModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-center p-4">
         <div id="changePasswordContainer" class="bg-white w-full max-w-sm rounded-3xl p-6 shadow-2xl transform scale-95 transition-all duration-300">
-            <div class="flex justify-between items-center pb-3 border-b border-[#EAE6DF]">
-                <button onclick="closeChangePasswordModal(); openAdminDashboard()" class="text-xs font-bold text-[#8AA18C] hover:text-[#1E3E2B] flex items-center gap-1 transition-all">
+            <div class="flex justify-between items-center pb-3 border-b border-[#DDE3DC]">
+                <button onclick="closeChangePasswordModal(); openAdminDashboard()" class="text-xs font-bold text-[#8F9F8B] hover:text-[#5A6D56] flex items-center gap-1 transition-all">
                     <i class="fa-solid fa-chevron-left text-[10px]"></i>
                     <span>대시보드로 돌아가기</span>
                 </button>
-                <button onclick="closeChangePasswordModal()" class="w-7 h-7 rounded-full bg-[#FAF8F5] flex items-center justify-center text-[#2D312E]">
+                <button onclick="closeChangePasswordModal()" class="w-7 h-7 rounded-full bg-[#F5F7F5] flex items-center justify-center text-[#2D3A2C]">
                     <i class="fa-solid fa-xmark text-xs"></i>
                 </button>
             </div>
 
             <div class="py-4 space-y-3 text-left">
-                <h4 class="text-sm font-extrabold text-[#1E3E2B] flex items-center gap-2 mb-1">
-                    <i class="fa-solid fa-key text-[#8AA18C]"></i>
+                <h4 class="text-sm font-extrabold text-[#5A6D56] flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-key text-[#8F9F8B]"></i>
                     <span>관리자 비밀번호 변경</span>
                 </h4>
-                <p class="text-xs text-[#2D312E]/70 mb-3">새로운 비밀번호를 두 번 입력해 주세요.</p>
+                <p class="text-xs text-[#2D3A2C]/70 mb-3">새로운 비밀번호를 두 번 입력해 주세요.</p>
                 
                 <div>
-                    <label class="block text-[10px] font-bold text-[#2D312E] mb-1">새 비밀번호 입력</label>
-                    <input type="password" id="newPasswordInput" placeholder="새 비밀번호" class="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#EAE6DF] rounded-xl text-xs focus:outline-none focus:border-[#1E3E2B]">
+                    <label class="block text-[10px] font-bold text-[#2D3A2C] mb-1">새 비밀번호 입력</label>
+                    <input type="password" id="newPasswordInput" placeholder="새 비밀번호" class="w-full px-3.5 py-2.5 bg-[#F5F7F5] border border-[#DDE3DC] rounded-xl text-xs focus:outline-none focus:border-[#5A6D56]">
                 </div>
 
                 <div>
-                    <label class="block text-[10px] font-bold text-[#2D312E] mb-1">새 비밀번호 확인</label>
-                    <input type="password" id="confirmPasswordInput" placeholder="새 비밀번호 재입력" class="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#EAE6DF] rounded-xl text-xs focus:outline-none focus:border-[#1E3E2B]">
+                    <label class="block text-[10px] font-bold text-[#2D3A2C] mb-1">새 비밀번호 확인</label>
+                    <input type="password" id="confirmPasswordInput" placeholder="새 비밀번호 재입력" class="w-full px-3.5 py-2.5 bg-[#F5F7F5] border border-[#DDE3DC] rounded-xl text-xs focus:outline-none focus:border-[#5A6D56]">
                 </div>
             </div>
 
             <div class="flex gap-2 pt-2">
-                <button onclick="closeChangePasswordModal(); openAdminDashboard()" class="w-1/2 bg-[#FAF8F5] text-[#2D312E] py-2.5 rounded-xl text-xs font-bold hover:bg-[#EAE6DF]">취소</button>
-                <button onclick="changePassword()" class="w-1/2 bg-[#1E3E2B] text-white py-2.5 rounded-xl text-xs font-bold shadow hover:bg-[#1E3E2B]/90">변경하기</button>
+                <button onclick="closeChangePasswordModal(); openAdminDashboard()" class="w-1/2 bg-[#F5F7F5] text-[#2D3A2C] py-2.5 rounded-xl text-xs font-bold hover:bg-[#DDE3DC]">취소</button>
+                <button onclick="changePassword()" class="w-1/2 bg-[#5A6D56] text-white py-2.5 rounded-xl text-xs font-bold shadow hover:bg-[#5A6D56]/90">변경하기</button>
             </div>
         </div>
     </div>
@@ -828,33 +828,33 @@
     <div id="sectionEditModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-center p-4">
         <div id="sectionEditContainer" class="bg-white w-full max-w-xl rounded-3xl p-6 shadow-2xl transform scale-95 transition-all duration-300 max-h-[88vh] overflow-y-auto no-scrollbar">
             
-            <div class="flex justify-between items-center pb-3 border-b border-[#EAE6DF] mb-3">
-                <button onclick="backToDashboardFromEdit()" class="text-xs font-bold text-[#8AA18C] hover:text-[#1E3E2B] flex items-center gap-1 transition-all">
+            <div class="flex justify-between items-center pb-3 border-b border-[#DDE3DC] mb-3">
+                <button onclick="backToDashboardFromEdit()" class="text-xs font-bold text-[#8F9F8B] hover:text-[#5A6D56] flex items-center gap-1 transition-all">
                     <i class="fa-solid fa-chevron-left text-[10px]"></i>
                     <span>대시보드로 돌아가기</span>
                 </button>
-                <button onclick="closeEditSectionModal()" class="w-7 h-7 rounded-full bg-[#FAF8F5] flex items-center justify-center text-[#2D312E]">
+                <button onclick="closeEditSectionModal()" class="w-7 h-7 rounded-full bg-[#F5F7F5] flex items-center justify-center text-[#2D3A2C]">
                     <i class="fa-solid fa-xmark text-xs"></i>
                 </button>
             </div>
 
-            <div class="pb-2 border-b border-[#EAE6DF]">
-                <h4 id="editModalHeaderTitle" class="text-sm font-extrabold text-[#1E3E2B] flex items-center gap-2">
-                    <i class="fa-solid fa-pen-to-square text-[#8AA18C]"></i>
+            <div class="pb-2 border-b border-[#DDE3DC]">
+                <h4 id="editModalHeaderTitle" class="text-sm font-extrabold text-[#5A6D56] flex items-center gap-2">
+                    <i class="fa-solid fa-pen-to-square text-[#8F9F8B]"></i>
                     <span>섹션 내용 실시간 편집</span>
                 </h4>
             </div>
 
-            <div class="bg-[#FAF8F5] p-3.5 rounded-2xl border border-[#EAE6DF] mt-3 mb-4 space-y-3">
-                <p class="text-[11px] font-bold text-[#1E3E2B] flex items-center gap-1">
-                    <i class="fa-solid fa-palette text-[#8AA18C]"></i>
+            <div class="bg-[#F5F7F5] p-3.5 rounded-2xl border border-[#DDE3DC] mt-3 mb-4 space-y-3">
+                <p class="text-[11px] font-bold text-[#5A6D56] flex items-center gap-1">
+                    <i class="fa-solid fa-palette text-[#8F9F8B]"></i>
                     <span>텍스트 커스텀 옵션 (폰트, 정렬, 크기, 줄간격 & 색상표)</span>
                 </p>
                 
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1">
                     <div>
-                        <label class="block text-[9px] font-bold text-[#2D312E] mb-1">폰트 스타일 선택</label>
-                        <select id="styleFontSelect" class="w-full text-[10px] p-2 bg-white border border-[#EAE6DF] rounded-lg focus:outline-none focus:border-[#1E3E2B]">
+                        <label class="block text-[9px] font-bold text-[#2D3A2C] mb-1">폰트 스타일 선택</label>
+                        <select id="styleFontSelect" class="w-full text-[10px] p-2 bg-white border border-[#DDE3DC] rounded-lg focus:outline-none focus:border-[#5A6D56]">
                             <option value="'Noto Sans KR', sans-serif">노토 산스 (기본 고딕)</option>
                             <option value="'Gowun Batang', serif">고운 바탕 (감성 명조)</option>
                             <option value="'Noto Serif KR', serif">노토 세리프 (클래식 명조)</option>
@@ -865,8 +865,8 @@
                     </div>
 
                     <div>
-                        <label class="block text-[9px] font-bold text-[#2D312E] mb-1">정렬 방식</label>
-                        <select id="styleAlignSelect" class="w-full text-[10px] p-2 bg-white border border-[#EAE6DF] rounded-lg focus:outline-none focus:border-[#1E3E2B]">
+                        <label class="block text-[9px] font-bold text-[#2D3A2C] mb-1">정렬 방식</label>
+                        <select id="styleAlignSelect" class="w-full text-[10px] p-2 bg-white border border-[#DDE3DC] rounded-lg focus:outline-none focus:border-[#5A6D56]">
                             <option value="text-left">좌측 정렬</option>
                             <option value="text-center">중앙 정렬</option>
                             <option value="text-right">우측 정렬</option>
@@ -874,8 +874,8 @@
                     </div>
 
                     <div>
-                        <label class="block text-[9px] font-bold text-[#2D312E] mb-1">제목 크기 선택</label>
-                        <select id="styleSizeSelect" class="w-full text-[10px] p-2 bg-white border border-[#EAE6DF] rounded-lg focus:outline-none focus:border-[#1E3E2B]">
+                        <label class="block text-[9px] font-bold text-[#2D3A2C] mb-1">제목 크기 선택</label>
+                        <select id="styleSizeSelect" class="w-full text-[10px] p-2 bg-white border border-[#DDE3DC] rounded-lg focus:outline-none focus:border-[#5A6D56]">
                             <option value="tiny">1단계 (아주 작게)</option>
                             <option value="small">2단계 (작게)</option>
                             <option value="normal">3단계 (보통)</option>
@@ -887,8 +887,8 @@
                     </div>
 
                     <div>
-                        <label class="block text-[9px] font-bold text-[#2D312E] mb-1">줄간격 (행간)</label>
-                        <select id="styleLineHeightSelect" class="w-full text-[10px] p-2 bg-white border border-[#EAE6DF] rounded-lg focus:outline-none focus:border-[#1E3E2B]">
+                        <label class="block text-[9px] font-bold text-[#2D3A2C] mb-1">줄간격 (행간)</label>
+                        <select id="styleLineHeightSelect" class="w-full text-[10px] p-2 bg-white border border-[#DDE3DC] rounded-lg focus:outline-none focus:border-[#5A6D56]">
                             <option value="leading-tight">촘촘하게 (1.25)</option>
                             <option value="leading-normal">보통 (1.5)</option>
                             <option value="leading-relaxed">여유있게 (1.625)</option>
@@ -897,15 +897,15 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 border-t border-[#EAE6DF]">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 border-t border-[#DDE3DC]">
                     <div>
-                        <label class="block text-[9px] font-bold text-[#2D312E] mb-1">기본 글자색 (색상표 선택)</label>
+                        <label class="block text-[9px] font-bold text-[#2D3A2C] mb-1">기본 글자색 (색상표 선택)</label>
                         <div class="flex items-center gap-2">
-                            <input type="color" id="styleTextColorPicker" value="#1E3E2B" class="w-8 h-8 rounded-lg border border-[#EAE6DF] cursor-pointer p-0.5 bg-white">
-                            <select id="styleTextColorSelect" onchange="document.getElementById('styleTextColorPicker').value = this.value" class="flex-grow text-[10px] p-1.5 bg-white border border-[#EAE6DF] rounded-lg focus:outline-none focus:border-[#1E3E2B]">
-                                <option value="#1E3E2B">다크 그린 (기본)</option>
-                                <option value="#2D312E">차콜 블랙</option>
-                                <option value="#8AA18C">세이지 그린</option>
+                            <input type="color" id="styleTextColorPicker" value="#5A6D56" class="w-8 h-8 rounded-lg border border-[#DDE3DC] cursor-pointer p-0.5 bg-white">
+                            <select id="styleTextColorSelect" onchange="document.getElementById('styleTextColorPicker').value = this.value" class="flex-grow text-[10px] p-1.5 bg-white border border-[#DDE3DC] rounded-lg focus:outline-none focus:border-[#5A6D56]">
+                                <option value="#5A6D56">포레스트 올리브 (기본)</option>
+                                <option value="#2D3A2C">다크 올리브</option>
+                                <option value="#8F9F8B">세이지</option>
                                 <option value="#0F172A">딥 네이비</option>
                                 <option value="#451A03">딥 브라운</option>
                             </select>
@@ -913,11 +913,11 @@
                     </div>
 
                     <div>
-                        <label class="block text-[9px] font-bold text-[#2D312E] mb-1">[] 대괄호 강조 색상표 선택</label>
+                        <label class="block text-[9px] font-bold text-[#2D3A2C] mb-1">[] 대괄호 강조 색상표 선택</label>
                         <div class="flex items-center gap-2">
-                            <input type="color" id="styleHighlightColorPicker" value="#8AA18C" class="w-8 h-8 rounded-lg border border-[#EAE6DF] cursor-pointer p-0.5 bg-white">
-                            <select id="styleHighlightColorSelect" onchange="document.getElementById('styleHighlightColorPicker').value = this.value" class="flex-grow text-[10px] p-1.5 bg-white border border-[#EAE6DF] rounded-lg focus:outline-none focus:border-[#1E3E2B]">
-                                <option value="#8AA18C">세이지 그린 (기본)</option>
+                            <input type="color" id="styleHighlightColorPicker" value="#8F9F8B" class="w-8 h-8 rounded-lg border border-[#DDE3DC] cursor-pointer p-0.5 bg-white">
+                            <select id="styleHighlightColorSelect" onchange="document.getElementById('styleHighlightColorPicker').value = this.value" class="flex-grow text-[10px] p-1.5 bg-white border border-[#DDE3DC] rounded-lg focus:outline-none focus:border-[#5A6D56]">
+                                <option value="#8F9F8B">세이지 (기본)</option>
                                 <option value="#D97706">딥 골드</option>
                                 <option value="#0284C7">오션 블루</option>
                                 <option value="#E11D48">코랄 핑크</option>
@@ -930,37 +930,37 @@
 
             <div class="space-y-3 text-left">
                 <div>
-                    <label class="block text-[11px] font-bold text-[#1E3E2B] mb-1">메인 제목 / 헤드라인 (엔터 줄바꿈 가능)</label>
-                    <textarea id="editSectionTitleInput" rows="3" placeholder="제목을 입력하세요. [강조문구] 입력 시 선택 색상으로 강조됩니다." class="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#EAE6DF] rounded-xl text-xs focus:outline-none focus:border-[#1E3E2B] resize-y"></textarea>
+                    <label class="block text-[11px] font-bold text-[#5A6D56] mb-1">메인 제목 / 헤드라인 (엔터 줄바꿈 가능)</label>
+                    <textarea id="editSectionTitleInput" rows="3" placeholder="제목을 입력하세요. [강조문구] 입력 시 선택 색상으로 강조됩니다." class="w-full px-3.5 py-2.5 bg-[#F5F7F5] border border-[#DDE3DC] rounded-xl text-xs focus:outline-none focus:border-[#5A6D56] resize-y"></textarea>
                 </div>
 
                 <div>
-                    <label class="block text-[11px] font-bold text-[#1E3E2B] mb-1">본문 / 서브 설명 (엔터 줄바꿈 가능)</label>
-                    <textarea id="editSectionDescInput" rows="4" placeholder="본문 설명을 입력하세요." class="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#EAE6DF] rounded-xl text-xs focus:outline-none focus:border-[#1E3E2B] resize-y"></textarea>
+                    <label class="block text-[11px] font-bold text-[#5A6D56] mb-1">본문 / 서브 설명 (엔터 줄바꿈 가능)</label>
+                    <textarea id="editSectionDescInput" rows="4" placeholder="본문 설명을 입력하세요." class="w-full px-3.5 py-2.5 bg-[#F5F7F5] border border-[#DDE3DC] rounded-xl text-xs focus:outline-none focus:border-[#5A6D56] resize-y"></textarea>
                 </div>
 
                 <!-- 1. 히어로 배경 동영상 목록 / 업로드 / 시각 효과 & 블러 조절 설정 영역 -->
-                <div id="welcomeDetailEditGroup" class="hidden space-y-3 pt-3 border-t border-[#EAE6DF]">
+                <div id="welcomeDetailEditGroup" class="hidden space-y-3 pt-3 border-t border-[#DDE3DC]">
                     <div class="flex justify-between items-center">
-                        <h5 class="text-xs font-bold text-[#1E3E2B] flex items-center gap-1">
-                            <i class="fa-solid fa-film text-[#8AA18C]"></i>
+                        <h5 class="text-xs font-bold text-[#5A6D56] flex items-center gap-1">
+                            <i class="fa-solid fa-film text-[#8F9F8B]"></i>
                             <span>히어로 배경 동영상 목록 & 무한 루프 재생 관리</span>
                         </h5>
                     </div>
 
-                    <div class="bg-[#FAF8F5] p-3.5 rounded-xl border border-[#EAE6DF] space-y-3">
+                    <div class="bg-[#F5F7F5] p-3.5 rounded-xl border border-[#DDE3DC] space-y-3">
                         <div>
-                            <label class="block text-[10px] font-bold text-[#2D312E] mb-1">새 동영상 파일 추가 업로드 (MP4/WebM)</label>
+                            <label class="block text-[10px] font-bold text-[#2D3A2C] mb-1">새 동영상 파일 추가 업로드 (MP4/WebM)</label>
                             <div class="flex gap-2">
-                                <input type="file" id="newHeroVideoFileInput" accept="video/*" class="flex-grow text-xs text-[#2D312E] file:mr-2 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-[#1E3E2B]/10 file:text-[#1E3E2B]">
-                                <button onclick="addHeroVideoFromInput()" class="bg-[#1E3E2B] text-white px-3 py-1 rounded-lg text-xs font-bold hover:bg-[#1E3E2B]/90 transition-all shrink-0">
+                                <input type="file" id="newHeroVideoFileInput" accept="video/*" class="flex-grow text-xs text-[#2D3A2C] file:mr-2 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-[#5A6D56]/10 file:text-[#5A6D56]">
+                                <button onclick="addHeroVideoFromInput()" class="bg-[#5A6D56] text-white px-3 py-1 rounded-lg text-xs font-bold hover:bg-[#5A6D56]/90 transition-all shrink-0">
                                     + 추가
                                 </button>
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-[10px] font-bold text-[#2D312E] mb-1">현재 등록된 배경 동영상 목록 (자동 순차 무한 반복)</label>
+                            <label class="block text-[10px] font-bold text-[#2D3A2C] mb-1">현재 등록된 배경 동영상 목록 (자동 순차 무한 반복)</label>
                             <div id="heroVideosListContainer" class="space-y-1.5 max-h-36 overflow-y-auto no-scrollbar">
                                 <!-- JS 동적 생성 -->
                             </div>
@@ -968,8 +968,8 @@
 
                         <div class="grid grid-cols-2 gap-2">
                             <div>
-                                <label class="block text-[10px] font-bold text-[#2D312E] mb-1">동영상 시각 효과 / 필터 오버레이</label>
-                                <select id="heroVideoEffectSelect" class="w-full px-2.5 py-1.5 bg-white border border-[#EAE6DF] rounded-lg text-xs">
+                                <label class="block text-[10px] font-bold text-[#2D3A2C] mb-1">동영상 시각 효과 / 필터 오버레이</label>
+                                <select id="heroVideoEffectSelect" class="w-full px-2.5 py-1.5 bg-white border border-[#DDE3DC] rounded-lg text-xs">
                                     <option value="none">효과 없음 (오버레이 및 필터 제거 - 100% 선명함)</option>
                                     <option value="default" selected>은은한 오버레이 (기본)</option>
                                     <option value="vintage">빈티지 시네마 필터 (아련함)</option>
@@ -979,8 +979,8 @@
                             </div>
 
                             <div>
-                                <label class="block text-[10px] font-bold text-[#2D312E] mb-1">배경 블러(Blur) 강도 조절</label>
-                                <select id="heroBlurSelect" class="w-full px-2.5 py-1.5 bg-white border border-[#EAE6DF] rounded-lg text-xs">
+                                <label class="block text-[10px] font-bold text-[#2D3A2C] mb-1">배경 블러(Blur) 강도 조절</label>
+                                <select id="heroBlurSelect" class="w-full px-2.5 py-1.5 bg-white border border-[#DDE3DC] rounded-lg text-xs">
                                     <option value="none">블러 없음 (선명함)</option>
                                     <option value="subtle" selected>약하게 (2px - 기본)</option>
                                     <option value="medium">보통 (4px)</option>
@@ -993,32 +993,32 @@
                 </div>
 
                 <!-- 2. 디모데 일상 전용 다중 사진/게시글 등록 및 수정 영역 -->
-                <div id="momentsDetailEditGroup" class="hidden space-y-4 pt-3 border-t border-[#EAE6DF]">
+                <div id="momentsDetailEditGroup" class="hidden space-y-4 pt-3 border-t border-[#DDE3DC]">
                     <div class="flex justify-between items-center">
-                        <h5 class="text-xs font-bold text-[#1E3E2B] flex items-center gap-1">
-                            <i class="fa-solid fa-images text-[#8AA18C]"></i>
+                        <h5 class="text-xs font-bold text-[#5A6D56] flex items-center gap-1">
+                            <i class="fa-solid fa-images text-[#8F9F8B]"></i>
                             <span>다중 활동 사진 게시글 등록 및 수정</span>
                         </h5>
                     </div>
 
-                    <div class="bg-[#FAF8F5] p-3.5 rounded-xl border border-[#EAE6DF] space-y-2.5">
-                        <span id="momentEditFormHeader" class="text-[11px] font-bold text-[#1E3E2B] block"><i class="fa-solid fa-plus-circle mr-1 text-[#8AA18C]"></i>새 사진/동영상 게시글 추가하기</span>
+                    <div class="bg-[#F5F7F5] p-3.5 rounded-xl border border-[#DDE3DC] space-y-2.5">
+                        <span id="momentEditFormHeader" class="text-[11px] font-bold text-[#5A6D56] block"><i class="fa-solid fa-plus-circle mr-1 text-[#8F9F8B]"></i>새 사진/동영상 게시글 추가하기</span>
                         
                         <input type="hidden" id="editingMomentId" value="">
 
                         <div>
-                            <label class="block text-[10px] font-bold text-[#2D312E] mb-1">사진 또는 동영상 파일 선택 (미선택 시 기존 유지)</label>
-                            <input type="file" id="newMomentFileInput" accept="image/*,video/*" class="w-full text-xs text-[#2D312E] file:mr-2 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-[#1E3E2B]/10 file:text-[#1E3E2B]">
+                            <label class="block text-[10px] font-bold text-[#2D3A2C] mb-1">사진 또는 동영상 파일 선택 (미선택 시 기존 유지)</label>
+                            <input type="file" id="newMomentFileInput" accept="image/*,video/*" class="w-full text-xs text-[#2D3A2C] file:mr-2 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-[#5A6D56]/10 file:text-[#5A6D56]">
                         </div>
 
                         <div class="grid grid-cols-2 gap-2">
                             <div>
-                                <label class="block text-[10px] font-bold text-[#2D312E] mb-1">뱃지 문구</label>
-                                <input type="text" id="newMomentBadgeInput" placeholder="예: 야외 액티비티" class="w-full px-2.5 py-1.5 bg-white border border-[#EAE6DF] rounded-lg text-xs">
+                                <label class="block text-[10px] font-bold text-[#2D3A2C] mb-1">뱃지 문구</label>
+                                <input type="text" id="newMomentBadgeInput" placeholder="예: 야외 액티비티" class="w-full px-2.5 py-1.5 bg-white border border-[#DDE3DC] rounded-lg text-xs">
                             </div>
                             <div>
-                                <label class="block text-[10px] font-bold text-[#2D312E] mb-1">연출 애니메이션 효과</label>
-                                <select id="newMomentEffectSelect" class="w-full px-2 py-1.5 bg-white border border-[#EAE6DF] rounded-lg text-xs">
+                                <label class="block text-[10px] font-bold text-[#2D3A2C] mb-1">연출 애니메이션 효과</label>
+                                <select id="newMomentEffectSelect" class="w-full px-2 py-1.5 bg-white border border-[#DDE3DC] rounded-lg text-xs">
                                     <option value="fx-none">효과 없음 (정지 화면)</option>
                                     <option value="fx-kenburns" selected>Ken Burns Zoom (줌인)</option>
                                     <option value="fx-vintage">Vintage Glow (레트로 필터)</option>
@@ -1030,17 +1030,17 @@
                         </div>
 
                         <div>
-                            <label class="block text-[10px] font-bold text-[#2D312E] mb-1">활동 제목</label>
-                            <input type="text" id="newMomentTitleInput" placeholder="예: 봄맞이 야외 딸기 농장 체험 & 소풍" class="w-full px-2.5 py-1.5 bg-white border border-[#EAE6DF] rounded-lg text-xs">
+                            <label class="block text-[10px] font-bold text-[#2D3A2C] mb-1">활동 제목</label>
+                            <input type="text" id="newMomentTitleInput" placeholder="예: 봄맞이 야외 딸기 농장 체험 & 소풍" class="w-full px-2.5 py-1.5 bg-white border border-[#DDE3DC] rounded-lg text-xs">
                         </div>
 
                         <div>
-                            <label class="block text-[10px] font-bold text-[#2D312E] mb-1">활동 서브 설명</label>
-                            <input type="text" id="newMomentDescInput" placeholder="예: 따뜻한 햇살 아래 서로의 삶을 나누는 소중한 시간" class="w-full px-2.5 py-1.5 bg-white border border-[#EAE6DF] rounded-lg text-xs">
+                            <label class="block text-[10px] font-bold text-[#2D3A2C] mb-1">활동 서브 설명</label>
+                            <input type="text" id="newMomentDescInput" placeholder="예: 따뜻한 햇살 아래 서로의 삶을 나누는 소중한 시간" class="w-full px-2.5 py-1.5 bg-white border border-[#DDE3DC] rounded-lg text-xs">
                         </div>
 
                         <div class="flex gap-2 pt-1">
-                            <button id="saveMomentBtn" onclick="saveMomentItem()" class="flex-grow bg-[#1E3E2B] text-white py-2 rounded-lg text-xs font-bold hover:bg-[#1E3E2B]/90 transition-all shadow">
+                            <button id="saveMomentBtn" onclick="saveMomentItem()" class="flex-grow bg-[#5A6D56] text-white py-2 rounded-lg text-xs font-bold hover:bg-[#5A6D56]/90 transition-all shadow">
                                 + 사진/동영상 게시글 등록
                             </button>
                             <button id="cancelMomentEditBtn" onclick="resetMomentForm()" class="hidden bg-gray-200 text-gray-700 px-3 py-2 rounded-lg text-xs font-bold hover:bg-gray-300 transition-all shrink-0">
@@ -1050,7 +1050,7 @@
                     </div>
 
                     <div class="space-y-2">
-                        <label class="block text-[11px] font-bold text-[#1E3E2B]">현재 등록된 게시글 목록 (수정 & 삭제)</label>
+                        <label class="block text-[11px] font-bold text-[#5A6D56]">현재 등록된 게시글 목록 (수정 & 삭제)</label>
                         <div id="adminMomentsListContainer" class="space-y-2 max-h-48 overflow-y-auto no-scrollbar">
                             <!-- JS 동적 생성 -->
                         </div>
@@ -1058,43 +1058,43 @@
                 </div>
 
                 <!-- 3. 공동체 비전 세부 카드 편집 영역 -->
-                <div id="visionDetailEditGroup" class="hidden space-y-3 pt-3 border-t border-[#EAE6DF]">
-                    <h5 class="text-xs font-bold text-[#1E3E2B] flex items-center gap-1">
-                        <i class="fa-solid fa-layer-group text-[#8AA18C]"></i>
+                <div id="visionDetailEditGroup" class="hidden space-y-3 pt-3 border-t border-[#DDE3DC]">
+                    <h5 class="text-xs font-bold text-[#5A6D56] flex items-center gap-1">
+                        <i class="fa-solid fa-layer-group text-[#8F9F8B]"></i>
                         <span>공동체 비전 개별 카드 3개 내용 수정</span>
                     </h5>
 
-                    <div class="bg-[#FAF8F5] p-3 rounded-xl border border-[#EAE6DF] space-y-2">
-                        <span class="text-[10px] font-bold text-[#1E3E2B] block">[01번 카드]</span>
-                        <input type="text" id="vCard1TitleInput" placeholder="카드 제목" class="w-full px-3 py-1.5 bg-white border border-[#EAE6DF] rounded-lg text-xs">
-                        <textarea id="vCard1DescInput" rows="2" placeholder="카드 설명 (줄바꿈 가능)" class="w-full px-3 py-1.5 bg-white border border-[#EAE6DF] rounded-lg text-xs resize-y"></textarea>
+                    <div class="bg-[#F5F7F5] p-3 rounded-xl border border-[#DDE3DC] space-y-2">
+                        <span class="text-[10px] font-bold text-[#5A6D56] block">[01번 카드]</span>
+                        <input type="text" id="vCard1TitleInput" placeholder="카드 제목" class="w-full px-3 py-1.5 bg-white border border-[#DDE3DC] rounded-lg text-xs">
+                        <textarea id="vCard1DescInput" rows="2" placeholder="카드 설명 (줄바꿈 가능)" class="w-full px-3 py-1.5 bg-white border border-[#DDE3DC] rounded-lg text-xs resize-y"></textarea>
                     </div>
 
-                    <div class="bg-[#FAF8F5] p-3 rounded-xl border border-[#EAE6DF] space-y-2">
-                        <span class="text-[10px] font-bold text-[#1E3E2B] block">[02번 성장 카드]</span>
-                        <input type="text" id="vCard2BadgeInput" placeholder="상단 뱃지" class="w-full px-3 py-1.5 bg-white border border-[#EAE6DF] rounded-lg text-xs">
-                        <input type="text" id="vCard2TitleInput" placeholder="카드 제목" class="w-full px-3 py-1.5 bg-white border border-[#EAE6DF] rounded-lg text-xs">
-                        <textarea id="vCard2DescInput" rows="2" placeholder="카드 설명 (줄바꿈 가능)" class="w-full px-3 py-1.5 bg-white border border-[#EAE6DF] rounded-lg text-xs resize-y"></textarea>
+                    <div class="bg-[#F5F7F5] p-3 rounded-xl border border-[#DDE3DC] space-y-2">
+                        <span class="text-[10px] font-bold text-[#5A6D56] block">[02번 성장 카드]</span>
+                        <input type="text" id="vCard2BadgeInput" placeholder="상단 뱃지" class="w-full px-3 py-1.5 bg-white border border-[#DDE3DC] rounded-lg text-xs">
+                        <input type="text" id="vCard2TitleInput" placeholder="카드 제목" class="w-full px-3 py-1.5 bg-white border border-[#DDE3DC] rounded-lg text-xs">
+                        <textarea id="vCard2DescInput" rows="2" placeholder="카드 설명 (줄바꿈 가능)" class="w-full px-3 py-1.5 bg-white border border-[#DDE3DC] rounded-lg text-xs resize-y"></textarea>
                     </div>
 
-                    <div class="bg-[#FAF8F5] p-3 rounded-xl border border-[#EAE6DF] space-y-2">
-                        <span class="text-[10px] font-bold text-[#1E3E2B] block">[03번 카드]</span>
-                        <input type="text" id="vCard3TitleInput" placeholder="카드 제목" class="w-full px-3 py-1.5 bg-white border border-[#EAE6DF] rounded-lg text-xs">
-                        <textarea id="vCard3DescInput" rows="2" placeholder="카드 설명 (줄바꿈 가능)" class="w-full px-3 py-1.5 bg-white border border-[#EAE6DF] rounded-lg text-xs resize-y"></textarea>
+                    <div class="bg-[#F5F7F5] p-3 rounded-xl border border-[#DDE3DC] space-y-2">
+                        <span class="text-[10px] font-bold text-[#5A6D56] block">[03번 카드]</span>
+                        <input type="text" id="vCard3TitleInput" placeholder="카드 제목" class="w-full px-3 py-1.5 bg-white border border-[#DDE3DC] rounded-lg text-xs">
+                        <textarea id="vCard3DescInput" rows="2" placeholder="카드 설명 (줄바꿈 가능)" class="w-full px-3 py-1.5 bg-white border border-[#DDE3DC] rounded-lg text-xs resize-y"></textarea>
                     </div>
                 </div>
 
                 <!-- 4. 섬기는 사람들 카드 편집 영역 -->
-                <div id="leadersDetailEditGroup" class="hidden space-y-3 pt-3 border-t border-[#EAE6DF]">
-                    <h5 class="text-xs font-bold text-[#1E3E2B] flex items-center gap-1">
-                        <i class="fa-solid fa-users-gear text-[#8AA18C]"></i>
+                <div id="leadersDetailEditGroup" class="hidden space-y-3 pt-3 border-t border-[#DDE3DC]">
+                    <h5 class="text-xs font-bold text-[#5A6D56] flex items-center gap-1">
+                        <i class="fa-solid fa-users-gear text-[#8F9F8B]"></i>
                         <span>리더십 4개 카드 개별 수정 & 프로필 사진 관리</span>
                     </h5>
 
                     <!-- Leader 1 -->
-                    <div class="bg-[#FAF8F5] p-3 rounded-xl border border-[#EAE6DF] space-y-2">
+                    <div class="bg-[#F5F7F5] p-3 rounded-xl border border-[#DDE3DC] space-y-2">
                         <div class="flex justify-between items-center">
-                            <span class="text-[10px] font-bold text-[#1E3E2B]">[1. 강충만 담당 목사]</span>
+                            <span class="text-[10px] font-bold text-[#5A6D56]">[1. 강충만 담당 목사]</span>
                             <button onclick="removeLeaderPhoto(1)" class="text-[9px] bg-red-100 hover:bg-red-200 text-red-700 px-2 py-0.5 rounded font-bold transition-all">사진 삭제 (초기화)</button>
                         </div>
                         <div class="flex gap-2">
@@ -1104,15 +1104,15 @@
                         <textarea id="l1QuoteInput" rows="2" placeholder="메시지 문구" class="w-full px-2.5 py-1.5 bg-white border rounded-lg text-xs resize-y"></textarea>
                         <input type="text" id="l1EmailInput" placeholder="이메일 주소" class="w-full px-2.5 py-1.5 bg-white border rounded-lg text-xs">
                         <div>
-                            <label class="text-[10px] font-bold text-[#8AA18C] block mb-0.5">프로필 사진 업로드</label>
+                            <label class="text-[10px] font-bold text-[#8F9F8B] block mb-0.5">프로필 사진 업로드</label>
                             <input type="file" id="l1PhotoInput" accept="image/*" class="text-[10px] w-full">
                         </div>
                     </div>
 
                     <!-- Leader 2 -->
-                    <div class="bg-[#FAF8F5] p-3 rounded-xl border border-[#EAE6DF] space-y-2">
+                    <div class="bg-[#F5F7F5] p-3 rounded-xl border border-[#DDE3DC] space-y-2">
                         <div class="flex justify-between items-center">
-                            <span class="text-[10px] font-bold text-[#1E3E2B]">[2. 김본중 부장 집사]</span>
+                            <span class="text-[10px] font-bold text-[#5A6D56]">[2. 김본중 부장 집사]</span>
                             <button onclick="removeLeaderPhoto(2)" class="text-[9px] bg-red-100 hover:bg-red-200 text-red-700 px-2 py-0.5 rounded font-bold transition-all">사진 삭제 (초기화)</button>
                         </div>
                         <div class="flex gap-2">
@@ -1121,15 +1121,15 @@
                         </div>
                         <textarea id="l2QuoteInput" rows="2" placeholder="메시지 문구" class="w-full px-2.5 py-1.5 bg-white border rounded-lg text-xs resize-y"></textarea>
                         <div>
-                            <label class="text-[10px] font-bold text-[#8AA18C] block mb-0.5">프로필 사진 업로드</label>
+                            <label class="text-[10px] font-bold text-[#8F9F8B] block mb-0.5">프로필 사진 업로드</label>
                             <input type="file" id="l2PhotoInput" accept="image/*" class="text-[10px] w-full">
                         </div>
                     </div>
 
                     <!-- Leader 3 -->
-                    <div class="bg-[#FAF8F5] p-3 rounded-xl border border-[#EAE6DF] space-y-2">
+                    <div class="bg-[#F5F7F5] p-3 rounded-xl border border-[#DDE3DC] space-y-2">
                         <div class="flex justify-between items-center">
-                            <span class="text-[10px] font-bold text-[#1E3E2B]">[3. 정대영 디모데 회장]</span>
+                            <span class="text-[10px] font-bold text-[#5A6D56]">[3. 정대영 디모데 회장]</span>
                             <button onclick="removeLeaderPhoto(3)" class="text-[9px] bg-red-100 hover:bg-red-200 text-red-700 px-2 py-0.5 rounded font-bold transition-all">사진 삭제 (초기화)</button>
                         </div>
                         <div class="flex gap-2">
@@ -1138,15 +1138,15 @@
                         </div>
                         <textarea id="l3QuoteInput" rows="2" placeholder="메시지 문구" class="w-full px-2.5 py-1.5 bg-white border rounded-lg text-xs resize-y"></textarea>
                         <div>
-                            <label class="text-[10px] font-bold text-[#8AA18C] block mb-0.5">프로필 사진 업로드</label>
+                            <label class="text-[10px] font-bold text-[#8F9F8B] block mb-0.5">프로필 사진 업로드</label>
                             <input type="file" id="l3PhotoInput" accept="image/*" class="text-[10px] w-full">
                         </div>
                     </div>
 
                     <!-- Leader 4 -->
-                    <div class="bg-[#FAF8F5] p-3 rounded-xl border border-[#EAE6DF] space-y-2">
+                    <div class="bg-[#F5F7F5] p-3 rounded-xl border border-[#DDE3DC] space-y-2">
                         <div class="flex justify-between items-center">
-                            <span class="text-[10px] font-bold text-[#1E3E2B]">[4. 디모데 청년들]</span>
+                            <span class="text-[10px] font-bold text-[#5A6D56]">[4. 디모데 청년들]</span>
                             <button onclick="removeLeaderPhoto(4)" class="text-[9px] bg-red-100 hover:bg-red-200 text-red-700 px-2 py-0.5 rounded font-bold transition-all">사진 삭제 (초기화)</button>
                         </div>
                         <div class="flex gap-2">
@@ -1156,37 +1156,37 @@
                         <textarea id="l4QuoteInput" rows="2" placeholder="메시지 문구" class="w-full px-2.5 py-1.5 bg-white border rounded-lg text-xs resize-y"></textarea>
                         <input type="text" id="l4SubBottomInput" placeholder="하단 뱃지 문구" class="w-full px-2.5 py-1.5 bg-white border rounded-lg text-xs">
                         <div>
-                            <label class="text-[10px] font-bold text-[#8AA18C] block mb-0.5">청년들 단체/대표 사진 업로드</label>
+                            <label class="text-[10px] font-bold text-[#8F9F8B] block mb-0.5">청년들 단체/대표 사진 업로드</label>
                             <input type="file" id="l4PhotoInput" accept="image/*" class="text-[10px] w-full">
                         </div>
                     </div>
                 </div>
 
                 <!-- 5. 모임 안내 카드 편집 영역 -->
-                <div id="meetingsDetailEditGroup" class="hidden space-y-3 pt-3 border-t border-[#EAE6DF]">
-                    <h5 class="text-xs font-bold text-[#1E3E2B] flex items-center gap-1">
-                        <i class="fa-solid fa-calendar-week text-[#8AA18C]"></i>
+                <div id="meetingsDetailEditGroup" class="hidden space-y-3 pt-3 border-t border-[#DDE3DC]">
+                    <h5 class="text-xs font-bold text-[#5A6D56] flex items-center gap-1">
+                        <i class="fa-solid fa-calendar-week text-[#8F9F8B]"></i>
                         <span>모임 안내 개별 카드 3개 내용 수정</span>
                     </h5>
 
-                    <div class="bg-[#FAF8F5] p-3 rounded-xl border border-[#EAE6DF] space-y-2">
-                        <span class="text-[10px] font-bold text-[#1E3E2B] block">[1. 모임 시간 카드]</span>
+                    <div class="bg-[#F5F7F5] p-3 rounded-xl border border-[#DDE3DC] space-y-2">
+                        <span class="text-[10px] font-bold text-[#5A6D56] block">[1. 모임 시간 카드]</span>
                         <input type="text" id="m1SubInput" placeholder="서브타이틀" class="w-full px-3 py-1.5 bg-white border rounded-lg text-xs">
                         <input type="text" id="m1TitleInput" placeholder="제목" class="w-full px-3 py-1.5 bg-white border rounded-lg text-xs">
                         <input type="text" id="m1BadgeInput" placeholder="강조 뱃지" class="w-full px-3 py-1.5 bg-white border rounded-lg text-xs">
                         <input type="text" id="m1DescInput" placeholder="하단 설명" class="w-full px-3 py-1.5 bg-white border rounded-lg text-xs">
                     </div>
 
-                    <div class="bg-[#FAF8F5] p-3 rounded-xl border border-[#EAE6DF] space-y-2">
-                        <span class="text-[10px] font-bold text-[#1E3E2B] block">[2. 모임 장소 카드]</span>
+                    <div class="bg-[#F5F7F5] p-3 rounded-xl border border-[#DDE3DC] space-y-2">
+                        <span class="text-[10px] font-bold text-[#5A6D56] block">[2. 모임 장소 카드]</span>
                         <input type="text" id="m2SubInput" placeholder="서브타이틀" class="w-full px-3 py-1.5 bg-white border rounded-lg text-xs">
                         <input type="text" id="m2TitleInput" placeholder="제목" class="w-full px-3 py-1.5 bg-white border rounded-lg text-xs">
                         <input type="text" id="m2BadgeInput" placeholder="강조 뱃지" class="w-full px-3 py-1.5 bg-white border rounded-lg text-xs">
                         <input type="text" id="m2DescInput" placeholder="하단 설명" class="w-full px-3 py-1.5 bg-white border rounded-lg text-xs">
                     </div>
 
-                    <div class="bg-[#FAF8F5] p-3 rounded-xl border border-[#EAE6DF] space-y-2">
-                        <span class="text-[10px] font-bold text-[#1E3E2B] block">[3. 액티비티 활동 카드]</span>
+                    <div class="bg-[#F5F7F5] p-3 rounded-xl border border-[#DDE3DC] space-y-2">
+                        <span class="text-[10px] font-bold text-[#5A6D56] block">[3. 액티비티 활동 카드]</span>
                         <input type="text" id="m3SubInput" placeholder="서브타이틀" class="w-full px-3 py-1.5 bg-white border rounded-lg text-xs">
                         <input type="text" id="m3TitleInput" placeholder="제목" class="w-full px-3 py-1.5 bg-white border rounded-lg text-xs">
                         <textarea id="m3DescInput" rows="2" placeholder="활동 설명 문구" class="w-full px-3 py-1.5 bg-white border rounded-lg text-xs resize-y"></textarea>
@@ -1196,8 +1196,8 @@
             </div>
 
             <div class="flex gap-2 pt-2">
-                <button onclick="closeEditSectionModal()" class="w-1/2 bg-[#FAF8F5] text-[#2D312E] py-2.5 rounded-xl text-xs font-bold hover:bg-[#EAE6DF]">취소</button>
-                <button onclick="saveSectionEdits()" class="w-1/2 bg-[#1E3E2B] text-white py-2.5 rounded-xl text-xs font-bold shadow hover:bg-[#1E3E2B]/90">적용하기</button>
+                <button onclick="closeEditSectionModal()" class="w-1/2 bg-[#F5F7F5] text-[#2D3A2C] py-2.5 rounded-xl text-xs font-bold hover:bg-[#DDE3DC]">취소</button>
+                <button onclick="saveSectionEdits()" class="w-1/2 bg-[#5A6D56] text-white py-2.5 rounded-xl text-xs font-bold shadow hover:bg-[#5A6D56]/90">적용하기</button>
             </div>
         </div>
     </div>
@@ -1205,19 +1205,19 @@
     <!-- 4. 신규 축복 파송 글쓰기 및 수정 모달 -->
     <div id="writePostModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-center p-4">
         <div id="writePostContainer" class="bg-white w-full max-w-md rounded-3xl p-6 shadow-2xl transform scale-95 transition-all duration-300">
-            <div class="flex justify-between items-center pb-3 border-b border-[#EAE6DF] mb-3">
-                <button onclick="backToDashboardFromWrite()" class="text-xs font-bold text-[#8AA18C] hover:text-[#1E3E2B] flex items-center gap-1 transition-all">
+            <div class="flex justify-between items-center pb-3 border-b border-[#DDE3DC] mb-3">
+                <button onclick="backToDashboardFromWrite()" class="text-xs font-bold text-[#8F9F8B] hover:text-[#5A6D56] flex items-center gap-1 transition-all">
                     <i class="fa-solid fa-chevron-left text-[10px]"></i>
                     <span>대시보드로 돌아가기</span>
                 </button>
-                <button onclick="closeWriteModal()" class="w-7 h-7 rounded-full bg-[#FAF8F5] flex items-center justify-center text-[#2D312E]">
+                <button onclick="closeWriteModal()" class="w-7 h-7 rounded-full bg-[#F5F7F5] flex items-center justify-center text-[#2D3A2C]">
                     <i class="fa-solid fa-xmark text-xs"></i>
                 </button>
             </div>
 
-            <div class="pb-2 border-b border-[#EAE6DF]">
-                <h4 id="writeModalHeaderTitle" class="text-sm font-extrabold text-[#1E3E2B] flex items-center gap-2">
-                    <i class="fa-solid fa-pen-to-square text-[#8AA18C]"></i>
+            <div class="pb-2 border-b border-[#DDE3DC]">
+                <h4 id="writeModalHeaderTitle" class="text-sm font-extrabold text-[#5A6D56] flex items-center gap-2">
+                    <i class="fa-solid fa-pen-to-square text-[#8F9F8B]"></i>
                     <span>축복 & 파송 메시지 등록</span>
                 </h4>
             </div>
@@ -1226,41 +1226,41 @@
                 <input type="hidden" id="editingPostId" value="">
 
                 <div>
-                    <label class="block text-[11px] font-bold text-[#1E3E2B] mb-1">수신 지체 및 사유</label>
-                    <input type="text" id="postRecipient" placeholder="예: To. 수진 자매 (보스턴 이직)" class="w-full px-3.5 py-2 bg-[#FAF8F5] border border-[#EAE6DF] rounded-xl text-xs focus:outline-none focus:border-[#1E3E2B]">
+                    <label class="block text-[11px] font-bold text-[#5A6D56] mb-1">수신 지체 및 사유</label>
+                    <input type="text" id="postRecipient" placeholder="예: To. 수진 자매 (보스턴 이직)" class="w-full px-3.5 py-2 bg-[#F5F7F5] border border-[#DDE3DC] rounded-xl text-xs focus:outline-none focus:border-[#5A6D56]">
                 </div>
 
                 <div>
-                    <label class="block text-[11px] font-bold text-[#1E3E2B] mb-1">축복 메시지 내용</label>
-                    <textarea id="postContent" rows="3" placeholder="축복과 마음을 담은 파송 메시지를 입력해 주세요." class="w-full px-3.5 py-2 bg-[#FAF8F5] border border-[#EAE6DF] rounded-xl text-xs focus:outline-none focus:border-[#1E3E2B] resize-y"></textarea>
+                    <label class="block text-[11px] font-bold text-[#5A6D56] mb-1">축복 메시지 내용</label>
+                    <textarea id="postContent" rows="3" placeholder="축복과 마음을 담은 파송 메시지를 입력해 주세요." class="w-full px-3.5 py-2 bg-[#F5F7F5] border border-[#DDE3DC] rounded-xl text-xs focus:outline-none focus:border-[#5A6D56] resize-y"></textarea>
                 </div>
 
                 <div class="grid grid-cols-2 gap-2">
                     <div>
-                        <label class="block text-[11px] font-bold text-[#1E3E2B] mb-1">작성자</label>
-                        <input type="text" id="postAuthor" placeholder="예: 디모데 임원회" class="w-full px-3.5 py-2 bg-[#FAF8F5] border border-[#EAE6DF] rounded-xl text-xs focus:outline-none focus:border-[#1E3E2B]">
+                        <label class="block text-[11px] font-bold text-[#5A6D56] mb-1">작성자</label>
+                        <input type="text" id="postAuthor" placeholder="예: 디모데 임원회" class="w-full px-3.5 py-2 bg-[#F5F7F5] border border-[#DDE3DC] rounded-xl text-xs focus:outline-none focus:border-[#5A6D56]">
                     </div>
                     <div>
-                        <label class="block text-[11px] font-bold text-[#1E3E2B] mb-1">날짜 선택 (캘린더)</label>
-                        <input type="date" id="postDatePicker" class="w-full px-3 py-2 bg-[#FAF8F5] border border-[#EAE6DF] rounded-xl text-xs focus:outline-none focus:border-[#1E3E2B]">
+                        <label class="block text-[11px] font-bold text-[#5A6D56] mb-1">날짜 선택 (캘린더)</label>
+                        <input type="date" id="postDatePicker" class="w-full px-3 py-2 bg-[#F5F7F5] border border-[#DDE3DC] rounded-xl text-xs focus:outline-none focus:border-[#5A6D56]">
                     </div>
                 </div>
             </div>
 
             <div class="flex gap-2 pt-2">
-                <button onclick="closeWriteModal()" class="w-1/2 bg-[#FAF8F5] text-[#2D312E] py-2.5 rounded-xl text-xs font-bold hover:bg-[#EAE6DF]">취소</button>
-                <button id="savePostSubmitBtn" onclick="saveNewPost()" class="w-1/2 bg-[#1E3E2B] text-white py-2.5 rounded-xl text-xs font-bold shadow hover:bg-[#1E3E2B]/90">등록하기</button>
+                <button onclick="closeWriteModal()" class="w-1/2 bg-[#F5F7F5] text-[#2D3A2C] py-2.5 rounded-xl text-xs font-bold hover:bg-[#DDE3DC]">취소</button>
+                <button id="savePostSubmitBtn" onclick="saveNewPost()" class="w-1/2 bg-[#5A6D56] text-white py-2.5 rounded-xl text-xs font-bold shadow hover:bg-[#5A6D56]/90">등록하기</button>
             </div>
         </div>
     </div>
 
     <!-- 숨겨진 관리자 기어 버튼 -->
-    <button id="adminGearBtn" onclick="handleGearClick()" class="fixed bottom-20 md:bottom-5 right-4 z-50 w-10 h-10 rounded-full bg-[#1E3E2B] text-white flex items-center justify-center opacity-0 hover:opacity-100 focus:opacity-100 transition-opacity duration-300 shadow-xl border border-white/20 cursor-pointer" title="관리자 모드">
+    <button id="adminGearBtn" onclick="handleGearClick()" class="fixed bottom-20 md:bottom-5 right-4 z-50 w-10 h-10 rounded-full bg-[#5A6D56] text-white flex items-center justify-center opacity-0 hover:opacity-100 focus:opacity-100 transition-opacity duration-300 shadow-xl border border-white/20 cursor-pointer" title="관리자 모드">
         <i class="fa-solid fa-gear text-sm"></i>
     </button>
 
     <!-- Footer -->
-    <footer class="bg-[#1E3E2B] text-white/90">
+    <footer class="bg-[#5A6D56] text-white/90">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-white/10 pb-8">
                 <div class="space-y-2">
@@ -1274,15 +1274,15 @@
                 </div>
 
                 <div class="space-y-2">
-                    <h5 class="text-xs font-bold text-white border-l-2 border-[#8AA18C] pl-2">교회 위치 & 연락처</h5>
+                    <h5 class="text-xs font-bold text-white border-l-2 border-[#8F9F8B] pl-2">교회 위치 & 연락처</h5>
                     <ul class="text-[11px] text-white/70 space-y-1">
-                        <li><i class="fa-solid fa-map-pin mr-1 text-[#8AA18C]"></i> 2681 John F Kennedy Blvd. Jersey City, NJ 07306</li>
-                        <li><i class="fa-solid fa-phone mr-1 text-[#8AA18C]"></i> 201-333-2121 / 201-332-4585</li>
+                        <li><i class="fa-solid fa-map-pin mr-1 text-[#8F9F8B]"></i> 2681 John F Kennedy Blvd. Jersey City, NJ 07306</li>
+                        <li><i class="fa-solid fa-phone mr-1 text-[#8F9F8B]"></i> 201-333-2121 / 201-332-4585</li>
                     </ul>
                 </div>
 
                 <div class="space-y-2">
-                    <h5 class="text-xs font-bold text-white border-l-2 border-[#8AA18C] pl-2">바로가기</h5>
+                    <h5 class="text-xs font-bold text-white border-l-2 border-[#8F9F8B] pl-2">바로가기</h5>
                     <div class="grid grid-cols-2 gap-1 text-[11px] text-white/70">
                         <a href="../" class="hover:text-white">교회 홈</a>
                         <a href="#welcome" class="hover:text-white">처음으로</a>
@@ -1300,8 +1300,8 @@
     </footer>
 
     <!-- Toast Alert Container -->
-    <div id="toastAlert" class="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-[#1E3E2B] text-white text-xs font-semibold px-5 py-2.5 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2">
-        <i class="fa-solid fa-check-circle text-[#8AA18C]"></i>
+    <div id="toastAlert" class="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-[#5A6D56] text-white text-xs font-semibold px-5 py-2.5 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2">
+        <i class="fa-solid fa-check-circle text-[#8F9F8B]"></i>
         <span id="toastMessage">안내가 완료되었습니다.</span>
     </div>
 
@@ -1605,8 +1605,8 @@
             }
 
             container.innerHTML = heroVideoItems.map((v, idx) => `
-                <div class="bg-white p-2 rounded-lg border border-[#EAE6DF] flex items-center justify-between text-xs">
-                    <span class="font-bold text-[#1E3E2B] truncate max-w-[200px] text-[11px]">${idx + 1}. ${v.name}</span>
+                <div class="bg-white p-2 rounded-lg border border-[#DDE3DC] flex items-center justify-between text-xs">
+                    <span class="font-bold text-[#5A6D56] truncate max-w-[200px] text-[11px]">${idx + 1}. ${v.name}</span>
                     <button onclick="removeHeroVideoItem(${idx})" class="text-[9px] bg-red-100 hover:bg-red-200 text-red-700 px-2 py-0.5 rounded font-bold transition-all">
                         삭제
                     </button>
@@ -1658,7 +1658,7 @@
 
             if (momentItems.length === 0) {
                 container.innerHTML = `
-                    <div class="w-full h-full bg-gray-100 flex flex-col items-center justify-center text-[#2D312E]/50 p-6">
+                    <div class="w-full h-full bg-gray-100 flex flex-col items-center justify-center text-[#2D3A2C]/50 p-6">
                         <i class="fa-solid fa-image text-3xl mb-2"></i>
                         <p class="text-xs font-bold">등록된 디모데 일상 사진이 없습니다.</p>
                         <p class="text-[10px] mt-1">관리자 모드에서 신규 사진/동영상을 올려보세요.</p>
@@ -1693,7 +1693,7 @@
                     ${mediaHtml}
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-5 sm:p-8 pointer-events-none">
                         <div class="text-white max-w-xl pointer-events-auto">
-                            <span class="bg-[#8AA18C] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full mb-2 inline-block shadow-sm">${item.badge || '디모데 일상'}</span>
+                            <span class="bg-[#8F9F8B] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full mb-2 inline-block shadow-sm">${item.badge || '디모데 일상'}</span>
                             <p class="text-sm sm:text-xl font-bold">${item.title}</p>
                             <p class="text-xs text-white/80 mt-1">${item.desc}</p>
                         </div>
@@ -1705,7 +1705,7 @@
 
             if (dotsContainer) {
                 dotsContainer.innerHTML = momentItems.map((_, idx) => `
-                    <button onclick="goToMomentSlide(${idx})" class="h-2.5 rounded-full transition-all ${idx === currentMomentIndex ? 'bg-[#1E3E2B] w-6' : 'bg-[#8AA18C]/40 w-2.5 hover:bg-[#8AA18C]'}" title="${idx + 1}번 슬라이드"></button>
+                    <button onclick="goToMomentSlide(${idx})" class="h-2.5 rounded-full transition-all ${idx === currentMomentIndex ? 'bg-[#5A6D56] w-6' : 'bg-[#8F9F8B]/40 w-2.5 hover:bg-[#8F9F8B]'}" title="${idx + 1}번 슬라이드"></button>
                 `).join('');
             }
         }
@@ -1770,7 +1770,7 @@
 
             if (blessingItems.length === 0) {
                 container.innerHTML = `
-                    <div class="col-span-3 text-center py-8 text-[#2D312E]/50">
+                    <div class="col-span-3 text-center py-8 text-[#2D3A2C]/50">
                         <i class="fa-solid fa-heart-crack text-2xl mb-2"></i>
                         <p class="text-xs font-bold">등록된 축복 & 파송 메시지가 없습니다.</p>
                     </div>
@@ -1792,9 +1792,9 @@
             container.innerHTML = pageItems.map((item) => {
                 const globalIndex = blessingItems.findIndex(b => b.id === item.id);
                 return `
-                    <div class="bg-white border border-[#EAE6DF] rounded-2xl p-5 shadow-sm hover-card-zoom flex flex-col justify-between relative group">
+                    <div class="bg-white border border-[#DDE3DC] rounded-2xl p-5 shadow-sm hover-card-zoom flex flex-col justify-between relative group">
                         <div class="admin-only absolute -top-2.5 -right-2.5 flex gap-1 z-10">
-                            <button onclick="editBlessingCard(${globalIndex})" class="bg-[#1E3E2B] text-white w-6 h-6 rounded-full text-[10px] flex items-center justify-center shadow hover:bg-[#1E3E2B]/80 transition-all" title="카드 수정">
+                            <button onclick="editBlessingCard(${globalIndex})" class="bg-[#5A6D56] text-white w-6 h-6 rounded-full text-[10px] flex items-center justify-center shadow hover:bg-[#5A6D56]/80 transition-all" title="카드 수정">
                                 <i class="fa-solid fa-pen"></i>
                             </button>
                             <button onclick="deleteBlessingCard(${globalIndex})" class="bg-red-600 text-white w-6 h-6 rounded-full text-[10px] flex items-center justify-center shadow hover:bg-red-700 transition-all" title="카드 삭제">
@@ -1803,16 +1803,16 @@
                         </div>
                         <div>
                             <div class="flex justify-between items-start mb-3 gap-2">
-                                <span class="text-[11px] bg-[#1E3E2B]/10 text-[#1E3E2B] px-2.5 py-0.5 rounded-full font-bold truncate">${item.recipient}</span>
-                                <span class="text-[9px] text-[#2D312E]/50 font-semibold shrink-0">${item.date}</span>
+                                <span class="text-[11px] bg-[#5A6D56]/10 text-[#5A6D56] px-2.5 py-0.5 rounded-full font-bold truncate">${item.recipient}</span>
+                                <span class="text-[9px] text-[#2D3A2C]/50 font-semibold shrink-0">${item.date}</span>
                             </div>
-                            <p class="text-xs text-[#2D312E]/85 leading-relaxed mb-4 italic font-medium">
+                            <p class="text-xs text-[#2D3A2C]/85 leading-relaxed mb-4 italic font-medium">
                                 "${item.content.replace(/\n/g, '<br>')}"
                             </p>
                         </div>
-                        <div class="pt-3 border-t border-[#EAE6DF] text-[11px] flex justify-between items-center">
-                            <span class="text-[#2D312E]/50">작성자</span>
-                            <strong class="text-[#1E3E2B] font-bold">${item.author}</strong>
+                        <div class="pt-3 border-t border-[#DDE3DC] text-[11px] flex justify-between items-center">
+                            <span class="text-[#2D3A2C]/50">작성자</span>
+                            <strong class="text-[#5A6D56] font-bold">${item.author}</strong>
                         </div>
                     </div>
                 `;
@@ -1822,7 +1822,7 @@
 
             if (dotsContainer) {
                 dotsContainer.innerHTML = Array.from({ length: totalPages }).map((_, idx) => `
-                    <button onclick="goToBlessingSlide(${idx})" class="h-2.5 rounded-full transition-all ${idx === currentBlessingIndex ? 'bg-[#1E3E2B] w-6' : 'bg-[#8AA18C]/40 w-2.5 hover:bg-[#8AA18C]'}" title="${idx + 1}번 페이지"></button>
+                    <button onclick="goToBlessingSlide(${idx})" class="h-2.5 rounded-full transition-all ${idx === currentBlessingIndex ? 'bg-[#5A6D56] w-6' : 'bg-[#8F9F8B]/40 w-2.5 hover:bg-[#8F9F8B]'}" title="${idx + 1}번 페이지"></button>
                 `).join('');
             }
         }
@@ -1907,7 +1907,7 @@
             let formattedDate = item.date.replace(/\./g, '-');
             document.getElementById('postDatePicker').value = formattedDate;
 
-            document.getElementById('writeModalHeaderTitle').innerHTML = `<i class="fa-solid fa-pen text-[#8AA18C]"></i> <span>축복 & 파송 메시지 수정</span>`;
+            document.getElementById('writeModalHeaderTitle').innerHTML = `<i class="fa-solid fa-pen text-[#8F9F8B]"></i> <span>축복 & 파송 메시지 수정</span>`;
             document.getElementById('savePostSubmitBtn').textContent = '✓ 수정사항 저장하기';
 
             openWriteModal();
@@ -2055,7 +2055,7 @@
 
         function parseBracketHighlightsCustom(text, hexColor) {
             if (!text) return '';
-            const color = hexColor || '#8AA18C';
+            const color = hexColor || '#8F9F8B';
             return text.replace(/\[(.*?)\]/g, `<span style="color: ${color}; font-weight: bold;">$1</span>`);
         }
 
@@ -2083,21 +2083,21 @@
             let targetDescEl = null;
 
             if (sectionKey === 'welcome') {
-                headerTitle.innerHTML = `<i class="fa-solid fa-pen-to-square text-[#8AA18C]"></i> <span>[1. 환영합니다] 섹션 수정</span>`;
+                headerTitle.innerHTML = `<i class="fa-solid fa-pen-to-square text-[#8F9F8B]"></i> <span>[1. 환영합니다] 섹션 수정</span>`;
                 targetTitleEl = document.getElementById('heroTitle');
                 targetDescEl = document.getElementById('heroDesc');
                 document.getElementById('welcomeDetailEditGroup').classList.remove('hidden');
                 if (sizeSelect) sizeSelect.value = "xlarge";
                 renderAdminHeroVideosList();
             } else if (sectionKey === 'moments') {
-                headerTitle.innerHTML = `<i class="fa-solid fa-camera text-[#8AA18C]"></i> <span>[2. 디모데 일상] 섹션 수정</span>`;
+                headerTitle.innerHTML = `<i class="fa-solid fa-camera text-[#8F9F8B]"></i> <span>[2. 디모데 일상] 섹션 수정</span>`;
                 targetTitleEl = document.getElementById('momentsMainHeader');
                 targetDescEl = document.getElementById('momentsSubHeader');
                 document.getElementById('momentsDetailEditGroup').classList.remove('hidden');
                 if (sizeSelect) sizeSelect.value = "large";
                 renderAdminMomentsList();
             } else if (sectionKey === 'identity') {
-                headerTitle.innerHTML = `<i class="fa-solid fa-pen-to-square text-[#8AA18C]"></i> <span>[3. 공동체 비전] 섹션 수정</span>`;
+                headerTitle.innerHTML = `<i class="fa-solid fa-pen-to-square text-[#8F9F8B]"></i> <span>[3. 공동체 비전] 섹션 수정</span>`;
                 targetTitleEl = document.getElementById('visionTitle');
                 targetDescEl = document.getElementById('visionDesc');
                 document.getElementById('visionDetailEditGroup').classList.remove('hidden');
@@ -2111,7 +2111,7 @@
                 document.getElementById('vCard3TitleInput').value = extractTextWithBrackets(document.getElementById('vCard3Title'));
                 document.getElementById('vCard3DescInput').value = extractTextWithBrackets(document.getElementById('vCard3Desc'));
             } else if (sectionKey === 'leaders') {
-                headerTitle.innerHTML = `<i class="fa-solid fa-user-pen text-[#8AA18C]"></i> <span>[4. 섬기는 사람들] 해당 섹션</span>`;
+                headerTitle.innerHTML = `<i class="fa-solid fa-user-pen text-[#8F9F8B]"></i> <span>[4. 섬기는 사람들] 해당 섹션</span>`;
                 targetTitleEl = document.getElementById('leadersTitle');
                 targetDescEl = document.getElementById('leadersDesc');
                 document.getElementById('leadersDetailEditGroup').classList.remove('hidden');
@@ -2135,7 +2135,7 @@
                 document.getElementById('l4QuoteInput').value = extractTextWithBrackets(document.getElementById('leader4Quote'));
                 document.getElementById('l4SubBottomInput').value = extractTextWithBrackets(document.getElementById('leader4SubBottom'));
             } else if (sectionKey === 'meetings') {
-                headerTitle.innerHTML = `<i class="fa-solid fa-pen-to-square text-[#8AA18C]"></i> <span>[5. 모임 안내] 해당 섹션</span>`;
+                headerTitle.innerHTML = `<i class="fa-solid fa-pen-to-square text-[#8F9F8B]"></i> <span>[5. 모임 안내] 해당 섹션</span>`;
                 targetTitleEl = document.getElementById('meetingsMainTitle');
                 targetDescEl = document.getElementById('meetingsMainDesc');
                 document.getElementById('meetingsDetailEditGroup').classList.remove('hidden');
@@ -2156,7 +2156,7 @@
                 document.getElementById('m3DescInput').value = extractTextWithBrackets(document.getElementById('mCard3Desc'));
                 document.getElementById('m3BadgeInput').value = document.getElementById('mCard3Badge').textContent;
             } else if (sectionKey === 'blessing') {
-                headerTitle.innerHTML = `<i class="fa-solid fa-pen-to-square text-[#8AA18C]"></i> <span>[6. 송별과 축복 아카이브] 섹션 수정</span>`;
+                headerTitle.innerHTML = `<i class="fa-solid fa-pen-to-square text-[#8F9F8B]"></i> <span>[6. 송별과 축복 아카이브] 섹션 수정</span>`;
                 targetTitleEl = document.getElementById('blessingMainTitle');
                 targetDescEl = document.getElementById('blessingMainDesc');
                 if (sizeSelect) sizeSelect.value = "large";
@@ -2227,7 +2227,7 @@
             }
 
             container.innerHTML = momentItems.map((item, idx) => `
-                <div class="bg-white p-2.5 rounded-lg border border-[#EAE6DF] flex items-center justify-between text-xs gap-2">
+                <div class="bg-white p-2.5 rounded-lg border border-[#DDE3DC] flex items-center justify-between text-xs gap-2">
                     <div class="flex items-center gap-2 overflow-hidden">
                         ${item.type === 'video' || item.videoSrc ? `
                             <div class="w-10 h-10 bg-gray-800 rounded flex items-center justify-center text-white shrink-0">
@@ -2237,12 +2237,12 @@
                             <img src="${item.imgSrc}" class="w-10 h-10 object-cover rounded shrink-0" onerror="this.src='https://placehold.co/100x100'">
                         `}
                         <div class="truncate">
-                            <span class="font-bold text-[#1E3E2B] block truncate">${item.title}</span>
+                            <span class="font-bold text-[#5A6D56] block truncate">${item.title}</span>
                             <span class="text-[10px] text-gray-500">${item.badge || '일상'} (${item.type === 'video' ? '동영상' : '사진'})</span>
                         </div>
                     </div>
                     <div class="flex items-center gap-1 shrink-0">
-                        <button onclick="editMomentItem(${item.id})" class="bg-[#8AA18C]/20 text-[#1E3E2B] px-2 py-1 rounded text-[10px] font-bold hover:bg-[#8AA18C]/40">
+                        <button onclick="editMomentItem(${item.id})" class="bg-[#8F9F8B]/20 text-[#5A6D56] px-2 py-1 rounded text-[10px] font-bold hover:bg-[#8F9F8B]/40">
                             수정
                         </button>
                         <button onclick="deleteMomentItem(${idx})" class="bg-red-100 text-red-700 px-2 py-1 rounded text-[10px] font-bold hover:bg-red-200">
@@ -2263,7 +2263,7 @@
             document.getElementById('newMomentDescInput').value = item.desc || '';
             document.getElementById('newMomentEffectSelect').value = item.effect || 'fx-kenburns';
 
-            document.getElementById('momentEditFormHeader').innerHTML = `<i class="fa-solid fa-pen mr-1 text-[#8AA18C]"></i>선택한 일상 게시글 내용 수정하기`;
+            document.getElementById('momentEditFormHeader').innerHTML = `<i class="fa-solid fa-pen mr-1 text-[#8F9F8B]"></i>선택한 일상 게시글 내용 수정하기`;
             document.getElementById('saveMomentBtn').textContent = '✓ 수정사항 저장하기';
             document.getElementById('cancelMomentEditBtn').classList.remove('hidden');
         }
@@ -2276,7 +2276,7 @@
             document.getElementById('newMomentDescInput').value = '';
             document.getElementById('newMomentEffectSelect').value = 'fx-kenburns';
 
-            document.getElementById('momentEditFormHeader').innerHTML = `<i class="fa-solid fa-plus-circle mr-1 text-[#8AA18C]"></i>새 사진/동영상 게시글 추가하기`;
+            document.getElementById('momentEditFormHeader').innerHTML = `<i class="fa-solid fa-plus-circle mr-1 text-[#8F9F8B]"></i>새 사진/동영상 게시글 추가하기`;
             document.getElementById('saveMomentBtn').textContent = '+ 사진/동영상 게시글 등록';
             document.getElementById('cancelMomentEditBtn').classList.add('hidden');
         }
@@ -2461,7 +2461,7 @@
                     if (videoEffectSelect === 'none') {
                         heroOverlay.className = `absolute inset-0 z-10 pointer-events-none transition-all duration-500 ${blurClass}`;
                     } else {
-                        heroOverlay.className = `absolute inset-0 bg-gradient-to-b from-[#FAF8F5]/90 via-[#FAF8F5]/75 to-[#FAF8F5]/50 z-10 transition-all duration-500 ${blurClass}`;
+                        heroOverlay.className = `absolute inset-0 bg-gradient-to-b from-[#F5F7F5]/90 via-[#F5F7F5]/75 to-[#F5F7F5]/50 z-10 transition-all duration-500 ${blurClass}`;
                     }
                 }
             } 
@@ -2483,19 +2483,19 @@
 
                 const v1T = document.getElementById('vCard1TitleInput').value.trim();
                 const v1D = document.getElementById('vCard1DescInput').value.trim();
-                if (v1T) document.getElementById('vCard1Title').innerHTML = `<span>${parseBracketHighlightsCustom(v1T, highlightColor)}</span> <i class="fa-solid fa-door-open text-[#8AA18C]"></i>`;
+                if (v1T) document.getElementById('vCard1Title').innerHTML = `<span>${parseBracketHighlightsCustom(v1T, highlightColor)}</span> <i class="fa-solid fa-door-open text-[#8F9F8B]"></i>`;
                 if (v1D) document.getElementById('vCard1Desc').innerHTML = parseBracketHighlightsCustom(v1D, highlightColor).replace(/\n/g, '<br>');
 
                 const v2B = document.getElementById('vCard2BadgeInput').value.trim();
                 const v2T = document.getElementById('vCard2TitleInput').value.trim();
                 const v2D = document.getElementById('vCard2DescInput').value.trim();
                 if (v2B) document.getElementById('vCard2Badge').textContent = v2B;
-                if (v2T) document.getElementById('vCard2Title').innerHTML = `<span>${parseBracketHighlightsCustom(v2T, highlightColor)}</span> <i class="fa-solid fa-seedling text-[#1E3E2B]"></i>`;
+                if (v2T) document.getElementById('vCard2Title').innerHTML = `<span>${parseBracketHighlightsCustom(v2T, highlightColor)}</span> <i class="fa-solid fa-seedling text-[#5A6D56]"></i>`;
                 if (v2D) document.getElementById('vCard2Desc').innerHTML = parseBracketHighlightsCustom(v2D, highlightColor).replace(/\n/g, '<br>');
 
                 const v3T = document.getElementById('vCard3TitleInput').value.trim();
                 const v3D = document.getElementById('vCard3DescInput').value.trim();
-                if (v3T) document.getElementById('vCard3Title').innerHTML = `<span>${parseBracketHighlightsCustom(v3T, highlightColor)}</span> <i class="fa-solid fa-paper-plane text-[#8AA18C]"></i>`;
+                if (v3T) document.getElementById('vCard3Title').innerHTML = `<span>${parseBracketHighlightsCustom(v3T, highlightColor)}</span> <i class="fa-solid fa-paper-plane text-[#8F9F8B]"></i>`;
                 if (v3D) document.getElementById('vCard3Desc').innerHTML = parseBracketHighlightsCustom(v3D, highlightColor).replace(/\n/g, '<br>');
             } 
             else if (currentEditingTarget === 'leaders') {
@@ -2558,7 +2558,7 @@
                 document.getElementById('leader4Role').textContent = document.getElementById('l4RoleInput').value.trim();
                 document.getElementById('leader4Eng').textContent = document.getElementById('l4EngInput').value.trim();
                 document.getElementById('leader4Quote').innerHTML = document.getElementById('l4QuoteInput').value.trim().replace(/\n/g, '<br>');
-                document.getElementById('leader4SubBottom').innerHTML = `<i class="fa-solid fa-check mr-1 text-[#8AA18C]"></i> ${document.getElementById('l4SubBottomInput').value.trim()}`;
+                document.getElementById('leader4SubBottom').innerHTML = `<i class="fa-solid fa-check mr-1 text-[#8F9F8B]"></i> ${document.getElementById('l4SubBottomInput').value.trim()}`;
                 const l4File = document.getElementById('l4PhotoInput').files[0];
                 if (l4File) {
                     const reader = new FileReader();
@@ -2643,7 +2643,7 @@
                 document.getElementById('postRecipient').value = '';
                 document.getElementById('postContent').value = '';
                 document.getElementById('postAuthor').value = '';
-                document.getElementById('writeModalHeaderTitle').innerHTML = `<i class="fa-solid fa-pen-to-square text-[#8AA18C]"></i> <span>축복 & 파송 메시지 등록</span>`;
+                document.getElementById('writeModalHeaderTitle').innerHTML = `<i class="fa-solid fa-pen-to-square text-[#8F9F8B]"></i> <span>축복 & 파송 메시지 등록</span>`;
                 document.getElementById('savePostSubmitBtn').textContent = '등록하기';
             }
         }
