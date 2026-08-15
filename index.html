@@ -19,9 +19,11 @@
   .en-hero{display:block;font-size:15px;line-height:1.45;font-weight:400;color:rgba(251,249,243,0.58);margin-top:3px;}
   .en-cta{display:block;font-size:11px;font-weight:500;opacity:.78;margin-top:1px;letter-spacing:0.02em;}
   .bi{display:inline-block;width:fit-content;max-width:100%;vertical-align:top;text-align:left;}
+  .bi.wm{container-type:inline-size;}
   .bi .en,.bi .en-hero,.bi .en-cta{width:0;min-width:100%;box-sizing:border-box;margin-top:2px;}
   .bi .en-hero{margin-top:3px;}
   .bi .en-cta{margin-top:1px;}
+  .wm-en{white-space:nowrap;letter-spacing:0.02em;font-size:5.2cqw;text-align:justify;text-align-last:justify;text-transform:uppercase;}
 </style>
 </helmet>
 
@@ -34,9 +36,9 @@
       <div style="max-width:1440px;margin:0 auto;padding:0 40px;height:92px;display:flex;align-items:center;justify-content:space-between;gap:32px;">
 
         <!-- Wordmark -->
-        <a href="./" class="bi" style="text-decoration:none;line-height:1;flex:none;">
+        <a href="./" class="bi wm" style="text-decoration:none;line-height:1;flex:none;">
           <span style="display:block;font-weight:800;font-size:22px;letter-spacing:-0.02em;color:var(--wm,#FBF9F3);transition:color .3s ease;">뉴저지제일한인교회</span>
-          <span class="en" style="letter-spacing:0.08em;text-transform:uppercase;color:var(--wmSub,rgba(251,249,243,0.72));opacity:1;">The First Korean Church of NJ</span>
+          <span class="en wm-en" style="color:var(--wmSub,rgba(251,249,243,0.72));opacity:1;">The First Korean Church of NJ</span>
         </a>
 
         <!-- Desktop nav -->
@@ -280,9 +282,9 @@
     <div style="max-width:1440px;margin:0 auto;padding:72px 40px 40px;">
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(251,249,243,0.1);">
         <div>
-          <div class="bi" style="display:block;margin-bottom:20px;">
+          <div class="bi wm" style="display:block;margin-bottom:20px;">
             <div style="font-weight:800;font-size:18px;color:#FBF9F3;">뉴저지제일한인교회</div>
-            <div class="en" style="font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#5F6B7A;opacity:1;">The First Korean Church of NJ</div>
+            <div class="en wm-en" style="color:#5F6B7A;opacity:1;">The First Korean Church of NJ</div>
           </div>
           <p style="font-size:13.5px;line-height:1.7;margin:0;">2681 John F Kennedy Blvd<br>Jersey City, NJ 07306<br>201-333-2121</p>
         </div>
