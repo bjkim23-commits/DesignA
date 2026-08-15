@@ -7,127 +7,355 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <style>
     :root {
-      --blue: #0B1626;
-      --sky: #F7EBD2;
-      --yellow: #E3BE6E;
-      --ink: #0B1626;
-      --gray: #55616F;
-      --bg: #F3EFE6;
+      --navy: #0B1626;
+      --gold: #E3BE6E;
+      --gold-deep: #8A5F14;
+      --warm: #F3EFE6;
+      --cream: #FBF9F3;
+      --section: #EEE7D8;
+      --chip: #F7EBD2;
+      --muted: #55616F;
+      --label: #5F6B7A;
+      --caption: #8492A2;
     }
     * { box-sizing: border-box; }
+    html, body { margin: 0; }
     body {
-      margin: 0;
+      background: var(--warm);
+      color: var(--navy);
       font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      line-height: 1.6;
     }
+    a { color: inherit; }
+
+    .wrap { max-width: 1440px; margin: 0 auto; padding: 0 40px; }
+
     header {
       position: sticky;
       top: 0;
       z-index: 40;
-      background: rgba(243, 239, 230, 0.95);
+      background: rgba(243, 239, 230, 0.96);
       border-bottom: 1px solid rgba(11, 22, 38, 0.08);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
     .header-bar {
-      width: min(1200px, 92vw);
+      max-width: 1440px;
       margin: 0 auto;
-      height: 70px;
+      padding: 0 40px;
+      height: 92px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 24px;
     }
     .logo {
       display: flex;
       flex-direction: column;
       text-decoration: none;
-      color: inherit;
-      line-height: 1.15;
+      line-height: 1;
     }
-    .logo strong { font-size: 16px; letter-spacing: -0.02em; }
-    .logo span { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray); margin-top: 3px; }
+    .logo strong {
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+    }
+    .logo span {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--label);
+      margin-top: 5px;
+    }
     .home-pill {
-      display: inline-flex;
-      align-items: center;
-      height: 32px;
-      padding: 0 14px;
-      border-radius: 999px;
       background: #E3BE6E;
       color: #0B1626;
-      font-size: 12px;
-      font-weight: 700;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 12px 26px;
+      border-radius: 999px;
       text-decoration: none;
     }
-    .shell { width: min(1200px, 92vw); margin: auto; }
+
     .hero {
-      margin: 26px auto 0;
-      border-radius: 34px;
+      position: relative;
       overflow: hidden;
-      background: #111;
-      min-height: 500px;
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      box-shadow: 0 24px 80px rgba(11, 22, 38, .18);
-    }
-    .heroText {
-      background: linear-gradient(135deg, #0B1626, #13253C);
-      color: #FBF9F3;
-      padding: 56px;
+      background: #0E1A2C;
+      min-height: 560px;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      align-items: flex-end;
     }
-    .heroText h1 { font-size: clamp(36px, 5vw, 62px); line-height: 1.08; margin: 10px 0 18px; font-weight: 600; }
-    .heroText p { font-size: 19px; color: rgba(251, 249, 243, 0.82); }
-    .heroImg { background: url("assets/hero_christmas.jpg") center/cover; }
-    .chip {
-      background: rgba(227, 190, 110, 0.22);
-      color: #E3BE6E;
-      padding: 8px 14px;
-      border-radius: 999px;
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      background: url("assets/hero_christmas.jpg") center/cover;
+    }
+    .hero-shade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(175deg, rgba(9, 18, 32, 0.28), rgba(9, 18, 32, 0.55));
+    }
+    .hero-fade {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 48%;
+      background: linear-gradient(to top, rgba(9, 18, 32, 0.78), rgba(9, 18, 32, 0));
+    }
+    .hero-copy {
+      position: relative;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 132px 40px 88px;
+      width: 100%;
+    }
+    .eyebrow {
       display: inline-block;
-      width: max-content;
-      font-weight: 700;
       font-size: 13px;
-      letter-spacing: 0.08em;
+      font-weight: 400;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 26px;
     }
-    .quick { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: -48px; position: relative; z-index: 2; }
-    .quick .q { background: #FBF9F3; border-radius: 24px; padding: 24px; box-shadow: 0 14px 40px rgba(11, 22, 38, .12); }
-    .q span { font-size: 30px; }
-    .q b { display: block; color: var(--blue); font-size: 18px; margin-top: 8px; }
-    .section { padding: 68px 0; }
-    .head { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 24px; }
-    .head h2 { font-size: 40px; line-height: 1.15; margin: 0; font-weight: 600; }
-    .head p { max-width: 520px; color: var(--gray); }
-    .mission { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .panel { background: #FBF9F3; border-radius: 28px; padding: 32px; box-shadow: 0 10px 30px rgba(11, 22, 38, .06); }
-    .panel h3 { font-size: 25px; margin-top: 0; color: #8A5F14; font-weight: 600; }
-    .values { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .value { background: var(--sky); padding: 22px; border-radius: 24px; }
-    .value b { font-size: 19px; }
-    .calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; }
-    .cal { background: #FBF9F3; border-radius: 22px; padding: 20px; border: 1px solid rgba(11, 22, 38, 0.08); }
-    .cal b { display: inline-grid; place-items: center; background: var(--yellow); width: 48px; height: 48px; border-radius: 16px; margin-bottom: 12px; color: #0B1626; }
-    .worship { display: grid; grid-template-columns: 1.05fr .95fr; gap: 18px; }
+    .hero-copy h1 {
+      font-weight: 600;
+      font-size: clamp(36px, 5.4vw, 72px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #FBF9F3;
+      margin: 0 0 24px;
+      max-width: 16ch;
+    }
+    .hero-copy p {
+      font-size: clamp(16px, 1.5vw, 19px);
+      line-height: 1.65;
+      font-weight: 500;
+      color: #FFFFFF;
+      max-width: 560px;
+      margin: 0;
+    }
+
+    .band {
+      background: var(--section);
+      border-bottom: 1px solid rgba(11, 22, 38, 0.08);
+    }
+    .quick {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      padding: 28px 0;
+    }
+    .q {
+      background: var(--cream);
+      border: 1px solid rgba(11, 22, 38, 0.08);
+      border-radius: 20px;
+      padding: 28px 26px;
+    }
+    .q .mark {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--chip);
+      color: var(--gold-deep);
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+    .q b {
+      display: block;
+      font-weight: 300;
+      font-size: 23px;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .q span {
+      display: block;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .section { padding: 96px 0; }
+    .section.alt { background: var(--section); }
+    .head { margin-bottom: 44px; }
+    .head .label {
+      display: block;
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--label);
+    }
+    .head h2 {
+      font-weight: 300;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.15;
+      color: var(--navy);
+      margin: 10px 0 12px;
+    }
+    .head p {
+      margin: 0;
+      max-width: 58ch;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .mission, .worship { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .panel {
+      background: var(--cream);
+      border: 1px solid rgba(11, 22, 38, 0.12);
+      border-radius: 20px;
+      padding: 38px;
+    }
+    .panel h3 {
+      font-weight: 300;
+      font-size: 23px;
+      color: var(--navy);
+      margin: 0 0 16px;
+    }
+    .panel p { margin: 0; font-size: 14.5px; line-height: 1.7; color: var(--muted); }
+    .motto {
+      font-weight: 300;
+      font-size: clamp(26px, 3vw, 34px);
+      line-height: 1.35;
+      color: var(--navy);
+      margin: 0;
+    }
+    .verse-ref {
+      display: block;
+      margin-top: 16px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+      font-weight: 600;
+    }
+
+    .values, .practices { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .value, .practice {
+      background: var(--cream);
+      border: 1px solid rgba(11, 22, 38, 0.12);
+      border-radius: 20px;
+      padding: 34px;
+    }
+    .value b, .practice strong {
+      display: block;
+      font-weight: 300;
+      font-size: 23px;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .value p, .practice p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .schedule p {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin: 0;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(11, 22, 38, 0.08);
+      font-size: 14.5px;
+      color: #3D4A5A;
+    }
+    .schedule p:last-child { border-bottom: 0; }
+    .schedule .time {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+      min-width: 4.2em;
+    }
+
     .steps { counter-reset: item; }
-    .step { display: grid; grid-template-columns: 38px 1fr; gap: 12px; align-items: center; background: #FBF9F3; border-radius: 16px; padding: 12px 14px; margin: 8px 0; }
-    .step:before { counter-increment: item; content: counter(item); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 10px; background: var(--blue); color: #FBF9F3; font-weight: 800; }
-    .time { font-size: 34px; font-weight: 800; color: var(--blue); }
-    .practices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .practice { border-radius: 26px; padding: 28px; background: linear-gradient(135deg, #FBF9F3, #F7EBD2); border: 1px solid rgba(11, 22, 38, 0.08); }
-    .practice strong { font-size: 24px; color: var(--blue); }
-    .footer { padding: 40px 0; text-align: center; color: var(--gray); }
-    .footer a { color: #8A5F14; font-weight: 600; text-decoration: none; }
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(11, 22, 38, 0.08);
+      font-size: 15px;
+      color: #2B3849;
+    }
+    .step:last-child { border-bottom: 0; }
+    .step:before {
+      counter-increment: item;
+      content: counter(item);
+      flex: none;
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--chip);
+      color: var(--gold-deep);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; }
+    .cal {
+      background: var(--cream);
+      border: 1px solid rgba(11, 22, 38, 0.12);
+      border-radius: 20px;
+      padding: 22px 18px 24px;
+      font-size: 14px;
+      line-height: 1.45;
+      color: #2B3849;
+    }
+    .cal b {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #091220;
+      color: rgba(251, 249, 243, 0.6);
+    }
+    .footer-inner { max-width: 1440px; margin: 0 auto; padding: 72px 40px 40px; }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding-bottom: 44px;
+      border-bottom: 1px solid rgba(251, 249, 243, 0.1);
+    }
+    .footer-name { font-weight: 800; font-size: 18px; color: #FBF9F3; margin-bottom: 4px; }
+    .footer-en {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #5F6B7A;
+      margin-bottom: 18px;
+    }
+    .footer-top p { margin: 0; font-size: 13.5px; line-height: 1.7; }
+    .footer-top a {
+      font-size: 13.5px;
+      color: rgba(251, 249, 243, 0.55);
+      text-decoration: none;
+    }
+    .copy { padding-top: 26px; font-size: 12px; color: rgba(251, 249, 243, 0.32); }
+
     @media (max-width: 900px) {
-      .hero, .quick, .mission, .values, .calendar, .worship, .practices { grid-template-columns: 1fr; }
-      .heroImg { min-height: 260px; order: -1; }
-      .heroText { padding: 34px; }
-      .quick { margin-top: 20px; }
-      .head { display: block; }
+      .header-bar, .wrap, .hero-copy, .footer-inner { padding-left: 24px; padding-right: 24px; }
+      .header-bar { height: 76px; }
+      .logo strong { font-size: 18px; }
+      .hero-copy { padding-top: 110px; padding-bottom: 64px; }
+      .quick, .mission, .worship, .calendar { grid-template-columns: 1fr; }
       .calendar { grid-template-columns: repeat(2, 1fr); }
+      .section { padding: 72px 0; }
     }
   </style>
 </head>
@@ -135,52 +363,62 @@
   <header>
     <div class="header-bar">
       <a class="logo" href="./">
-        <strong>유초등부</strong>
-        <span>뉴저지제일한인교회</span>
+        <strong>뉴저지제일한인교회</strong>
+        <span>Elementary · 유초등부</span>
       </a>
-      <a class="home-pill" href="../" title="교회 홈으로">교회 홈</a>
+      <a class="home-pill" href="../">교회 홈</a>
     </div>
   </header>
 
-  <main class="shell">
-    <section class="hero">
-      <div class="heroText">
-        <span class="chip">유초등부</span>
-        <h1>배우고 확신한 일에 거하는 어린이</h1>
-        <p>말씀, 예배, 공동체, 삶의 실천을 한 화면에서 명확하게 보여주는 카드형 원페이지입니다. 교회 전체 홈페이지의 하위 페이지로 통합하기 쉽습니다.</p>
-      </div>
-      <div class="heroImg"></div>
-    </section>
-
-    <div class="quick">
-      <div class="q"><span>🕘</span><b>주일 10:40</b>초등부 예배</div>
-      <div class="q"><span>📖</span><b>딤후 3:14–15</b>주제성구</div>
-      <div class="q"><span>🌍</span><b>Grand Story</b>교육과정</div>
-      <div class="q"><span>🤝</span><b>환영합니다</b>처음 온 어린이 안내</div>
+  <section class="hero">
+    <div class="hero-photo"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-fade"></div>
+    <div class="hero-copy">
+      <span class="eyebrow">Next Generation · Elementary</span>
+      <h1>배우고 확신한 일에 거하는 어린이</h1>
+      <p>유치부와 초등학생이 말씀, 예배, 공동체, 삶의 실천 안에서 자라가는 교육 공동체입니다.</p>
     </div>
+  </section>
 
-    <section class="section">
+  <section class="band">
+    <div class="wrap">
+      <div class="quick">
+        <div class="q"><span class="mark">🕘</span><b>주일 10:40</b><span>초등부 예배</span></div>
+        <div class="q"><span class="mark">📖</span><b>딤후 3:14–15</b><span>주제성구</span></div>
+        <div class="q"><span class="mark">🌍</span><b>Grand Story</b><span>교육과정</span></div>
+        <div class="q"><span class="mark">🤝</span><b>환영합니다</b><span>처음 온 어린이 안내</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
       <div class="head">
+        <span class="label">Vision</span>
         <h2>교육표어와 목적</h2>
         <p>어린이들이 성경적 세계관과 하나님의 구원역사를 배우고, 하나님의 사랑받는 자녀라는 건강한 자아상을 갖도록 돕습니다.</p>
       </div>
       <div class="mission">
         <div class="panel">
           <h3>교육표어</h3>
-          <p class="time">말씀 가운데 자라가는 지혜로운 초등부</p>
+          <p class="motto">말씀 가운데 자라가는 지혜로운 초등부</p>
         </div>
         <div class="panel">
           <h3>주제성구</h3>
           <p>“그러나 너는 배우고 확신한 일에 거하라… 성경은 능히 너로 하여금 그리스도 예수 안에 있는 믿음으로 말미암아 구원에 이르는 지혜가 있게 하느니라”</p>
-          <b>디모데후서 3:14–15</b>
+          <span class="verse-ref">디모데후서 3:14–15</span>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
+  <section class="section alt">
+    <div class="wrap">
       <div class="head">
+        <span class="label">Core Values</span>
         <h2>비전 및 핵심가치</h2>
-        <p>초등부의 교육 방향을 부모와 방문자가 한눈에 이해할 수 있도록 4개의 카드로 정리했습니다.</p>
+        <p>초등부의 교육 방향을 부모와 방문자가 한눈에 이해할 수 있도록 정리했습니다.</p>
       </div>
       <div class="values">
         <div class="value"><b>구원의 역사 이해</b><p>하나님의 약속과 구속사를 배웁니다.</p></div>
@@ -188,20 +426,23 @@
         <div class="value"><b>자아정체성</b><p>하나님의 자녀로 자신을 바라봅니다.</p></div>
         <div class="value"><b>전도/영향력</b><p>말씀을 삶 속에서 실천합니다.</p></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
+  <section class="section">
+    <div class="wrap">
       <div class="head">
+        <span class="label">Worship</span>
         <h2>예배와 분반공부</h2>
-        <p>시간표와 예배 순서를 병렬 배치하여, 새가족 부모님도 쉽게 이해하도록 설계했습니다.</p>
+        <p>시간표와 예배 순서를 나란히 두어, 새가족 부모님도 쉽게 이해하도록 안내합니다.</p>
       </div>
       <div class="worship">
-        <div class="panel">
+        <div class="panel schedule">
           <h3>주일 일정</h3>
-          <p><span class="time">10:20</span> 예배 준비</p>
-          <p><span class="time">10:40</span> 예배</p>
-          <p><span class="time">11:20</span> 점심</p>
-          <p><span class="time">11:45</span> 분반공부</p>
+          <p><span class="time">10:20</span>예배 준비</p>
+          <p><span class="time">10:40</span>예배</p>
+          <p><span class="time">11:20</span>점심</p>
+          <p><span class="time">11:45</span>분반공부</p>
         </div>
         <div class="panel steps">
           <h3>예배 순서</h3>
@@ -213,36 +454,56 @@
           <div class="step">주기도문, 광고, 환영</div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
+  <section class="section alt">
+    <div class="wrap">
       <div class="head">
+        <span class="label">This Year</span>
         <h2>2025 월별 활동</h2>
-        <p>사진/후기 페이지와 연결하면 생동감 있는 활동 아카이브로 확장할 수 있습니다.</p>
+        <p>한 해의 주요 모임을 달력처럼 살펴보실 수 있습니다.</p>
       </div>
       <div class="calendar">
-        <div class="cal"><b>2</b><br>Snow Tubing</div>
-        <div class="cal"><b>4</b><br>부활절 발표회</div>
-        <div class="cal"><b>5</b><br>어린이주일 야외예배</div>
-        <div class="cal"><b>7</b><br>Beach: Sandy Hook</div>
-        <div class="cal"><b>10</b><br>가을 캠프</div>
-        <div class="cal"><b>11</b><br>추수감사 찬양제</div>
-        <div class="cal"><b>12</b><br>성탄 발표회</div>
+        <div class="cal"><b>Feb</b>Snow Tubing</div>
+        <div class="cal"><b>Apr</b>부활절 발표회</div>
+        <div class="cal"><b>May</b>어린이주일 야외예배</div>
+        <div class="cal"><b>Jul</b>Beach: Sandy Hook</div>
+        <div class="cal"><b>Oct</b>가을 캠프</div>
+        <div class="cal"><b>Nov</b>추수감사 찬양제</div>
+        <div class="cal"><b>Dec</b>성탄 발표회</div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
-      <div class="head"><h2>매주 실천하는 믿음</h2></div>
+  <section class="section">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Practice</span>
+        <h2>매주 실천하는 믿음</h2>
+      </div>
       <div class="practices">
         <div class="practice"><strong>예배</strong><p>주일예배 잘 드리기</p></div>
         <div class="practice"><strong>감사</strong><p>하루 1 감사 제목 나누기</p></div>
         <div class="practice"><strong>묵상</strong><p>매일 말씀 묵상하기</p></div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="footer">
-    뉴저지제일한인교회 유초등부 · <a href="../">교회 홈</a>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-name">뉴저지제일한인교회</div>
+          <div class="footer-en">The First Korean Church of NJ</div>
+          <p>유초등부 · Elementary<br>2681 John F Kennedy Blvd<br>Jersey City, NJ 07306</p>
+        </div>
+        <div>
+          <a href="../">교회 홈</a>
+        </div>
+      </div>
+      <div class="copy">&copy; 2026 뉴저지제일한인교회. All rights reserved.</div>
+    </div>
   </footer>
 </body>
 </html>
