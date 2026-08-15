@@ -44,7 +44,7 @@ header {
 }
 .logo { display: flex; flex-direction: column; text-decoration: none; line-height: 1; }
 .logo strong { font-weight: 800; font-size: 22px; letter-spacing: -0.02em; }
-.logo span { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--label); margin-top: 5px; }
+.logo span { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--label); margin-top: 2px; }
 .home-pill {
   background: #E3BE6E;
   color: #0B1626;
@@ -80,24 +80,45 @@ header {
   color: #FBF9F3;
   margin: 0 0 14px;
 }
+.hero-copy .bi h1 {
+  margin-bottom: 0;
+}
 .hero-copy p { margin: 0; max-width: 560px; font-size: 16px; line-height: 1.7; color: rgba(251,249,243,0.78); }
 .hero-en {
   font-size: 15px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #E3BE6E;
-  margin: -6px 0 16px !important;
+  margin: 3px 0 0 !important;
 }
 .en {
   display: block;
   font-size: 13.5px;
-  line-height: 1.65;
+  line-height: 1.4;
   color: #8492A2;
   font-weight: 400;
+  margin-top: 3px;
 }
 .hero-copy .en {
   color: rgba(251,249,243,0.58);
-  margin-top: 6px;
+  margin-top: 3px;
+}
+.bi {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  vertical-align: top;
+  text-align: left;
+}
+.bi + .bi {
+  margin-top: 22px;
+}
+.bi .en,
+.bi .hero-en,
+.bi .footer-en {
+  width: 0;
+  min-width: 100%;
+  box-sizing: border-box;
 }
 
 .section { padding: 88px 0; }
@@ -243,7 +264,7 @@ table.svc td:nth-child(2), table.svc td:nth-child(3) { color: var(--muted); font
 .give-card h2 {
   font-weight: 300;
   font-size: 26px;
-  margin: 0 0 10px;
+  margin: 0;
 }
 .give-card p {
   margin: 0;
@@ -265,7 +286,7 @@ table.svc td:nth-child(2), table.svc td:nth-child(3) { color: var(--muted); font
 }
 .give-card .tithely small {
   display: block;
-  margin-top: 4px;
+  margin-top: 2px;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -287,7 +308,7 @@ table.svc td:nth-child(2), table.svc td:nth-child(3) { color: var(--muted); font
 footer { background: #091220; color: rgba(251,249,243,0.6); }
 .footer-inner { max-width: 1440px; margin: 0 auto; padding: 56px 40px 36px; }
 .footer-name { font-weight: 800; font-size: 18px; color: #FBF9F3; }
-.footer-en { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #5F6B7A; margin: 4px 0 16px; }
+.footer-en { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #5F6B7A; margin: 2px 0 16px; }
 .footer-inner a { color: rgba(251,249,243,0.55); text-decoration: none; font-size: 13.5px; }
 .copy { margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(251,249,243,0.1); font-size: 12px; color: rgba(251,249,243,0.32); }
 
