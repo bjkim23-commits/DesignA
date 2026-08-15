@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>뉴저지제일한인교회 - 유초등부</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    :root {
+      --blue: #0B1626;
+      --sky: #F7EBD2;
+      --yellow: #E3BE6E;
+      --ink: #0B1626;
+      --gray: #55616F;
+      --bg: #F3EFE6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(243, 239, 230, 0.95);
+      border-bottom: 1px solid rgba(11, 22, 38, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .header-bar {
+      width: min(1200px, 92vw);
+      margin: 0 auto;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      line-height: 1.15;
+    }
+    .logo strong { font-size: 16px; letter-spacing: -0.02em; }
+    .logo span { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray); margin-top: 3px; }
+    .home-pill {
+      display: inline-flex;
+      align-items: center;
+      height: 32px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: #E3BE6E;
+      color: #0B1626;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .shell { width: min(1200px, 92vw); margin: auto; }
+    .hero {
+      margin: 26px auto 0;
+      border-radius: 34px;
+      overflow: hidden;
+      background: #111;
+      min-height: 500px;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      box-shadow: 0 24px 80px rgba(11, 22, 38, .18);
+    }
+    .heroText {
+      background: linear-gradient(135deg, #0B1626, #13253C);
+      color: #FBF9F3;
+      padding: 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .heroText h1 { font-size: clamp(36px, 5vw, 62px); line-height: 1.08; margin: 10px 0 18px; font-weight: 600; }
+    .heroText p { font-size: 19px; color: rgba(251, 249, 243, 0.82); }
+    .heroImg { background: url("assets/hero_christmas.jpg") center/cover; }
+    .chip {
+      background: rgba(227, 190, 110, 0.22);
+      color: #E3BE6E;
+      padding: 8px 14px;
+      border-radius: 999px;
+      display: inline-block;
+      width: max-content;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+    }
+    .quick { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: -48px; position: relative; z-index: 2; }
+    .quick .q { background: #FBF9F3; border-radius: 24px; padding: 24px; box-shadow: 0 14px 40px rgba(11, 22, 38, .12); }
+    .q span { font-size: 30px; }
+    .q b { display: block; color: var(--blue); font-size: 18px; margin-top: 8px; }
+    .section { padding: 68px 0; }
+    .head { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 24px; }
+    .head h2 { font-size: 40px; line-height: 1.15; margin: 0; font-weight: 600; }
+    .head p { max-width: 520px; color: var(--gray); }
+    .mission { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .panel { background: #FBF9F3; border-radius: 28px; padding: 32px; box-shadow: 0 10px 30px rgba(11, 22, 38, .06); }
+    .panel h3 { font-size: 25px; margin-top: 0; color: #8A5F14; font-weight: 600; }
+    .values { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .value { background: var(--sky); padding: 22px; border-radius: 24px; }
+    .value b { font-size: 19px; }
+    .calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; }
+    .cal { background: #FBF9F3; border-radius: 22px; padding: 20px; border: 1px solid rgba(11, 22, 38, 0.08); }
+    .cal b { display: inline-grid; place-items: center; background: var(--yellow); width: 48px; height: 48px; border-radius: 16px; margin-bottom: 12px; color: #0B1626; }
+    .worship { display: grid; grid-template-columns: 1.05fr .95fr; gap: 18px; }
+    .steps { counter-reset: item; }
+    .step { display: grid; grid-template-columns: 38px 1fr; gap: 12px; align-items: center; background: #FBF9F3; border-radius: 16px; padding: 12px 14px; margin: 8px 0; }
+    .step:before { counter-increment: item; content: counter(item); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 10px; background: var(--blue); color: #FBF9F3; font-weight: 800; }
+    .time { font-size: 34px; font-weight: 800; color: var(--blue); }
+    .practices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .practice { border-radius: 26px; padding: 28px; background: linear-gradient(135deg, #FBF9F3, #F7EBD2); border: 1px solid rgba(11, 22, 38, 0.08); }
+    .practice strong { font-size: 24px; color: var(--blue); }
+    .footer { padding: 40px 0; text-align: center; color: var(--gray); }
+    .footer a { color: #8A5F14; font-weight: 600; text-decoration: none; }
+    @media (max-width: 900px) {
+      .hero, .quick, .mission, .values, .calendar, .worship, .practices { grid-template-columns: 1fr; }
+      .heroImg { min-height: 260px; order: -1; }
+      .heroText { padding: 34px; }
+      .quick { margin-top: 20px; }
+      .head { display: block; }
+      .calendar { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-bar">
+      <a class="logo" href="./">
+        <strong>유초등부</strong>
+        <span>뉴저지제일한인교회</span>
+      </a>
+      <a class="home-pill" href="../" title="교회 홈으로">교회 홈</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="heroText">
+        <span class="chip">유초등부</span>
+        <h1>배우고 확신한 일에 거하는 어린이</h1>
+        <p>말씀, 예배, 공동체, 삶의 실천을 한 화면에서 명확하게 보여주는 카드형 원페이지입니다. 교회 전체 홈페이지의 하위 페이지로 통합하기 쉽습니다.</p>
+      </div>
+      <div class="heroImg"></div>
+    </section>
+
+    <div class="quick">
+      <div class="q"><span>🕘</span><b>주일 10:40</b>초등부 예배</div>
+      <div class="q"><span>📖</span><b>딤후 3:14–15</b>주제성구</div>
+      <div class="q"><span>🌍</span><b>Grand Story</b>교육과정</div>
+      <div class="q"><span>🤝</span><b>환영합니다</b>처음 온 어린이 안내</div>
+    </div>
+
+    <section class="section">
+      <div class="head">
+        <h2>교육표어와 목적</h2>
+        <p>어린이들이 성경적 세계관과 하나님의 구원역사를 배우고, 하나님의 사랑받는 자녀라는 건강한 자아상을 갖도록 돕습니다.</p>
+      </div>
+      <div class="mission">
+        <div class="panel">
+          <h3>교육표어</h3>
+          <p class="time">말씀 가운데 자라가는 지혜로운 초등부</p>
+        </div>
+        <div class="panel">
+          <h3>주제성구</h3>
+          <p>“그러나 너는 배우고 확신한 일에 거하라… 성경은 능히 너로 하여금 그리스도 예수 안에 있는 믿음으로 말미암아 구원에 이르는 지혜가 있게 하느니라”</p>
+          <b>디모데후서 3:14–15</b>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="head">
+        <h2>비전 및 핵심가치</h2>
+        <p>초등부의 교육 방향을 부모와 방문자가 한눈에 이해할 수 있도록 4개의 카드로 정리했습니다.</p>
+      </div>
+      <div class="values">
+        <div class="value"><b>구원의 역사 이해</b><p>하나님의 약속과 구속사를 배웁니다.</p></div>
+        <div class="value"><b>믿음/구원의 확신</b><p>예수님을 주로 고백하도록 돕습니다.</p></div>
+        <div class="value"><b>자아정체성</b><p>하나님의 자녀로 자신을 바라봅니다.</p></div>
+        <div class="value"><b>전도/영향력</b><p>말씀을 삶 속에서 실천합니다.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="head">
+        <h2>예배와 분반공부</h2>
+        <p>시간표와 예배 순서를 병렬 배치하여, 새가족 부모님도 쉽게 이해하도록 설계했습니다.</p>
+      </div>
+      <div class="worship">
+        <div class="panel">
+          <h3>주일 일정</h3>
+          <p><span class="time">10:20</span> 예배 준비</p>
+          <p><span class="time">10:40</span> 예배</p>
+          <p><span class="time">11:20</span> 점심</p>
+          <p><span class="time">11:45</span> 분반공부</p>
+        </div>
+        <div class="panel steps">
+          <h3>예배 순서</h3>
+          <div class="step">찬양</div>
+          <div class="step">신앙고백 / 사도신경</div>
+          <div class="step">대표기도와 성경봉독</div>
+          <div class="step">말씀증거</div>
+          <div class="step">헌금과 봉헌기도</div>
+          <div class="step">주기도문, 광고, 환영</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="head">
+        <h2>2025 월별 활동</h2>
+        <p>사진/후기 페이지와 연결하면 생동감 있는 활동 아카이브로 확장할 수 있습니다.</p>
+      </div>
+      <div class="calendar">
+        <div class="cal"><b>2</b><br>Snow Tubing</div>
+        <div class="cal"><b>4</b><br>부활절 발표회</div>
+        <div class="cal"><b>5</b><br>어린이주일 야외예배</div>
+        <div class="cal"><b>7</b><br>Beach: Sandy Hook</div>
+        <div class="cal"><b>10</b><br>가을 캠프</div>
+        <div class="cal"><b>11</b><br>추수감사 찬양제</div>
+        <div class="cal"><b>12</b><br>성탄 발표회</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="head"><h2>매주 실천하는 믿음</h2></div>
+      <div class="practices">
+        <div class="practice"><strong>예배</strong><p>주일예배 잘 드리기</p></div>
+        <div class="practice"><strong>감사</strong><p>하루 1 감사 제목 나누기</p></div>
+        <div class="practice"><strong>묵상</strong><p>매일 말씀 묵상하기</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    뉴저지제일한인교회 유초등부 · <a href="../">교회 홈</a>
+  </footer>
+</body>
+</html>
