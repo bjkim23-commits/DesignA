@@ -213,6 +213,50 @@ table.svc td:nth-child(2), table.svc td:nth-child(3) { color: var(--muted); font
 .ggrid figcaption b { display: block; font-weight: 500; font-size: 14px; }
 .ggrid figcaption span { font-size: 11px; color: rgba(255,255,255,0.7); }
 
+.give-card {
+  max-width: 420px;
+  margin: 36px auto 0;
+  background: var(--cream);
+  border: 1px solid rgba(11, 22, 38, 0.12);
+  border-radius: 20px;
+  padding: 40px 32px 36px;
+  text-align: center;
+}
+.give-card h2 {
+  font-weight: 300;
+  font-size: 26px;
+  margin: 0 0 10px;
+}
+.give-card p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.give-card .tithely {
+  display: inline-block;
+  margin: 22px 0 18px;
+  background: #00DB72;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 16px 48px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.give-card img {
+  display: block;
+  width: 160px;
+  height: 160px;
+  margin: 8px auto 0;
+  border-radius: 12px;
+}
+.give-card .hint {
+  margin-top: 22px;
+  font-size: 13px;
+  color: #8492A2;
+}
+
 footer { background: #091220; color: rgba(251,249,243,0.6); }
 .footer-inner { max-width: 1440px; margin: 0 auto; padding: 56px 40px 36px; }
 .footer-name { font-weight: 800; font-size: 18px; color: #FBF9F3; }
