@@ -113,24 +113,21 @@ header {
 .bi + .bi {
   margin-top: 22px;
 }
-.bi.wm {
-  container-type: inline-size;
-}
 .bi .en,
 .bi .hero-en {
   width: 0;
   min-width: 100%;
   box-sizing: border-box;
 }
-.bi .footer-en {
-  width: 0;
-  min-width: 100%;
-  box-sizing: border-box;
+.bi.wm .en,
+.bi.wm .footer-en {
+  width: auto;
+  min-width: 0;
   white-space: nowrap;
-  letter-spacing: 0.02em;
-  font-size: 5.2cqw;
-  text-align: justify;
-  text-align-last: justify;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  text-align: left;
 }
 
 .section { padding: 88px 0; }
@@ -320,7 +317,7 @@ table.svc td:nth-child(2), table.svc td:nth-child(3) { color: var(--muted); font
 footer { background: #091220; color: rgba(251,249,243,0.6); }
 .footer-inner { max-width: 1440px; margin: 0 auto; padding: 56px 40px 36px; }
 .footer-name { font-weight: 800; font-size: 18px; color: #FBF9F3; }
-.footer-en { font-size: 10.5px; letter-spacing: 0.03em; text-transform: uppercase; color: #5F6B7A; margin: 2px 0 16px; }
+.footer-en { font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: #5F6B7A; margin: 5px 0 16px; }
 .footer-inner a { color: rgba(251,249,243,0.55); text-decoration: none; font-size: 13.5px; }
 .copy { margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(251,249,243,0.1); font-size: 12px; color: rgba(251,249,243,0.32); }
 
