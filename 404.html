@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting…</title>
+  <script>
+    (function () {
+      var path = location.pathname;
+      var marker = '/english';
+      var idx = path.indexOf(marker);
+      if (idx >= 0) {
+        var base = path.slice(0, idx + marker.length);
+        var rest = path.slice(base.length) || '/';
+        try { sessionStorage.setItem('em-redirect', rest + location.search + location.hash); } catch (e) {}
+        location.replace(base + '/' + location.search);
+        return;
+      }
+      location.replace('./');
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting…</p>
+</body>
+</html>

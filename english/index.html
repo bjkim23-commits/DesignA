@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./2911_favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2911 Ministry | English Ministry</title>
+    <script>
+      (function () {
+        var path = location.pathname;
+        var marker = '/english';
+        var idx = path.indexOf(marker);
+        window.__EM_BASE__ = idx >= 0 ? path.slice(0, idx + marker.length) : '/english';
+        try {
+          var saved = sessionStorage.getItem('em-redirect');
+          if (saved) {
+            sessionStorage.removeItem('em-redirect');
+            var next = window.__EM_BASE__ + (saved.charAt(0) === '/' ? saved : '/' + saved);
+            history.replaceState(null, '', next);
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="./assets/index-pe5by6yo.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B-2t_8VV.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
