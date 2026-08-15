@@ -24,6 +24,9 @@
   .bi .en-cta{margin-top:1px;}
   .bi.wm .en,.wm-en{width:auto;min-width:0;white-space:nowrap;font-size:10px;line-height:1.2;letter-spacing:0.05em;text-transform:uppercase;text-align:left;margin-top:5px;}
   .bi .en.en-nowrap{width:auto;min-width:0;white-space:nowrap;}
+  .footer-cols{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1.35fr) minmax(0,0.85fr);gap:40px;}
+  @media (max-width:900px){.footer-cols{grid-template-columns:1fr 1fr;}}
+  @media (max-width:600px){.footer-cols{grid-template-columns:1fr;}}
 </style>
 </helmet>
 
@@ -280,7 +283,7 @@
   <!-- ============ FOOTER ============ -->
   <footer style="background:#091220;color:rgba(251,249,243,0.6);">
     <div style="max-width:1440px;margin:0 auto;padding:72px 40px 40px;">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(251,249,243,0.1);">
+      <div class="footer-cols" style="padding-bottom:44px;border-bottom:1px solid rgba(251,249,243,0.1);">
         <div>
           <div class="bi wm" style="display:block;margin-bottom:20px;">
             <div style="font-weight:800;font-size:18px;color:#FBF9F3;">뉴저지제일한인교회</div>
