@@ -47,7 +47,7 @@
             <a href="./" onClick="{{ closeAll }}" class="bi" style="font-size:15px;font-weight:500;color:var(--nav,rgba(251,249,243,0.88));white-space:normal;text-decoration:none;transition:color .3s ease;line-height:1.2;" style-hover="color:var(--navHover,#FBF9F3);"><span style="display:block;">홈</span><span class="en">Home</span></a>
             <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="4">
               <button onMouseEnter="{{ item.onEnter }}" onClick="{{ item.onClick }}" style="display:flex;align-items:center;gap:7px;background:none;border:none;padding:0;cursor:pointer;font-family:inherit;font-size:15px;font-weight:500;color:var(--nav,rgba(251,249,243,0.88));white-space:normal;transition:color .3s ease;" style-hover="color:var(--navHover,#FBF9F3);">
-                <span class="bi" style="line-height:1.2;"><span style="display:block;">{{ item.label }}</span><span class="en">{{ item.en }}</span></span>
+                <span class="bi" style="line-height:1.2;"><span style="display:block;">{{ item.label }}</span><span class="en en-nowrap">{{ item.en }}</span></span>
                 <span style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;font-size:15px;font-weight:400;color:var(--ind,#E3BE6E);transition:color .3s ease;">{{ item.indicator }}</span>
               </button>
             </sc-for>
@@ -112,7 +112,7 @@
       <sc-for list="{{ mobileGroups }}" as="grp" hint-placeholder-count="4">
         <div style="border-bottom:1px solid rgba(11,22,38,0.08);">
           <button onClick="{{ grp.onToggle }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;background:none;border:none;padding:16px 6px;cursor:pointer;font-family:inherit;font-size:17px;font-weight:600;color:#0B1626;">
-            <span class="bi" style="line-height:1.2;"><span style="display:block;">{{ grp.label }}</span><span class="en">{{ grp.en }}</span></span>
+            <span class="bi" style="line-height:1.2;"><span style="display:block;">{{ grp.label }}</span><span class="en en-nowrap">{{ grp.en }}</span></span>
             <span style="color:#B98A2E;font-weight:400;font-size:19px;">{{ grp.indicator }}</span>
           </button>
           <sc-if value="{{ grp.isOpen }}" hint-placeholder-val="{{ false }}">
@@ -122,7 +122,7 @@
                   <span style="flex:none;width:40px;height:40px;border-radius:11px;background:#FBF9F3;border:1px solid rgba(11,22,38,0.08);display:flex;align-items:center;justify-content:center;color:#8A5F14;">
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="{{ item.icon }}"></path></svg>
                   </span>
-                  <span class="bi" style="line-height:1.2;"><span style="display:block;font-size:15px;color:#2B3849;">{{ item.label }}</span><span class="en">{{ item.en }}</span></span>
+                  <span class="bi" style="line-height:1.2;"><span style="display:block;font-size:15px;color:#2B3849;">{{ item.label }}</span><span class="en en-nowrap">{{ item.en }}</span></span>
                 </a>
               </sc-for>
             </div>
@@ -268,7 +268,7 @@
           </span>
           <span class="bi" style="display:block;margin:0 auto 18px;text-align:center;">
             <span style="display:block;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:300;font-size:23px;color:#0B1626;">{{ c.title }}</span>
-            <span class="en" style="color:#8A5F14;opacity:1;font-size:12px;">{{ c.subtitle }}</span>
+            <span class="en en-nowrap" style="color:#8A5F14;opacity:1;font-size:12px;">{{ c.subtitle }}</span>
           </span>
           <span style="display:block;font-size:14px;line-height:1.6;color:#55616F;">{{ c.desc }}</span>
           <span class="en">{{ c.descEn }}</span>
