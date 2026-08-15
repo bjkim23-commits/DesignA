@@ -124,7 +124,7 @@
   <!-- ============ HERO ============ -->
   <section style="position:relative;overflow:hidden;background:#0E1A2C;">
     <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;">
-      <video class="hero-bg" src="./videos/fellowship.mp4" muted autoplay playsinline preload="auto" style="position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100%;min-width:177.78vh;transform:translate(-50%,-50%);object-fit:cover;border:0;"></video>
+      <video class="hero-bg" src="./videos/worship.mp4" muted autoplay playsinline preload="auto" style="position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100%;min-width:177.78vh;transform:translate(-50%,-50%);object-fit:cover;border:0;"></video>
     </div>
     <div style="position:absolute;inset:0;background:linear-gradient(175deg,rgba(9,18,32,0.18),rgba(9,18,32,0.42));"></div>
     <div style="position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(to top,rgba(9,18,32,0.72),rgba(9,18,32,0));pointer-events:none;"></div>
@@ -345,12 +345,12 @@ class Component extends DCLogic {
       this._io.observe(sentinel);
     }
     const clips = [
-      './videos/fellowship.mp4',
+      './videos/worship.mp4',
+      './videos/sermon.mp4',
       './videos/preschool.mp4',
       './videos/sundayschool.mp4',
       './videos/youth.mp4',
-      './videos/worship.mp4',
-      './videos/sermon.mp4',
+      './videos/fellowship.mp4',
     ];
     const video = document.querySelector('.sc-host video.hero-bg') || document.querySelector('video.hero-bg');
     if (video && !video.dataset.heroBound) {
@@ -430,12 +430,12 @@ class Component extends DCLogic {
 <script>
 (function () {
   var clips = [
-    './videos/fellowship.mp4',
+    './videos/worship.mp4',
+    './videos/sermon.mp4',
     './videos/preschool.mp4',
     './videos/sundayschool.mp4',
     './videos/youth.mp4',
-    './videos/worship.mp4',
-    './videos/sermon.mp4'
+    './videos/fellowship.mp4'
   ];
   function visibleHero() {
     return document.querySelector('.sc-host video.hero-bg');
