@@ -124,10 +124,10 @@
   <!-- ============ HERO ============ -->
   <section style="position:relative;overflow:hidden;background:#0E1A2C;">
     <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;">
-      <video id="heroBgVideo" muted autoplay playsinline preload="auto" style="position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100%;min-width:177.78vh;transform:translate(-50%,-50%);object-fit:cover;border:0;"></video>
+      <video class="hero-bg" src="./videos/fellowship.mp4" muted autoplay playsinline preload="auto" style="position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100%;min-width:177.78vh;transform:translate(-50%,-50%);object-fit:cover;border:0;"></video>
     </div>
-    <div style="position:absolute;inset:0;background:linear-gradient(175deg,rgba(9,18,32,0.34),rgba(9,18,32,0.72));"></div>
-    <div style="position:absolute;left:0;right:0;bottom:0;height:55%;background:linear-gradient(to top,rgba(9,18,32,0.9),rgba(9,18,32,0));pointer-events:none;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(175deg,rgba(9,18,32,0.18),rgba(9,18,32,0.42));"></div>
+    <div style="position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(to top,rgba(9,18,32,0.72),rgba(9,18,32,0));pointer-events:none;"></div>
     <div style="position:relative;max-width:1440px;margin:0 auto;padding:132px 40px 96px;">
       <span style="display:inline-block;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:400;font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:#E3BE6E;margin-bottom:26px;">Grace &amp; Truth · Since 1974</span>
       <h2 style="font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:600;font-size:clamp(42px,6.5vw,82px);line-height:1.2;letter-spacing:-0.02em;color:#FBF9F3;margin:0 0 24px;">말씀 위에 세워진<br>믿음의 공동체</h2>
@@ -351,8 +351,9 @@ class Component extends DCLogic {
       './videos/youth.mp4',
       './videos/worship.mp4',
     ];
-    const video = document.getElementById('heroBgVideo');
-    if (video) {
+    const video = document.querySelector('.sc-host video.hero-bg') || document.querySelector('video.hero-bg');
+    if (video && !video.dataset.heroBound) {
+      video.dataset.heroBound = '1';
       let i = 0;
       const playClip = () => {
         video.muted = true;
@@ -424,6 +425,44 @@ class Component extends DCLogic {
     };
   }
 }
+</script>
+<script>
+(function () {
+  var clips = [
+    './videos/fellowship.mp4',
+    './videos/preschool.mp4',
+    './videos/sundayschool.mp4',
+    './videos/youth.mp4',
+    './videos/worship.mp4'
+  ];
+  function visibleHero() {
+    return document.querySelector('.sc-host video.hero-bg');
+  }
+  function bind() {
+    var video = visibleHero();
+    if (!video || video.dataset.heroBound) return !!video;
+    video.dataset.heroBound = '1';
+    var i = 0;
+    var playClip = function () {
+      video.muted = true;
+      video.playsInline = true;
+      video.setAttribute('playsinline', '');
+      video.src = clips[i % clips.length];
+      var p = video.play();
+      if (p && p.catch) p.catch(function () {});
+    };
+    video.addEventListener('ended', function () { i += 1; playClip(); });
+    playClip();
+    return true;
+  }
+  if (!bind()) {
+    var n = 0;
+    var t = setInterval(function () {
+      n += 1;
+      if (bind() || n > 40) clearInterval(t);
+    }, 50);
+  }
+})();
 </script>
 </body>
 </html>
