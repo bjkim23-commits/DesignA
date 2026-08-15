@@ -23,6 +23,7 @@
   .bi .en-hero{margin-top:3px;}
   .bi .en-cta{margin-top:1px;}
   .bi.wm .en,.wm-en{width:auto;min-width:0;white-space:nowrap;font-size:10px;line-height:1.2;letter-spacing:0.05em;text-transform:uppercase;text-align:left;margin-top:5px;}
+  .bi .en.en-nowrap{width:auto;min-width:0;white-space:nowrap;}
 </style>
 </helmet>
 
@@ -160,7 +161,7 @@
   <!-- ============ WORSHIP TIMES BAND ============ -->
   <section style="background:#EEE7D8;border-bottom:1px solid rgba(11,22,38,0.08);">
     <div style="max-width:1440px;margin:0 auto;padding:26px 40px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 40px;">
-      <span class="bi" style="font-size:12px;letter-spacing:0.04em;color:#5F6B7A;font-weight:600;flex:none;line-height:1.25;"><span style="display:block;">예배 시간</span><span class="en">Service Times</span></span>
+      <span class="bi" style="font-size:12px;letter-spacing:0.04em;color:#5F6B7A;font-weight:600;flex:none;line-height:1.25;"><span style="display:block;">예배 시간</span><span class="en en-nowrap">Service Times</span></span>
       <div style="display:flex;flex-wrap:wrap;gap:12px 36px;">
         <sc-for list="{{ heroTimes }}" as="t" hint-placeholder-count="4">
           <div class="bi" style="display:flex;flex-direction:column;gap:0;">
@@ -168,7 +169,7 @@
               <span style="font-size:14px;color:#3D4A5A;">{{ t.name }}</span>
               <span style="font-size:15px;font-weight:600;color:#0B1626;">{{ t.time }}</span>
             </div>
-            <span class="en">{{ t.en }}</span>
+            <span class="en en-nowrap">{{ t.en }}</span>
           </div>
         </sc-for>
       </div>
@@ -299,10 +300,10 @@
         <div>
           <div class="bi" style="display:block;margin-bottom:18px;">
             <div style="color:rgba(251,249,243,0.85);font-weight:600;font-size:14px;">예배 시간</div>
-            <div class="en">Service Times</div>
+            <div class="en en-nowrap">Service Times</div>
           </div>
           <sc-for list="{{ heroTimes }}" as="t" hint-placeholder-count="4">
-            <div class="bi" style="display:block;font-size:13.5px;padding:8px 0;line-height:1.25;"><span style="display:block;">{{ t.name }} · {{ t.time }}</span><span class="en">{{ t.en }}</span></div>
+            <div class="bi" style="display:block;font-size:13.5px;padding:8px 0;line-height:1.25;"><span style="display:block;">{{ t.name }} · {{ t.time }}</span><span class="en en-nowrap">{{ t.en }}</span></div>
           </sc-for>
         </div>
         <div>
