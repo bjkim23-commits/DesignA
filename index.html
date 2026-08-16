@@ -188,20 +188,20 @@
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:22px;">
       <div style="grid-column:span 1;position:relative;overflow:hidden;border-radius:22px;background:#0C1E33;color:#FBF9F3;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;">
         <div style="position:absolute;inset:0;">
-          <iframe src="https://www.youtube.com/embed/Xzdsv4wX_20?rel=0&modestbranding=1&playsinline=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe>
+          <iframe id="home-sermon-frame" src="https://www.youtube.com/embed/Xzdsv4wX_20?rel=0&modestbranding=1&playsinline=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe>
         </div>
         <div style="position:relative;padding:22px 24px;background:linear-gradient(to top,rgba(8,16,28,0.92),rgba(8,16,28,0));pointer-events:none;">
           <span class="bi" style="display:block;margin-bottom:16px;">
-            <span style="display:block;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;letter-spacing:0.04em;color:#E3BE6E;">최신 주일설교 · 2026.05.31</span>
+            <span id="home-sermon-kicker" style="display:block;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;letter-spacing:0.04em;color:#E3BE6E;">최신 주일설교 · 2026.05.31</span>
             <span class="en" style="color:rgba(251,249,243,0.62);">Latest Sunday Sermon</span>
           </span>
           <span class="bi" style="display:block;">
-            <span style="display:block;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:300;font-size:22px;line-height:1.35;">예수님을 위한 증거</span>
-            <span class="en" style="color:rgba(251,249,243,0.62);">Witnesses to Jesus</span>
+            <span id="home-sermon-title" style="display:block;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:300;font-size:22px;line-height:1.35;">예수님을 위한 증거</span>
+            <span id="home-sermon-title-en" class="en" style="color:rgba(251,249,243,0.62);">Witnesses to Jesus</span>
           </span>
           <span class="bi" style="display:block;margin-top:16px;">
-            <span style="display:block;font-size:13.5px;color:rgba(251,249,243,0.72);">요한복음 5:31-47 · 강상석 담임목사</span>
-            <span class="en" style="color:rgba(251,249,243,0.5);">John 5:31-47 · Rev. Sang-Suk Kang</span>
+            <span id="home-sermon-meta" style="display:block;font-size:13.5px;color:rgba(251,249,243,0.72);">요한복음 5:31-47 · 강상석 담임목사</span>
+            <span id="home-sermon-meta-en" class="en" style="color:rgba(251,249,243,0.5);">John 5:31-47 · Rev. Sang-Suk Kang</span>
           </span>
         </div>
       </div>
@@ -210,12 +210,14 @@
           <h4 style="font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:300;font-size:22px;color:#0B1626;margin:0;">이번 주 소식</h4>
           <span class="en">Weekly News</span>
         </span>
+        <div id="home-news-list">
         <sc-for list="{{ news }}" as="n" hint-placeholder-count="4">
           <div style="display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid rgba(11,22,38,0.08);">
             <span class="bi" style="line-height:1.3;"><span style="display:block;font-size:14.5px;color:#2B3849;">{{ n.title }}</span><span class="en">{{ n.en }}</span></span>
             <span style="font-size:12.5px;color:#8492A2;flex:none;">{{ n.date }}</span>
           </div>
         </sc-for>
+        </div>
         <a href="./bulletin/" class="bi" style="margin-top:22px;font-size:14px;font-weight:600;color:#8A5F14;text-decoration:none;line-height:1.25;"><span style="display:block;">주보 보기 &rarr;</span><span class="en">View bulletin</span></a>
       </div>
     </div>
@@ -536,5 +538,9 @@ class Component extends DCLogic {
   }
 })();
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./js/supabase-config.js"></script>
+<script src="./js/db.js"></script>
+<script src="./js/content.js"></script>
 </body>
 </html>

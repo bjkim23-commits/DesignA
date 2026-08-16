@@ -1,18 +1,17 @@
 # First Korean Church of NJ — Design A
 
-Modernized church website (mega menu + refreshed home page).
+Theme: **Deep Navy & Warm Gold**. Live: [design-a-ochre.vercel.app](https://design-a-ochre.vercel.app/). Domain: `njfirstchurch.org` (Squarespace DNS, Vercel hosting).
 
-Theme: **Deep Navy & Warm Gold** — selected from the church website theme color poll (신뢰와 경건함).
+## 운영자
+
+- 관리 페이지: `/admin/`
+- 백엔드: Supabase. 스키마는 [`supabase/schema.sql`](supabase/schema.sql), 연결 방법은 [`supabase/README.md`](supabase/README.md).
+- 도메인 DNS: [`SQUARESPACE-DNS.md`](SQUARESPACE-DNS.md) — **네임서버와 메일 MX는 바꾸지 않습니다.**
 
 ## Files
-- `index.html` — the site (self-contained; the Pretendard webfont loads from a CDN at runtime).
-- `support.js` — runtime the page needs; keep it next to `index.html`.
-- `videos/` — muted hero background clips (fellowship, preschool, Sunday school, youth, worship, sermon).
-- `.nojekyll` — tells GitHub Pages to serve files as-is.
 
-## Publish with GitHub Pages
-1. Commit these files to the root of the `main` branch.
-2. Repo **Settings → Pages** → Source: **Deploy from a branch** → Branch: **main** / **/(root)** → Save.
-3. The site goes live at `https://bjkim23-commits.github.io/DesignA/` in a minute or two.
-
-The hero background cycles through local church videos in `videos/`. An internet connection is only needed for the Pretendard webfont.
+- `index.html` — landing
+- `admin/` — 설교·소식·주보 관리
+- `js/` — Supabase 클라이언트와 공개 콘텐츠 로더
+- `support.js` — landing runtime
+- `videos/` — hero clips

@@ -1,5 +1,7 @@
 {
   "rewrites": [
-    { "source": "/english/:path*", "destination": "/english/index.html" }
+    { "source": "/english/:path*", "destination": "/english/index.html" },
+    { "source": "/admin", "destination": "/admin/index.html" },
+    { "source": "/admin/", "destination": "/admin/index.html" }
   ]
 }
